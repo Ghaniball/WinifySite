@@ -1,0 +1,80 @@
+// bower:scss
+// endbower
+
+@import "compass";
+
+body {
+	.my-main-body {
+		#main {
+			
+		}
+	}
+	
+	#footer {
+		
+	}
+	
+	&.home {
+		.my-main-body {
+			height: 100%;
+			min-height: 0;
+			
+			#main {
+				height: 100%;
+				
+				.intro {
+					background-color: gainsboro;
+					height: 100%;
+					
+					nav {
+						a {
+							color: white;
+							text-align: center;
+							@include inline-block;
+							
+							.ico {
+								display: block;
+								margin: 0 auto 40px;
+								font-size: 100px;
+								line-height: 1;
+								text-shadow: 4px 4px 3px rgba(60, 60, 60, 0.34);
+							}
+							
+							.txt {
+								font-size: 30px;
+								text-shadow: 1px 1px 1px rgba(60, 60, 60, 0.34);
+							}
+						}
+					}
+					
+					.logo-big {
+						height: 20%;						
+					}
+					.button-container {
+						height: 20%;
+						position: relative;
+						
+						.button-wrap {
+							position: absolute;
+							width: 100%;
+							bottom: 0;
+							left: 0;
+						}
+					}
+				}
+			}
+			
+			.my-rasporka {
+				display: none;
+			}
+			
+			#footer {
+				margin-top: 0;
+			}
+		}
+		
+		> #footer {
+			display: none;
+		}
+	}
+}

@@ -1,0 +1,75 @@
+@import "compass";
+
+$footerHeight			: 60px;
+
+body, html {
+	height:100%;
+}
+
+body {
+	overflow-y:auto;
+	
+	#footer {
+		margin-top:-$footerHeight;
+		height:$footerHeight;
+	}
+}
+.my-main-body {
+	min-height:100%;
+}
+
+* html .my-main-body {
+	height:100%;
+}
+
+.my-rasporka {
+	height: $footerHeight;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+.field {
+	font-size: 14px;
+	font-size: 100%;
+}
+
+.hidden {
+	display: none !important;
+	visibility: hidden;
+}
+
+.fa {
+    @include inline-block;
+	margin: 0 5px;
+    min-width: 20px;
+    position: static;
+    text-align: center;
+}
+
+i.left-icon {
+	margin-left: 0;
+}
+i.right-icon {
+	margin-right: 0;
+}
+
+.tvalign {
+	display: table;
+    width: 100%;
+	height: inherit;
+	
+	.tcvalign {
+		display: table-cell;
+		vertical-align: middle;
+		height: inherit;
+	}
+}
+
+.btn > a,
+.skiplink > a {
+	&:hover, &:active, &:focus {
+		text-decoration: none;
+	}
+}
