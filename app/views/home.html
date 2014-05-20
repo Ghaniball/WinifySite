@@ -1,17 +1,19 @@
-<div class="intro" ng-include="'views/partials/home/intro.html'"></div>
+<div class="top-menu" ng-include="'views/partials/top_menu.html'" onload="loadTopMenu()"></div>
 
-<div ng-include="'views/partials/top_menu.html'"></div>
+<div class="intro-block" ng-include="'views/partials/home/intro.html'" onload="loadIntroBlock()"></div>
 
-<div ng-include="'views/partials/home/skils.html'"></div>
+<div class="skils-block" ng-include="'views/partials/home/skils.html'" onload="loadMe('skils')"></div>
 
-<div ng-include="'views/partials/home/flow.html'"></div>
+<div class="flow-block" ng-include="'views/partials/home/flow.html'" onload="loadMe('flow')"></div>
 
-<div ng-include="'views/partials/home/works.html'"></div>
+<div class="works-block" ng-include="'views/partials/home/works.html'" onload="loadMe('works')"></div>
 
-<div ng-include="'views/partials/home/quotes.html'"></div>
+<div class="quotes-block" ng-include="'views/partials/home/quotes.html'" onload="loadQuotesBlock()"></div>
 
-<div ng-include="'views/partials/home/about.html'"></div>
+<div class="about-block" ng-include="'views/partials/home/about.html'" onload="loadMe('about')"></div>
 
-<div ng-include="'views/partials/home/contact.html'"></div>
+<div class="contact-block" ng-include="'views/partials/home/contact.html'" onload="loadMe('contact')"></div>
 
-<div id="footer" ng-include="'views/partials/footer.html'"></div>
+<div class="gmap-block" ng-include="'views/partials/home/gmap.html'" onload="loadMe('contact')"></div>
+
+<div id="footer" ng-include="'views/partials/footer.html'" onload="loadMe('footer')"></div>

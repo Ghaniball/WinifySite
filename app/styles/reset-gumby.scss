@@ -1,6 +1,6 @@
 @import "compass";
 
-$footerHeight			: 60px;
+$footerHeight			: 120px;
 
 body, html {
 	height:100%;
@@ -10,8 +10,8 @@ body {
 	overflow-y:auto;
 	
 	#footer {
-		margin-top:-$footerHeight;
-		height:$footerHeight;
+		margin-top: -$footerHeight;
+		height: $footerHeight;
 	}
 }
 .my-main-body {
@@ -58,7 +58,7 @@ i.right-icon {
 .tvalign {
 	display: table;
     width: 100%;
-	height: inherit;
+	height: 100%;
 	
 	.tcvalign {
 		display: table-cell;
@@ -72,4 +72,38 @@ i.right-icon {
 	&:hover, &:active, &:focus {
 		text-decoration: none;
 	}
+}
+
+.navbar {
+	background: none;
+	
+	ul li > a {
+		color: black;
+		text-shadow: none;
+		padding: 0 20px;
+	}
+}
+
+.gumby-no-touch .navbar ul li:hover > a,
+.gumby-touch .navbar ul li.active > a {
+	background-color: #333;
+	background-color: rgba(0,0,0,.4);
+}
+
+.btn.orange {
+	background-color: #F58220;
+    border-bottom: 4px solid #E26B29;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+
+.vvalign > div,
+.vvalign > article,
+.vvalign > section,
+.vvalign > figure {
+    display: table-cell;
+    vertical-align: middle;
 }
