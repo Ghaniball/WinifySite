@@ -78,7 +78,7 @@ body {
 				height: 100%;
 
 				.intro-block,
-				.skils-block,
+				.skills-block,
 				.works-block,
 				.contact-block,
 				.about-block {
@@ -150,7 +150,9 @@ body {
 							}
 
 							.txt {
-								font-size: 22px;
+								font-weight: 400;
+								padding: 0;
+								color: white;
 								text-shadow: 1px 1px 1px rgba(60, 60, 60, 0.34);
 							}
 							
@@ -293,11 +295,16 @@ body {
 }
 
 .top-menu {
-	background-color: #666;
+	background-color: #888;
 	background-color: rgba(0,0,0, .3);
 	position: fixed;
 	z-index: 3;
 	width: 100%;
+	
+	&:hover {
+		background-color: #666;
+		background-color: rgba(0,0,0, .5);
+	}
 
 	#nav1 {
 		margin-bottom: 0;
@@ -306,6 +313,12 @@ body {
 		.logo {
 			a {
 				padding: 0 20px;
+				float: left;
+				
+				&:hover {
+					background-color: #555;
+					background-color: rgba(0,0,0, .4);
+				}
 				
 				img {
 					@include inline-block;
@@ -338,7 +351,7 @@ body {
 		float: left;
 		position: relative;
 		width: 19.6%; height: 0;
-		padding-top: 19%;
+		padding-top: 20%;
 		margin-left: 0.5%;
 		
 		&:first-child {
@@ -349,7 +362,7 @@ body {
 			position: absolute;
 			width: 100%;
 			height: 100%;
-			padding: 2em 1em;
+			padding: 1.75em .5em;
 			left: 0; top: 0;
 			background-color: $dGray;
 			color: white;
@@ -409,7 +422,7 @@ body {
 		
 		.h {
 			padding: 0;
-			margin-bottom: 2em;
+			margin-bottom: 1em;
 			color: white;
 			text-transform: uppercase;
 			font-weight: 700;
@@ -517,6 +530,60 @@ body {
 	}
 }
 
-.works {
+body.home .my-main-body #main .intro-block .skiplinks-nav.fixed {
+	top: 50% !important;
+	left: 30px !important;
+	margin-top: -40px;
+	width: auto !important;
 	
+	.ico i {
+		display: none;
+	}
+	
+	h4 {
+		  font-size: 16px;
+		  font-size: 1rem;
+	}
+	
+	li {
+		float: none;
+		display: list-item;
+		margin: 0;
+		padding: 0;
+		width: 0; height: 20px;
+		font-size: 20px;
+		list-style-type: disc;
+		position: relative;
+		text-align: left;
+		color: $dGray;
+		@include transition(color ease-in-out .2s);
+		
+		a {
+			display: block;
+			background-color: $orange;
+			position: absolute;
+			left: -120px;
+			margin-top: 1px;
+			padding: 3px 7px;
+			@include transition(left .2s ease-in-out .3s);
+			
+			.ico {
+				position: absolute;
+				width: 0; height: 0;
+				border-width: 12px 12px 12px 20px;
+				border-color: transparent $orange transparent transparent;
+				border-style: solid;
+				left: -32px; top: 0;
+			}
+		}
+		
+		&:hover,
+		&.active {
+			color: $orange;
+		}
+		
+		&:hover a {
+			left: 13px;
+		}
+	}
 }

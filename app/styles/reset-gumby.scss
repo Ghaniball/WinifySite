@@ -91,12 +91,20 @@ i.right-icon {
 }
 
 .btn.orange {
-	background-color: #F58220;
-    border-bottom: 4px solid #E26B29;
-    border-radius: 4px;
-    font-size: 16px;
+	background-color: #E26B29;
+    border-bottom: 6px solid #E26B29;
+    border-radius: 3px;
+	font-size: 100%;
     font-weight: 600;
     text-transform: uppercase;
+	height: 52px;
+    line-height: 54px;
+	
+	> a, input, button {
+		background-color: #F58220;
+		border-radius: 5px;
+		
+	}
 }
 
 

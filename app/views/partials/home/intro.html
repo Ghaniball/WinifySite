@@ -1,24 +1,68 @@
-<!--<div class="top-menu-bg"></div>-->
-<div class="tvalign row">
-	<div class="tcvalign text-center">
-		<figure class="logo-big">
-			<!--<img src="images/logo_big.png" alt="Logo Big">-->
-		</figure>
 
-		<nav>
-			<ul class="row">
-				<li class="two columns text-left push_two"><a href="#"><span class="ico"><i class="icon-graduation-cap"></i></span><span class="txt">Skills</span></a></li>
-				<li class="two columns text-center"><a href="#"><span class="ico"><i class="icon-folder"></i></span><span class="txt">Works</span></a></li>
-				<li class="two columns text-center"><a href="#"><span class="ico"><i class="icon-info-circled"></i></span><span class="txt">About</span></a></li>
-				<li class="two columns text-right"><a href="#"><span class="ico"><i class="icon-phone"></i></span><span class="txt">Contact</span></a></li>
-			</ul>
-		</nav>
-		
-		<!-- Doua containere pentru a seta inaltime in procente si a positiona butonul jos - un container pentru positie relativa si inaltime altul pentru positie absoluta si positionare jos latime 100% pentru a face posibila alinierea pe centru a butonului -->
-		<div class="button-container">
-			<div class="button-wrap">
-				<div class="large xwide orange btn"><a href="#">Project Calculator</a></div>
-			</div>
-		</div>
-	</div>
-</div>
+<div style="height: 20%;"></div>
+
+<nav class="skiplinks-nav" gumby-fixed="500" ng-class="{fixed: block!=='intro'}">
+	<ul class="row">
+		<li class="two columns text-center hide">
+			<a href="intro"
+			   class="skip"
+			   gumby-goto="top"
+			   gumby-update="">
+				<span class="ico">
+					<i class="icon-graduation-cap"></i>
+				</span>
+				<h4 class="txt">To&nbsp;top</h4>
+			</a>
+		</li>
+		<li class="two columns text-center push_two" ng-class="{active: block==='skills'}">
+			<a href="skills"
+			   class="skip"
+			   gumby-goto=".skills-block"
+			   gumby-update="">
+				<span class="ico">
+					<i class="icon-graduation-cap"></i>
+				</span>
+				<h4 class="txt">Skills</h4>
+			</a>
+		</li>
+		<li class="two columns text-center" ng-class="{active: block==='works'}">
+			<a href="works"
+			   class="skip"
+			   gumby-goto=".works-block"
+			   gumby-update="">
+				<span class="ico">
+					<i class="icon-folder"></i>
+				</span>
+				<h4 class="txt">Works</h4>
+			</a>
+		</li>
+		<li class="two columns text-center" ng-class="{active: block==='about'}">
+			<a href="about"
+			   class="skip"
+			   gumby-goto=".about-block"
+			   gumby-update="">
+				<span class="ico">
+					<i class="icon-info-circled"></i>
+				</span>
+				<h4 class="txt">About</h4>
+			</a>
+		</li>
+		<li class="two columns text-center" ng-class="{active: block==='contact'}">
+			<a href="contact"
+			   style="padding-right: 14px;"
+			   class="skip"
+			   gumby-goto=".contact-block"
+			   gumby-update="">
+				<span class="ico">
+					<i class="icon-phone"></i>
+				</span>
+				<h4 class="txt">Contact</h4>
+			</a>
+		</li>
+	</ul>
+</nav>
+
+
+<div style="height: 20%;"></div>
+
+<div class="large bxwide orange btn"><a href="#">Project Calculator</a></div>

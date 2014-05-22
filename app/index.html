@@ -33,7 +33,7 @@
         <![endif]-->
 
 		<section class="my-main-body">
-			<div id="main" ng-view="" onload="loadMe('main')"></div>
+			<div id="main" ng-view=""></div>
 
 			<div class="my-rasporka"></div>
 		</section>
@@ -59,8 +59,10 @@
         <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="scripts/directives.js"></script>
+        <script src="scripts/services.js"></script>
+        <script src="scripts/controllers.js"></script>
         <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/main.js"></script>
         <!-- endbuild -->
 
         <!--[if lt IE 7 ]>

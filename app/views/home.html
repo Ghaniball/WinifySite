@@ -1,19 +1,64 @@
 <div class="top-menu" ng-include="'views/partials/top_menu.html'" onload="loadTopMenu()"></div>
 
-<div class="intro-block" ng-include="'views/partials/home/intro.html'" onload="loadIntroBlock()"></div>
+<div class="intro-block" scroll-to-me="{{block === 'intro'}}">
+	{{block === 'intro'}}
+	<div class="tvalign row">
+		<div class="tcvalign text-center"
+			 ng-include="'views/partials/home/intro.html'"
+			 onload="loadIntroBlock()"></div>
+	</div>
+</div>
 
-<div class="skils-block" ng-include="'views/partials/home/skils.html'" onload="loadMe('skils')"></div>
+<div class="skills-block">
+	<div class="tvalign row">
+		<div class="tcvalign text-center"
+			 ng-include="'views/partials/home/skills.html'"
+			 onload="loadSkillsBlock()"></div>
+	</div>
+</div>
 
-<div class="flow-block" ng-include="'views/partials/home/flow.html'" onload="loadMe('flow')"></div>
+<div class="flow-block">
+	<div class="tvalign row">
+		<div class="tcvalign text-center"
+			 ng-include="'views/partials/home/flow.html'"
+			 onload=""></div>
+	</div>
+</div>
 
-<div class="works-block" ng-include="'views/partials/home/works.html'" onload="loadMe('works')"></div>
+<div class="works-block">
+	<div class="tvalign row">
+		<div class="tcvalign text-center"
+			 ng-include="'views/partials/home/works.html'"
+			 onload=""></div>
+	</div>
+</div>
 
-<div class="quotes-block" ng-include="'views/partials/home/quotes.html'" onload="loadQuotesBlock()"></div>
+<div class="quotes-block">
+	<div class="tvalign row">
+		<div class="tcvalign text-center"
+			 ng-include="'views/partials/home/quotes.html'"
+			 onload=""></div>
+	</div>
+</div>
 
-<div class="about-block" ng-include="'views/partials/home/about.html'" onload="loadMe('about')"></div>
+<div class="about-block">
+	<div class="tvalign row">
+		<div class="tcvalign text-center"
+			 ng-include="'views/partials/home/about.html'"
+			 onload=""></div>
+	</div>
+</div>
 
-<div class="contact-block" ng-include="'views/partials/home/contact.html'" onload="loadMe('contact')"></div>
+<div class="contact-block">
+	<div class="tvalign row">
+		<div class="tcvalign text-center"
+			 ng-include="'views/partials/home/contact.html'"
+			 onload=""></div>
+	</div>
+</div>
 
-<div class="gmap-block" ng-include="'views/partials/home/gmap.html'" onload="loadMe('contact')"></div>
+<div class="gmap-block"
+	 ng-include="'views/partials/home/gmap.html'"></div>
 
-<div id="footer" ng-include="'views/partials/footer.html'" onload="loadMe('footer')"></div>
+<div id="footer"
+	 ng-include="'views/partials/footer.html'"></div>
