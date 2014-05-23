@@ -532,8 +532,9 @@ body {
 
 body.home .my-main-body #main .intro-block .skiplinks-nav.fixed {
 	top: 50% !important;
-	left: 30px !important;
-	margin-top: -40px;
+	left: 16px !important;
+	z-index: 2;
+	margin-top: -50px;
 	width: auto !important;
 	
 	.ico i {
@@ -547,23 +548,33 @@ body.home .my-main-body #main .intro-block .skiplinks-nav.fixed {
 	
 	li {
 		float: none;
-		display: list-item;
+		display: block;
 		margin: 0;
 		padding: 0;
-		width: 0; height: 20px;
+		width: 20px; height: 20px;
 		font-size: 20px;
-		list-style-type: disc;
 		position: relative;
 		text-align: left;
 		color: $dGray;
+		//@include background-image(radial-gradient(circle, white, gray));
 		@include transition(color ease-in-out .2s);
+		
+		&:before {
+			content: "\e6e0";
+			height: inherit;
+			font-family: "entypo";
+			font-size: 40px;
+			line-height: 20px;
+			margin-left: -11px;
+			cursor: pointer;
+		}
 		
 		a {
 			display: block;
 			background-color: $orange;
 			position: absolute;
-			left: -120px;
-			margin-top: 1px;
+			left: -120px; top: 0;
+			margin-top: -3px;
 			padding: 3px 7px;
 			@include transition(left .2s ease-in-out .3s);
 			
@@ -583,7 +594,7 @@ body.home .my-main-body #main .intro-block .skiplinks-nav.fixed {
 		}
 		
 		&:hover a {
-			left: 13px;
+			left: 30px;
 		}
 	}
 }

@@ -46,7 +46,7 @@ angular.module('winifySiteCtrls', [])
       });
 
       $scope.$on('$locationChangeSuccess', function() {
-        window.console.log(arguments);
+        //window.console.log(arguments);
       });
 
       $scope.loadTopMenu = function() {
