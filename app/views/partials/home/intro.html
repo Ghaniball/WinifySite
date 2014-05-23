@@ -4,10 +4,8 @@
 <nav class="skiplinks-nav" gumby-fixed="500" ng-class="{fixed: block!=='intro'}">
 	<ul class="row">
 		<li class="two columns text-center hide">
-			<a href="intro"
-			   class="skip"
-			   gumby-goto="top"
-			   gumby-update="">
+			<a href="#{{path}}?intro"
+			   ng-click="skipTo('intro')">
 				<span class="ico">
 					<i class="icon-graduation-cap"></i>
 				</span>
@@ -15,10 +13,8 @@
 			</a>
 		</li>
 		<li class="two columns text-center push_two" ng-class="{active: block==='skills'}">
-			<a href="skills"
-			   class="skip"
-			   gumby-goto=".skills-block"
-			   gumby-update="">
+			<a href="#{{path}}?skills"
+			   ng-click="skipTo('skills')">
 				<span class="ico">
 					<i class="icon-graduation-cap"></i>
 				</span>
@@ -26,10 +22,8 @@
 			</a>
 		</li>
 		<li class="two columns text-center" ng-class="{active: block==='works'}">
-			<a href="works"
-			   class="skip"
-			   gumby-goto=".works-block"
-			   gumby-update="">
+			<a href="#{{path}}?works"
+			   ng-click="skipTo('works')">
 				<span class="ico">
 					<i class="icon-folder"></i>
 				</span>
@@ -37,10 +31,8 @@
 			</a>
 		</li>
 		<li class="two columns text-center" ng-class="{active: block==='about'}">
-			<a href="about"
-			   class="skip"
-			   gumby-goto=".about-block"
-			   gumby-update="">
+			<a href="#{{path}}?about"
+			   ng-click="skipTo('about')">
 				<span class="ico">
 					<i class="icon-info-circled"></i>
 				</span>
@@ -48,11 +40,9 @@
 			</a>
 		</li>
 		<li class="two columns text-center" ng-class="{active: block==='contact'}">
-			<a href="contact"
-			   style="padding-right: 14px;"
-			   class="skip"
-			   gumby-goto=".contact-block"
-			   gumby-update="">
+			<a href="#{{path}}?contact"
+			   ng-click="skipTo('contact')"
+			   style="padding-right: 14px;">
 				<span class="ico">
 					<i class="icon-phone"></i>
 				</span>

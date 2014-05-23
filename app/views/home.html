@@ -1,7 +1,6 @@
 <div class="top-menu" ng-include="'views/partials/top_menu.html'" onload="loadTopMenu()"></div>
 
-<div class="intro-block" scroll-to-me="{{block === 'intro'}}">
-	{{block === 'intro'}}
+<div class="intro-block" wnf-scroll-pos="{{offsetTop}}">
 	<div class="tvalign row">
 		<div class="tcvalign text-center"
 			 ng-include="'views/partials/home/intro.html'"
@@ -9,7 +8,7 @@
 	</div>
 </div>
 
-<div class="skills-block">
+<div class="skills-block" wnf-scroll-pos="{{offsetTop}}">
 	<div class="tvalign row">
 		<div class="tcvalign text-center"
 			 ng-include="'views/partials/home/skills.html'"
@@ -25,7 +24,7 @@
 	</div>
 </div>
 
-<div class="works-block">
+<div class="works-block" wnf-scroll-pos="{{offsetTop}}">
 	<div class="tvalign row">
 		<div class="tcvalign text-center"
 			 ng-include="'views/partials/home/works.html'"
@@ -41,7 +40,7 @@
 	</div>
 </div>
 
-<div class="about-block">
+<div class="about-block" wnf-scroll-pos="{{offsetTop}}">
 	<div class="tvalign row">
 		<div class="tcvalign text-center"
 			 ng-include="'views/partials/home/about.html'"
@@ -49,7 +48,7 @@
 	</div>
 </div>
 
-<div class="contact-block">
+<div class="contact-block" wnf-scroll-pos="{{offsetTop}}">
 	<div class="tvalign row">
 		<div class="tcvalign text-center"
 			 ng-include="'views/partials/home/contact.html'"
