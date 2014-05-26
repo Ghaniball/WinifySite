@@ -1,9 +1,9 @@
 
 <div style="height: 20%;"></div>
 
-<nav class="skiplinks-nav" gumby-fixed="500" ng-class="{fixed: block!=='intro'}">
+<nav class="skiplinks-nav" ng-class="{fixed: block!=='intro'}">
 	<ul class="row">
-		<li class="two columns text-center hide">
+		<li class="two columns text-center" ng-hide="block==='intro'">
 			<a href="#{{path}}?intro"
 			   ng-click="skipTo('intro')">
 				<span class="ico">
@@ -12,7 +12,7 @@
 				<h4 class="txt">To&nbsp;top</h4>
 			</a>
 		</li>
-		<li class="two columns text-center push_two" ng-class="{active: block==='skills'}">
+		<li class="two columns text-center push_one" ng-class="{active: block==='skills'}">
 			<a href="#{{path}}?skills"
 			   ng-click="skipTo('skills')">
 				<span class="ico">
@@ -30,7 +30,7 @@
 				<h4 class="txt">Works</h4>
 			</a>
 		</li>
-		<li class="two columns text-center" ng-class="{active: block==='about'}">
+		<li class="two columns text-center push_two" ng-class="{active: block==='about'}">
 			<a href="#{{path}}?about"
 			   ng-click="skipTo('about')">
 				<span class="ico">
@@ -55,4 +55,9 @@
 
 <div style="height: 20%;"></div>
 
-<div class="large bxwide orange btn"><a href="#">Project Calculator</a></div>
+<div class="large bxwide orange btn phone-calculator">
+	<a href="#">
+		<img src="images/calculator_v2.png" alt="" />
+		<span>Project Calculator</span>
+	</a>
+</div>

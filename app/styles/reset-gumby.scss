@@ -1,4 +1,6 @@
-@import "compass";
+// bower:scss
+@import "../bower_components/compass-mixins/lib/_compass.scss";
+// endbower
 
 $footerHeight			: 120px;
 
@@ -115,3 +117,4 @@ i.right-icon {
     display: table-cell;
     vertical-align: middle;
 }
+

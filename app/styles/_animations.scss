@@ -1,0 +1,47 @@
+/* 
+    Created on : 23.05.2014, 13:34:21
+    Author     : igodorogea
+*/
+
+.no-touch {
+	.intro-block.active {
+		nav {
+			a, a .txt {
+				@include transition(color ease-in-out .1s);
+			}
+
+			a .ico {
+				//@include transition(font-size 0.4s ease-in-out 0s, margin 0.4s ease-in-out 0s);
+			}
+		}
+
+		.phone-calculator a span {
+			@include animation(blink_calc 3s ease-in-out infinite 2s);
+			@include transition(opacity ease-in-out .2s);
+
+			&:hover {
+				@include animation(none);
+				opacity: 0;
+			}
+		}
+	}
+	
+	.intro-block .skiplinks-nav.fixed {
+		li {
+			@include transition(color ease-in-out .2s);
+			
+			a {
+				@include transition(left .2s ease-in-out .3s);
+			}
+		}
+	}
+}
+
+@include keyframes(blink_calc) {
+	0%, 100% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0;
+	}
+}

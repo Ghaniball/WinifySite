@@ -2,6 +2,7 @@
 
 angular
   .module('winifySiteApp', [
+    'ngMap',
     'ngCookies',
     'ngResource',
     'ngSanitize',

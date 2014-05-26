@@ -1,6 +1,6 @@
 <div class="top-menu" ng-include="'views/partials/top_menu.html'" onload="loadTopMenu()"></div>
 
-<div class="intro-block" wnf-scroll-pos="{{offsetTop}}">
+<div class="intro-block" wnf-scroll-pos="{{offsetTop}}" ng-class="{active: block==='intro'}">
 	<div class="tvalign row">
 		<div class="tcvalign text-center"
 			 ng-include="'views/partials/home/intro.html'"
