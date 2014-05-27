@@ -86,12 +86,6 @@ i.right-icon {
 	}
 }
 
-.gumby-no-touch .navbar ul li:hover > a,
-.gumby-touch .navbar ul li.active > a {
-	background-color: #333;
-	background-color: rgba(0,0,0,.4);
-}
-
 .btn.orange {
 	background-color: #E26B29;
     border-bottom: 6px solid #E26B29;
@@ -105,10 +99,19 @@ i.right-icon {
 	> a, input, button {
 		background-color: #F58220;
 		border-radius: 5px;
-		
+	}
+	
+	&:hover {
+		border-bottom-width: 3px;
+		height: 49px;
+		margin-top: 3px;
 	}
 }
 
+.btn.bxwide a,
+.skiplink.bxwide a {
+	padding: 0 3em;
+}
 
 .vvalign > div,
 .vvalign > article,
@@ -118,3 +121,7 @@ i.right-icon {
     vertical-align: middle;
 }
 
+.hidden {
+	display: none !important;
+	visibility: hidden !important;
+}

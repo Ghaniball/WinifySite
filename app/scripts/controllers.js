@@ -23,7 +23,7 @@ angular.module('winifySiteCtrls', [])
         //window.console.log('skipto: ' + block);
         $('html,body').animate({
           'scrollTop': $('.' + block + '-block').offset().top
-        }, 200, 'swing');
+        }, 300, 'swing');
       };
 
       $scope.loadSkillsBlock = function() {
@@ -52,5 +52,29 @@ angular.module('winifySiteCtrls', [])
       $scope.loadTopMenu = function() {
         $window.Gumby.initialize('toggles');
       };
+      
+      $scope.quotes = [
+        {
+          'text': '"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tincidunt lorem tellus, ac tincidunt libero malesuada non. Vivamus sollicitudin pharetra tellus, in faucibus eros blandit ac. Sed sapien ante, pulvinar in bibendum non, molestie vitae diam. Integer quis purus eget sem feugiat fermentum."',
+          'author': {
+            'name': 'John Doe',
+            'desc': 'Creative Director'
+          }
+        },
+        {
+          'text': '"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tincidunt lorem tellus, ac tincidunt libero malesuada non. Vivamus sollicitudin pharetra tellus, in faucibus eros blandit ac. Sed sapien ante, pulvinar in bibendum non, molestie vitae diam. Integer quis purus eget sem feugiat fermentum."',
+          'author': {
+            'name': 'John Doe2',
+            'desc': 'Creative Director'
+          }
+        },
+        {
+          'text': '"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tincidunt lorem tellus, ac tincidunt libero malesuada non. Vivamus sollicitudin pharetra tellus, in faucibus eros blandit ac. Sed sapien ante, pulvinar in bibendum non, molestie vitae diam. Integer quis purus eget sem feugiat fermentum."',
+          'author': {
+            'name': 'John Doe3',
+            'desc': 'Creative Director'
+          }
+        }
+      ];
     }
   ]);

@@ -130,27 +130,19 @@ body {
 
 .gmap-block {
 	height: 40%;
-	background: url('../images/gmap.jpg') no-repeat center center;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
-	/*	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/gmap.jpg', sizingMethod='scale');
-		-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/gmap.jpg', sizingMethod='scale')";
-	*/
 }
 
 
 .top-menu {
-	background-color: #888;
-	background-color: rgba(0,0,0, .3);
+	background-color: #666;
+	background-color: rgba(0,0,0, .5);
 	position: fixed;
 	z-index: 3;
 	width: 100%;
 
 	&:hover {
-		background-color: #666;
-		background-color: rgba(0,0,0, .5);
+		background-color: #555;
+		background-color: rgba(0,0,0, .6);
 	}
 
 	#nav1 {
@@ -161,15 +153,20 @@ body {
 			a {
 				padding: 0 20px;
 				float: left;
-
-				&:hover {
-					background-color: #555;
-					background-color: rgba(0,0,0, .4);
-				}
+				font-size:22px;
 
 				img {
 					@include inline-block;
+					margin-right: 12px;
 				}
+			}
+		}
+		
+		a {
+			color: white;
+
+			&:hover {
+				text-decoration: none;
 			}
 		}
 
@@ -181,24 +178,24 @@ body {
 			li {
 				@include inline-block;
 			}
-
-			a {
-				color: white;
-
-				&:hover {
-					text-decoration: none;
-				}
-			}
 		}
 	}
 }
 
+.gumby-no-touch .navbar .logo a:hover,
+.gumby-no-touch .navbar ul li:hover > a,
+.gumby-touch .navbar ul li.active > a {
+	background-color: #333;
+	background-color: rgba(0,0,0,.4);
+}
+
 .skill-list {
 	li {
+		overflow: hidden;
 		float: left;
 		position: relative;
 		width: 19.6%; height: 0;
-		padding-top: 20%;
+		padding-top: 18%;
 		margin-left: 0.5%;
 
 		&:first-child {
@@ -209,21 +206,18 @@ body {
 			position: absolute;
 			width: 100%;
 			height: 100%;
-			padding: 1.75em .5em;
+			padding: 24px 7px;
 			left: 0; top: 0;
-			background-color: $dGray;
-			color: white;
+			font-size: 14px;
+			line-height: 1.3;
+			//background-color: $dGray;
+			//color: white;
 
 			&:hover {
-				background-color: $orange;
-
-				.ico {
-					display: none;
-				}
-
-				.d {
-					display: block;
-				}
+				background-color: white;
+				border: 2px solid $orange;
+				border-radius: 4px;
+				padding: 22px 5px;
 			}
 		}
 
@@ -235,7 +229,7 @@ body {
 
 			i {
 				@include inline-block;
-				background-image: url('../images/site-sprite.png');
+				background-image: url('../images/site-sprite-new.png');
 				width: 55px;
 				height: 64px;
 				background-position: 0 0;
@@ -270,9 +264,10 @@ body {
 		.h {
 			padding: 0;
 			margin-bottom: 1em;
-			color: white;
+			//color: white;
 			text-transform: uppercase;
-			font-weight: 700;
+			font-weight: 600;
+			font-size: 14px;
 		}
 
 		.d {
@@ -321,7 +316,7 @@ body {
 			left: 0; top: 0;
 			background-color: $dGray;
 			color: white;
-
+/*
 			&:hover {
 				background-color: $orange;
 
@@ -332,7 +327,7 @@ body {
 				.d {
 					display: block;
 				}
-			}
+			}*/
 		}
 
 		.ico {
@@ -343,7 +338,7 @@ body {
 
 			i {
 				@include inline-block;
-				background-image: url('../images/site-sprite.png');
+				background-image: url('../images/site-sprite-new.png');
 				width: 64px;
 				height: 64px;
 				background-position: 0 -66px;
@@ -371,8 +366,33 @@ body {
 		}
 
 		.d {
-			line-height: 1.2;
-			display: none;
+			background-color: $orange;
+			width: 100%;
+			font-size: 14px;
+			line-height: 1.3;
+			padding: 2em 1em;
+			@include opacity(0);
+			position: absolute;
+			bottom: -55px;
+			left: 0;
+			@include transition(opacity .4s ease-in-out 0s, bottom .4s ease-in-out 0s);
+			
+			&:after {
+				content: "";
+				position: absolute;
+				left: 50%;
+				bottom: -24px;
+				margin-left: -12px;
+				border-width: 12px 12px 12px 12px;
+				border-color: $orange transparent transparent transparent;
+				border-style: solid;
+			}
+		}
+		
+		.flow:hover .d {
+			visibility: visible;
+			bottom: 65px;
+			@include opacity(1);
 		}
 	}
 }
@@ -411,7 +431,7 @@ body {
 
 .intro-block {
 	position: relative;
-	background: url('../images/intro-bg4.jpg') no-repeat center center;
+	background: url('../images/intro-bg6.jpg') no-repeat center center;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -561,7 +581,7 @@ body {
 			background-color: $orange;
 			position: absolute;
 			left: -120px; top: 0;
-			padding: 1px 7px;
+			padding: 1px 7px 2px;
 
 			.ico {
 				position: absolute;
@@ -632,7 +652,7 @@ body {
 			font-weight: 700;
 		}
 
-		.prev-quote:before,
+/*		.prev-quote:before,
 			.next-quote:before {
 			content: "\f100";
 			font-size: 80px;
@@ -651,6 +671,11 @@ body {
 			content: "\f101";
 			left: auto;
 			right: -20px;
+		}*/
+		
+		.carousel-inner > .item {
+			padding: 0 20px;
+			@include transition(.7s ease-in-out left);
 		}
 	}
 }

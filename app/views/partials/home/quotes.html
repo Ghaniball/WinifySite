@@ -1,33 +1,10 @@
 <div class="quotes-list">
-	<ul>
-		<li>
-			<p class="quote">
-				"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tincidunt lorem tellus, ac tincidunt libero malesuada non. Vivamus sollicitudin pharetra tellus, in faucibus eros blandit ac. Sed sapien ante, pulvinar in bibendum non, molestie vitae diam. Integer quis purus eget sem feugiat fermentum."
-			</p>
+	<div carousel="" interval="5000">
+		<div slide="" ng-repeat="quote in quotes">
+			<p class="quote">{{quote.text}}</p>
 
-			<div class="author">John Doe</div>
-			<div class="author-desc">Creative Director</div>
-		</li>
-		<!--				<li>
-							<p class="quote">
-								"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tincidunt lorem tellus, ac tincidunt libero malesuada non. Vivamus sollicitudin pharetra tellus, in faucibus eros blandit ac. Sed sapien ante, pulvinar in bibendum non, molestie vitae diam. Integer quis purus eget sem feugiat fermentum."
-							</p>
-							<div>
-								<span class="author">John Doe</span>
-								<span class="author-desc">Creative Director</span>
-							</div>
-						</li>
-						<li>
-							<p class="quote">
-								"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tincidunt lorem tellus, ac tincidunt libero malesuada non. Vivamus sollicitudin pharetra tellus, in faucibus eros blandit ac. Sed sapien ante, pulvinar in bibendum non, molestie vitae diam. Integer quis purus eget sem feugiat fermentum."
-							</p>
-							<div>
-								<span class="author">John Doe</span>
-								<span class="author-desc">Creative Director</span>
-							</div>
-						</li>-->
-	</ul>
-
-	<div class="prev-quote"></div>
-	<div class="next-quote"></div>
+			<div class="author">{{quote.author.name}}</div>
+			<div class="author-desc">{{quote.author.desc}}</div>
+		</div>
+	</div>
 </div>
