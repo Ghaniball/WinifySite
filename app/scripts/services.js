@@ -92,4 +92,58 @@ angular.module('winifySiteServices', [])
       $transition.transitionEndEventName = findEndEventName(transitionEndEventNames);
       $transition.animationEndEventName = findEndEventName(animationEndEventNames);
       return $transition;
+    }])
+  .factory('skillsModel', [function() {
+      return [
+        {
+          'ico': 'skill-dev',
+          'head': 'Entwicklung',
+          'desc': 'We create powerful and secure online experiences. We build responsive websites and mobile apps.'
+        },
+        {
+          'ico': 'skill-manage',
+          'head': 'Management',
+          'desc': 'We will take care of your project and will keep you updated at every stage.'
+        },
+        {
+          'ico': 'skill-test',
+          'head': 'Testen und QA',
+          'desc': 'After our automatic and manual tests you will be able to check the work on our test servers for your review. '
+        },
+        {
+          'ico': 'skill-design',
+          'head': 'Design',
+          'desc': 'We will help you to discover your unique brand. A a custom solution which creates value for you and your customers.'
+        },
+        {
+          'ico': 'skill-admin',
+          'head': 'Unterstützung',
+          'desc': 'The work doesn\'t stop once the product was launched. The most important aspect of any project is that the product works well.'
+        }
+      ];
+    }])
+  .factory('quotesModel', [function() {
+      return [
+        {
+          'text': '"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tincidunt lorem tellus, ac tincidunt libero malesuada non. Vivamus sollicitudin pharetra tellus, in faucibus eros blandit ac. Sed sapien ante, pulvinar in bibendum non, molestie vitae diam. Integer quis purus eget sem feugiat fermentum."',
+          'author': {
+            'name': 'John Doe',
+            'desc': 'Creative Director'
+          }
+        },
+        {
+          'text': '"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tincidunt lorem tellus, ac tincidunt libero malesuada non. Vivamus sollicitudin pharetra tellus, in faucibus eros blandit ac. Sed sapien ante, pulvinar in bibendum non, molestie vitae diam. Integer quis purus eget sem feugiat fermentum."',
+          'author': {
+            'name': 'John Doe2',
+            'desc': 'Creative Director'
+          }
+        },
+        {
+          'text': '"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tincidunt lorem tellus, ac tincidunt libero malesuada non. Vivamus sollicitudin pharetra tellus, in faucibus eros blandit ac. Sed sapien ante, pulvinar in bibendum non, molestie vitae diam. Integer quis purus eget sem feugiat fermentum."',
+          'author': {
+            'name': 'John Doe3',
+            'desc': 'Creative Director'
+          }
+        }
+      ];
     }]);

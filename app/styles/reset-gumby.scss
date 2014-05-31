@@ -1,8 +1,17 @@
 // bower:scss
-@import "../bower_components/compass-mixins/lib/_compass.scss";
 // endbower
 
+@import "compass";
+@import "mixins";
+
 $footerHeight			: 120px;
+
+$lGray: #f7f7f7;
+$dGray: #58595b;
+$ddGray: #393a39;
+$orange: #f58220;
+$dorange: #d9721b;
+$ddorange: #E26B29;
 
 body, html {
 	height:100%;
@@ -87,8 +96,8 @@ i.right-icon {
 }
 
 .btn.orange {
-	background-color: #E26B29;
-    border-bottom: 6px solid #E26B29;
+	background-color: $orange;
+	@include gradient-vertical($orange, $dorange);
     border-radius: 3px;
 	font-size: 100%;
     font-weight: 600;
@@ -96,15 +105,16 @@ i.right-icon {
 	height: 52px;
     line-height: 54px;
 	
-	> a, input, button {
-		background-color: #F58220;
-		border-radius: 5px;
+	&:hover {
+		background-color: $orange;
+		background-image: none;
+		filter: none;
 	}
 	
-	&:hover {
-		border-bottom-width: 3px;
-		height: 49px;
-		margin-top: 3px;
+	&:active {
+		background-color: $dorange;
+		@include gradient-vertical($dorange, $orange);
+		
 	}
 }
 
@@ -124,4 +134,15 @@ i.right-icon {
 .hidden {
 	display: none !important;
 	visibility: hidden !important;
+}
+
+.gm-style {
+	img {
+		max-width: none;
+	}
+	
+	.info-window {
+		width: 220px;
+		margin-bottom: 0;
+	}
 }

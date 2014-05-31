@@ -1,64 +1,101 @@
+<div class="iosSlider">
+	<div class="slider">
+		<div class="item item1">
+			<div class="inner">
+				<div class="tvalign row">
+					<div class="tcvalign text-center">
+						<div class="separator"></div>
 
-<div style="height: 24%;"></div>
-
-<nav class="skiplinks-nav" ng-class="{fixed: block!=='intro'}">
-	<ul class="row">
-		<li class="two columns text-center" ng-hide="block==='intro'">
-			<a href="#{{path}}?intro"
-			   ng-click="skipTo('intro')">
-				<span class="ico">
-					<i class="icon-graduation-cap"></i>
-				</span>
-				<h4 class="txt">To&nbsp;top</h4>
-			</a>
-		</li>
-		<li class="two columns text-center push_one" ng-class="{active: block==='skills'}">
-			<a href="#{{path}}?skills"
-			   ng-click="skipTo('skills')">
-				<span class="ico">
-					<i class="icon-graduation-cap"></i>
-				</span>
-				<h4 class="txt">Skills</h4>
-			</a>
-		</li>
-		<li class="two columns text-center" ng-class="{active: block==='works'}">
-			<a href="#{{path}}?works"
-			   ng-click="skipTo('works')">
-				<span class="ico">
-					<i class="icon-folder"></i>
-				</span>
-				<h4 class="txt">Works</h4>
-			</a>
-		</li>
-		<li class="two columns text-center push_two" ng-class="{active: block==='about'}">
-			<a href="#{{path}}?about"
-			   ng-click="skipTo('about')">
-				<span class="ico">
-					<i class="icon-info-circled"></i>
-				</span>
-				<h4 class="txt">About</h4>
-			</a>
-		</li>
-		<li class="two columns text-center" ng-class="{active: block==='contact'}">
-			<a href="#{{path}}?contact"
-			   ng-click="skipTo('contact')">
-				<span class="ico">
-					<i class="icon-phone"></i>
-				</span>
-				<h4 class="txt">Contact</h4>
-			</a>
-		</li>
-	</ul>
-</nav>
+						<nav class="skiplinks-nav" ng-class="{fixed: block !== 'intro'}">
+							<ul class="row">
+								<li class="two columns text-center" ng-hide="block === 'intro'">
+									<a href="#{{path}}?intro"
+									   ng-click="skipTo('intro')">
+										<span class="ico">
+											<i class="icon-graduation-cap"></i>
+										</span>
+										<h4 class="txt">To&nbsp;top</h4>
+									</a>
+								</li>
+								<li class="two columns text-center push_one" ng-class="{active: block === 'skills'}">
+									<a href="#{{path}}?skills"
+									   ng-click="skipTo('skills')">
+										<span class="ico">
+											<i class="icon-graduation-cap"></i>
+										</span>
+										<h4 class="txt">Skills</h4>
+									</a>
+								</li>
+								<li class="two columns text-center" ng-class="{active: block === 'works'}">
+									<a href="#{{path}}?works"
+									   ng-click="skipTo('works')">
+										<span class="ico">
+											<i class="icon-folder"></i>
+										</span>
+										<h4 class="txt">Works</h4>
+									</a>
+								</li>
+								<li class="two columns text-center push_two" ng-class="{active: block === 'about'}">
+									<a href="#{{path}}?about"
+									   ng-click="skipTo('about')">
+										<span class="ico">
+											<i class="icon-info-circled"></i>
+										</span>
+										<h4 class="txt">About</h4>
+									</a>
+								</li>
+								<li class="two columns text-center" ng-class="{active: block === 'contact'}">
+									<a href="#{{path}}?contact"
+									   ng-click="skipTo('contact')">
+										<span class="ico">
+											<i class="icon-phone"></i>
+										</span>
+										<h4 class="txt">Contact</h4>
+									</a>
+								</li>
+							</ul>
+						</nav>
 
 
-<div style="height: 24%;"></div>
+						<div class="separator"></div>
 
-<div class="large bxwide orange btn"><a href="#">Project Calculator</a></div>
+						<div class="large bxwide orange btn"><a href="#">Project Calculator</a></div>
 
-<div class="phone-calculator">
-	<a href="#">
-		<img src="images/calculator_v2.png" alt="" />
-		<span>Project Calculator</span>
-	</a>
+						<div class="phone-calculator">
+							<a href="#">
+								<img src="images/calculator_v2.png" alt="" />
+								<span>Project Calculator</span>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="item item2">
+			<div class="inner">
+				<div class="tvalign row">
+					<div class="tcvalign text-center">
+						<div class="separator"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="item item3">
+			<div class="inner">
+				<div class="tvalign row">
+					<div class="tcvalign text-center">
+						<div class="separator"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="my-indicators">
+	<div class="item selected"></div>
+	<div class="item"></div>
+	<div class="item"></div>
 </div>

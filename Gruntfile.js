@@ -65,7 +65,7 @@ module.exports = function (grunt) {
     // The actual grunt server settings
     connect: {
       options: {
-        port: 9000,
+        port: 9010,
         // Change this to '0.0.0.0' to access the server from outside.
         hostname: '192.168.3.134',
         livereload: 35729
@@ -132,7 +132,7 @@ module.exports = function (grunt) {
     // Add vendor prefixed styles
     autoprefixer: {
       options: {
-        browsers: ['last 1 version']
+        browsers: ['> 1%', 'last 2 versions', 'ff 24', 'opera 12.1', 'ie 8', 'ie 9']
       },
       dist: {
         files: [{
@@ -310,6 +310,7 @@ module.exports = function (grunt) {
             '*.{ico,png,txt}',
             '.htaccess',
             '*.html',
+            '*.php',
             'views/{,*/}{,*/}*.html',
             'images/{,*/}*.{webp}',
             'fonts/**'

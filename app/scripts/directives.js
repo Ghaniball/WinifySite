@@ -11,18 +11,16 @@ angular.module('winifySiteDirectives', [])
             min = element.offset().top - 155;
             max = element.outerHeight() + min + 155;
 
-            //window.console.log(scrollTop);
-            //window.console.log(element.attr('class') + ': ' + min);
-
             if (scrollTop > min && scrollTop < max && scrollTop >= 0) {
               scope.block = element.attr('class').match(/\w+(?=-block)/gi)[0];
+             // window.console.log(scope);
             }
           });
         }
       };
     }
   ])
-  .directive('wnfAppears', [
+/*  .directive('wnfAppears', [
     function() {
       return {
         restrict: 'A',
@@ -76,7 +74,7 @@ angular.module('winifySiteDirectives', [])
         }
       };
     }
-  ])
+  ])*/
   .controller('CarouselController', ['$scope', '$timeout', '$transition', function($scope, $timeout, $transition) {
       var self = this,
         slides = self.slides = $scope.slides = [],

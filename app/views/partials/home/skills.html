@@ -1,54 +1,22 @@
-<div class="tvalign row">
-	<div class="tcvalign text-center">
-		<h2>
-			Unlocking <span>new</span> revenue<br/>
-			streams for <span>you</span>
-		</h2>
+<h2>
+	Wir hören Ihnen zu und beraten Sie.<br/>
+	Wir machen schöne <span>Webseiten</span> und <span>Apps</span>
+</h2>
 
-		<div style="height: 10%;"></div>
+<div class="separator"></div>
 
-		<p>Der Grundstein zu Ihrem Erfolg ist Technologie, die gut funktioniert, die Bedürfnisse des Nutzers erfüllt und vielleicht sogar Freude bereitet. Wir beherrschen alle führenden Software-Lösungen und passen diese exakt auf Ihre Bedürfnisse an. Doch den Unterschied macht Kreativität. Nur Lösungen, die aus der Masse heraus stechen können wirklich überdurchschnittlich erfolgreich sein.  Unsere Lösungen begeistern, sind intuitiv und erzeugen eine hohe Anziehungskraft. Der Geschäftserfolg unserer Kunden ist unser Maßstab. Darum denken und beraten wir ganzheitlich, innovativ und kompetent in allen Bereichen der Wertschöpfungskette.</p>
+<p>Der Grundstein zu Ihrem Erfolg ist Technologie, die gut funktioniert, die Bedürfnisse des Nutzers erfüllt und vielleicht sogar Freude bereitet. Wir beherrschen alle führenden Software-Lösungen und passen diese exakt auf Ihre Bedürfnisse an. Doch den Unterschied macht Kreativität. Nur Lösungen, die aus der Masse heraus stechen können wirklich überdurchschnittlich erfolgreich sein.  Unsere Lösungen begeistern, sind intuitiv und erzeugen eine hohe Anziehungskraft. Der Geschäftserfolg unserer Kunden ist unser Maßstab. Darum denken und beraten wir ganzheitlich, innovativ und kompetent in allen Bereichen der Wertschöpfungskette.</p>
 
-		<div style="height: 10%;"></div>
+<div class="separator"></div>
 
-		<ul wnf-appears="{{offsetTop}}" class="skill-list clearfix">
-			<li>
-				<div class="skill">
-					<span class="ico"><i class="skill-dev"></i></span>
-					<h6 class="h">Software Entwicklung</h6>
-					<span class="d">Interdum vehicula vitae taciti faucibus autem massa elit fringilla mauris eu purus.</span>
-				</div>
-			</li>
-			<li>
-				<div class="skill">
-					<span class="ico"><i class="skill-manage"></i></span>
-					<h6 class="h">Produkt/Projekt Management</h6>
-					<span class="d">Interdum vehicula vitae taciti faucibus autem massa elit fringilla mauris eu purus.</span>
-				</div>
-			</li>
-			<li>
-				<div class="skill">
-					<span class="ico"><i class="skill-test"></i></span>
-					<h6 class="h">Testen und Qualitätskontrolle</h6>
-					<span class="d">Interdum vehicula vitae taciti faucibus autem massa elit fringilla mauris eu purus.</span>
-				</div>
-			</li>
-			<li>
-				<div class="skill">
-					<span class="ico"><i class="skill-design"></i></span>
-					<h6 class="h">Design</h6>
-					<span class="d">Interdum vehicula vitae taciti faucibus autem massa elit fringilla mauris eu purus.</span>
-				</div>
-			</li>
-			<li>
-				<div class="skill">
-					<span class="ico"><i class="skill-admin"></i></span>
-					<h6 class="h">Administration und Service</h6>
-					<span class="d">Interdum vehicula vitae taciti faucibus autem massa elit fringilla mauris eu purus.</span>
-				</div>
-			</li>
-		</ul>
+<ul wnf-appears="{{offsetTop}}" class="skill-list clearfix">
+	<li ng-repeat="skill in skills">
+		<div class="skill">
+			<span class="ico"><i ng-class="skill.ico"></i></span>
+			<h6 class="h">{{skill.head}}</h6>
+			<span class="d">{{skill.desc}}</span>
+		</div>
+	</li>
+</ul>
 
-		<div class="hidden large bxwide orange btn"><a href="#">Project Calculator</a></div>
-	</div>
-</div>
+<div class="hidden large bxwide orange btn"><a href="#">Project Calculator</a></div>

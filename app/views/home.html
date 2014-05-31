@@ -1,14 +1,18 @@
-<div class="top-menu" ng-include="'views/partials/top_menu.html'" onload="loadTopMenu()"></div>
+<!--<div class="top-menu"
+	 ng-class="{active: block!=='intro'}"
+	 ng-include="'views/partials/top_menu.html'"
+	 onload="loadTopMenu()"></div>-->
 
-<div class="intro-block" wnf-scroll-pos="{{offsetTop}}" ng-class="{active: block==='intro'}">
-	<div class="tvalign row">
-		<div class="tcvalign text-center"
-			 ng-include="'views/partials/home/intro.html'"
-			 onload="loadIntroBlock()"></div>
-	</div>
+<div class="intro-block"
+	 wnf-scroll-pos="{{offsetTop}}"
+	 ng-class="{active: block==='intro'}">
+	<div class="my-carousel"
+		 ng-include="'views/partials/home/intro.html'"
+		 onload="loadIntroBlock()"></div>
 </div>
-
-<div class="skills-block" wnf-scroll-pos="{{offsetTop}}">
+<!--
+<div class="skills-block"
+	 wnf-scroll-pos="{{offsetTop}}">
 	<div class="tvalign row">
 		<div class="tcvalign text-center"
 			 ng-include="'views/partials/home/skills.html'"
@@ -60,4 +64,4 @@
 	 ng-include="'views/partials/home/gmap.html'"></div>
 
 <div id="footer"
-	 ng-include="'views/partials/footer.html'"></div>
+	 ng-include="'views/partials/footer.html'"></div>-->
