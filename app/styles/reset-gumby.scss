@@ -10,7 +10,7 @@ $lGray: #f7f7f7;
 $dGray: #58595b;
 $ddGray: #393a39;
 $orange: #f58220;
-$dorange: #d9721b;
+$dorange: #eb702b;
 $ddorange: #E26B29;
 
 body, html {
@@ -53,6 +53,7 @@ a:hover {
 
 .fa {
     @include inline-block;
+	vertical-align: baseline;
 	margin: 0 5px;
     min-width: 20px;
     position: static;
@@ -96,25 +97,30 @@ i.right-icon {
 }
 
 .btn.orange {
-	background-color: $orange;
-	@include gradient-vertical($orange, $dorange);
+	background-color: $dorange;
+    border-bottom: 4px solid $ddorange;
     border-radius: 3px;
 	font-size: 100%;
     font-weight: 600;
     text-transform: uppercase;
 	height: 52px;
-    line-height: 54px;
+    line-height: 54px !important;
+	font-size: 100% !important;
 	
-	&:hover {
+	
+	> a, input, button {
 		background-color: $orange;
-		background-image: none;
-		filter: none;
-	}
+		border-radius: 5px;
 	
-	&:active {
-		background-color: $dorange;
-		@include gradient-vertical($dorange, $orange);
-		
+		&:hover {
+			background-color: $orange;
+			@include gradient-vertical($dorange, $orange);
+		}
+
+		&:active {
+			background-color: $dorange;
+			@include gradient-vertical($orange, $dorange);
+		}
 	}
 }
 
@@ -145,4 +151,8 @@ i.right-icon {
 		width: 220px;
 		margin-bottom: 0;
 	}
+}
+
+small {
+	font-size: 14px;
 }

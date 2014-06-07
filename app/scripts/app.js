@@ -10,15 +10,12 @@ angular
     'winifySiteServices',
     'winifySiteDirectives'
   ])
-  .config(function(getSearchKeyProvider){
-    getSearchKeyProvider.setBlocks(['intro', 'skills', 'works', 'about', 'contact']);
-  })
+  .config(['getSearchKeyProvider', 'homePageBlocks',
+  function(getSearchKeyProvider, homePageBlocks){
+    getSearchKeyProvider.setBlocks(homePageBlocks);
+  }])
   .config(function ($routeProvider) {
     $routeProvider
-     /* .when('/home', {
-        templateUrl: 'views/home.html',
-        controller: 'HomeCtrl'
-      })*/
       .when('/home', {
         templateUrl: 'views/home.html',
         controller: 'HomeCtrl',

@@ -1,6 +1,7 @@
 'use strict';
 
 angular.module('winifySiteServices', [])
+  .constant('homePageBlocks', ['intro', 'skills', /*'works',*/'work_with', 'about', 'contact'])
   .provider('getSearchKey', function() {
     this.blocks = [];
 
@@ -97,52 +98,52 @@ angular.module('winifySiteServices', [])
       return [
         {
           'ico': 'skill-dev',
-          'head': 'Entwicklung',
-          'desc': 'We create powerful and secure online experiences. We build responsive websites and mobile apps.'
+          'head': 'Software Entwicklung',
+          'desc': 'Wir entwickeln leistungsfähige und sichere Software, Webseiten und Apps.'
         },
         {
           'ico': 'skill-manage',
-          'head': 'Management',
-          'desc': 'We will take care of your project and will keep you updated at every stage.'
+          'head': 'Projekt Management',
+          'desc': 'Wir sind mit dem Projekt Management erst zufrieden, wenn Sie sich gut informiert und sicher fühlen.'
         },
         {
           'ico': 'skill-test',
-          'head': 'Testen und QA',
-          'desc': 'After our automatic and manual tests you will be able to check the work on our test servers for your review. '
+          'head': 'Qualitätskontrolle',
+          'desc': 'Das Winify Testing und QA Programm begleitet Ihr Projekt von einem frühen Stadium bis zur finalen Übergabe an Sie.'
         },
         {
           'ico': 'skill-design',
           'head': 'Design',
-          'desc': 'We will help you to discover your unique brand. A a custom solution which creates value for you and your customers.'
+          'desc': 'Wir entwickeln gemeinsam mit Ihnen den Service, der genau zu Ihnen passt. Von der Datenbank bis zum Logo Design – alles individuell.'
         },
         {
           'ico': 'skill-admin',
-          'head': 'Unterstützung',
-          'desc': 'The work doesn\'t stop once the product was launched. The most important aspect of any project is that the product works well.'
+          'head': 'Administration',
+          'desc': 'Wir kümmern uns darum, dass Ihr Service immer einwandfrei läuft. 24/7 an 365 Tagen im Jahr.'
         }
       ];
     }])
   .factory('quotesModel', [function() {
       return [
         {
-          'text': '"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tincidunt lorem tellus, ac tincidunt libero malesuada non. Vivamus sollicitudin pharetra tellus, in faucibus eros blandit ac. Sed sapien ante, pulvinar in bibendum non, molestie vitae diam. Integer quis purus eget sem feugiat fermentum."',
+          'text': 'Es ist immer wieder schön zu sehen, wie nach und nach durch die zunehmende Kreativität des Winify Teams sich virtuelle Lösungen, die aus der Masse heraus stechen, bilden. Was mir jedoch besonders gefällt ist die Professionalität, mit deren Winify seine Kunden von der ersten Idee, über das Konzept bis zum Launch begleitet. Bitte so weitermachen liebe Winify Team.',
           'author': {
-            'name': 'John Doe',
-            'desc': 'Creative Director'
+            'name': 'Cashless Nation AG',
+            'desc': ''
           }
         },
         {
-          'text': '"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tincidunt lorem tellus, ac tincidunt libero malesuada non. Vivamus sollicitudin pharetra tellus, in faucibus eros blandit ac. Sed sapien ante, pulvinar in bibendum non, molestie vitae diam. Integer quis purus eget sem feugiat fermentum."',
+          'text': 'Gemäß der Devise „Einer für alle – Alle für einen“ hat sich hier ein hervorragendes Team gefunden, das durchgängig schöne Webseiten und gute Software anbietet, die alle  kühnsten Ideen der Kunden aufreihen. Winify bietet qualitative Produkte an, von denen alle nur profitieren können. Mein Fazit: Winify macht einen guten Job, der ihr Geld auf alle Fälle wert ist.',
           'author': {
-            'name': 'John Doe2',
-            'desc': 'Creative Director'
+            'name': 'WERBEANSTALT Schweiz AG',
+            'desc': ''
           }
         },
         {
-          'text': '"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tincidunt lorem tellus, ac tincidunt libero malesuada non. Vivamus sollicitudin pharetra tellus, in faucibus eros blandit ac. Sed sapien ante, pulvinar in bibendum non, molestie vitae diam. Integer quis purus eget sem feugiat fermentum."',
+          'text': 'Winify entwickelt gemeinsam mit dem Kunden den Service, der genau zu allen Bedürfnissen passt. Das in so einer fruchtbaren Gemeinschaft dann für den Kunden sehr nützliche Produkte entstehen, ist dabei nur die logische Konsequenz. Auch das Preis-Leistungs-Verhältnis ist absolut in Ordnung. Jetzt bin ich mal gespannt, was von Winify noch so nachkommt.',
           'author': {
-            'name': 'John Doe3',
-            'desc': 'Creative Director'
+            'name': 'EquityStory AG',
+            'desc': ''
           }
         }
       ];

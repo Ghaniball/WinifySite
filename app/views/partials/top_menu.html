@@ -8,10 +8,15 @@
 		</a>
 	</div>
 	<ul class="eight columns">
-		<li><a href="#">Home</a></li>
-		<li><a href="#">Leistungen</a></li>
-		<li><a href="#">Projekte</a></li>
-		<li><a href="#">Wir</a></li>
-		<li><a href="#">Kontakt</a></li>
+		<li><a href="#{{path}}?intro"
+			   ng-click="skipTo('intro')">Home</a></li>
+		<li><a href="#{{path}}?skills"
+			   ng-click="skipTo('skills')">Leistungen</a></li>
+		<li><a href="#{{path}}?work_with"
+			   ng-click="skipTo('work_with')">Partner</a></li>
+		<li><a href="#{{path}}?about"
+			   ng-click="skipTo('about')">Wir</a></li>
+		<li><a href="#{{path}}?contact"
+			   ng-click="skipTo('contact')">Kontakt</a></li>
 	</ul>
 </div>

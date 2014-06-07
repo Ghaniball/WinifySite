@@ -13,68 +13,88 @@ angular.module('winifySiteDirectives', [])
 
             if (scrollTop > min && scrollTop < max && scrollTop >= 0) {
               scope.block = element.attr('class').match(/\w+(?=-block)/gi)[0];
-             // window.console.log(scope);
+              // window.console.log(scope);
             }
           });
         }
       };
     }
   ])
-/*  .directive('wnfAppears', [
-    function() {
+  .directive('afterRepeat', [
+    '$parse',
+    '$timeout',
+    function($parse, $timeout) {
       return {
-        restrict: 'A',
-        link: function(scope, element, attrs) {
-          var blockOffsetTop, blockHeight, windowHeight;
-
-          function indexOf(array, obj) {
-            if (array.indexOf) {
-              return array.indexOf(obj);
+        compile: function($element, attr) {
+          var fn = $parse(attr.afterRepeat);
+          return function(scope, element, attr) {
+            if (scope.$last) {
+              $timeout(function() {
+                scope.$apply(function() {
+                  fn(scope);
+                });
+              });
             }
-            
-            for (var i = 0; i < array.length; i++) {
-              if (obj === array[i]) {
-                return i;
-              }
-            }
-            return -1;
-          }
-
-          function arrayRemove(array, value) {
-            var index = indexOf(array, value);
-            if (index >= 0) {
-              array.splice(index, 1);
-            }
-            return value;
-          }
-          
-          var $ = window.jQuery;
-          
-          var fn = attrs.$observe('wnfAppears', function(scrollOffsetTop) {
-            blockOffsetTop = element.offset().top;
-            blockHeight = element.outerHeight();
-            windowHeight = $(window).height();
-
-            window.console.log(attrs);
-
-            //window.console.log((blockOffsetTop - scrollOffsetTop) < windowHeight &&
-            //     (blockHeight + blockOffsetTop) > scrollOffsetTop );
-
-            if ((blockOffsetTop - scrollOffsetTop) < windowHeight &&
-              (blockHeight + blockOffsetTop) > scrollOffsetTop) {
-
-              element.addClass('appear');
-              
-              // deregister observer
-              //arrayRemove(attrs.$$observers['wnfAppears'], fn);
-            } else {
-              element.removeClass('appear');
-            }
-          });
+          };
         }
       };
     }
-  ])*/
+  ])
+  /*  .directive('wnfAppears', [
+   function() {
+   return {
+   restrict: 'A',
+   link: function(scope, element, attrs) {
+   var blockOffsetTop, blockHeight, windowHeight;
+   
+   function indexOf(array, obj) {
+   if (array.indexOf) {
+   return array.indexOf(obj);
+   }
+   
+   for (var i = 0; i < array.length; i++) {
+   if (obj === array[i]) {
+   return i;
+   }
+   }
+   return -1;
+   }
+   
+   function arrayRemove(array, value) {
+   var index = indexOf(array, value);
+   if (index >= 0) {
+   array.splice(index, 1);
+   }
+   return value;
+   }
+   
+   var $ = window.jQuery;
+   
+   var fn = attrs.$observe('wnfAppears', function(scrollOffsetTop) {
+   blockOffsetTop = element.offset().top;
+   blockHeight = element.outerHeight();
+   windowHeight = $(window).height();
+   
+   window.console.log(attrs);
+   
+   //window.console.log((blockOffsetTop - scrollOffsetTop) < windowHeight &&
+   //     (blockHeight + blockOffsetTop) > scrollOffsetTop );
+   
+   if ((blockOffsetTop - scrollOffsetTop) < windowHeight &&
+   (blockHeight + blockOffsetTop) > scrollOffsetTop) {
+   
+   element.addClass('appear');
+   
+   // deregister observer
+   //arrayRemove(attrs.$$observers['wnfAppears'], fn);
+   } else {
+   element.removeClass('appear');
+   }
+   });
+   }
+   };
+   }
+   ])*/
   .controller('CarouselController', ['$scope', '$timeout', '$transition', function($scope, $timeout, $transition) {
       var self = this,
         slides = self.slides = $scope.slides = [],
@@ -211,6 +231,7 @@ angular.module('winifySiteDirectives', [])
           restartTimer();
         }
       };
+      
       $scope.pause = function() {
         if (!$scope.noPause) {
           isPlaying = false;
@@ -246,7 +267,10 @@ angular.module('winifySiteDirectives', [])
           currentIndex--;
         }
       };
-
+      
+      $scope.$on('pause.quotes.slide', $scope.pause);
+      $scope.$on('play.quotes.slide', $scope.play);
+      
     }])
   .directive('carousel', [function() {
       return {

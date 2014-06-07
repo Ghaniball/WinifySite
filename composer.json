@@ -1,0 +1,32 @@
+{
+    "name": "vendor/winifysite",
+    "description": "New Winify Site",
+    "authors": [
+        {
+            "name": "Ghaniball",
+            "email": "igodorogea@winify.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.23",
+        "zendframework/zend-form": "2.3.*",
+        "zendframework/zend-mail": "2.3.*",
+        "zendframework/zend-log": "2.3.*",
+        "zendframework/zend-http": "2.3.*",
+        "zendframework/zend-crypt": "2.3.*",
+        "zendframework/zend-math": "2.3.*",
+        "zendframework/zend-loader": "2.3.*",
+        "zendframework/zend-mime": "2.3.*",
+        "zendframework/zend-stdlib": "2.3.*",
+        "zendframework/zend-loader": "2.3.*",
+        "zendframework/zend-uri": "2.3.*"
+    },
+    "require-dev": {
+        "zendframework/zend-servicemanager": "2.3.*",
+        "zendframework/zend-validator": "2.3.*"
+    },
+    "suggest": {
+        "zendframework/zend-servicemanager": "Zend\\ServiceManager component",
+        "zendframework/zend-validator": "Zend\\Validator component"
+    }
+}

@@ -11,21 +11,22 @@
 
 
 .no-touch {
-	.intro-block.active .current {
+	.intro-block.active .active {
 		nav {
 			a, a .txt {
 				@include transition(color ease-in-out .1s);
 			}
 		}
 
-		.phone-calculator a span {
+		.phone-calculator a .overlay {
 			@include animation(blink_calc 2s ease-in-out infinite 2s);
+			//-webkit-animation-play-state: running;
 			@include transition(opacity ease-in-out .2s);
-
-			&:hover {
-				@include animation(none);
-				@include opacity(0);
-			}
+		}
+		.phone-calculator a:hover .overlay {
+			@include animation(none);
+			-webkit-animation-play-state: paused;
+			opacity: 0;
 		}
 	}
 
@@ -44,7 +45,7 @@
 			@include opacity(1);
 			@include transition(opacity 0.2s ease-in-out 0.1s, margin-top 0.2s ease-in-out 0.1s);
 		}
-		
+
 		.d {
 			display: block;
 			@include opacity(0);
@@ -56,19 +57,19 @@
 				@include opacity(0);
 				margin-top: -92px;
 			}
-			
+
 			.d {
 				@include opacity(1);
 			}
 		}
 	}
-	
+
 	.flow-list li {
 		.d {
 			@include transition(opacity .3s ease-in-out 0.1s, bottom .3s ease-in-out 0.1s);
 		}
 	}
-	
+
 	.top-menu {
 		//@include transition(background-color .3s ease-in-out 0s);
 	}
@@ -77,6 +78,14 @@
 	}
 	.top-menu .navbar ul li > a {
 		//@include transition(font-size .3s ease-in-out 0s, padding .3s ease-in-out 0s);
+	}
+
+	.work_with-block .partners li a > div {
+		//@include transition(opacity 0.2s ease-in-out 0s);
+		
+		&.hover {
+			@include transition(opacity 0.15s ease-in-out 0s);
+		}
 	}
 }
 

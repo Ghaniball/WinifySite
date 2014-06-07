@@ -4,7 +4,8 @@
 @import "compass";
 @import "mixins";
 
-$lGray: #f7f7f7;
+$llGray: #f7f7f7;
+$lGray: #d4d4d4;
 $dGray: #58595b;
 $ddGray: #393a39;
 $orange: #f58220;
@@ -33,6 +34,16 @@ body {
 
 			span {
 				color: white;
+			}
+		}
+
+		&.negative-caption {
+			color: white;
+			font-weight: 300;
+
+			span {
+				color: white;
+				font-weight: 600;
 			}
 		}
 	}
@@ -99,9 +110,10 @@ body {
 .intro-block,
 .skills-block,
 .works-block,
+.work_with-block,
 .contact-block,
 .about-block {
-	background-color: $lGray;
+	background-color: $llGray;
 	height: 100%;
 }
 
@@ -136,16 +148,16 @@ body {
 
 	#map_container {
 		height: 100%;
-		@include background-cover('../images/gmap.jpg');
+		background: url("../images/gmap_v2.jpg") no-repeat center center;
 	}
 }
 
 
 .top-menu {
 	background-color: #666;
-	background-color: rgba(0,0,0, .5);
+	background-color: rgba(0,0,0, .7);
 	position: fixed;
-	z-index: 3;
+	z-index: 30;
 	width: 100%;
 
 	//	&:hover {
@@ -211,7 +223,12 @@ body {
 
 
 	&.active {
-		background-color: #fff;
+		background-color: #ddd;
+		background-color: rgba(255,255,255,0.9);
+
+		&:hover {
+			background-color: #fff;
+		}
 
 		.navbar {
 			min-height: 52px;
@@ -287,6 +304,12 @@ body {
 	}
 }
 
+.work_with-block {
+	.separator {
+		height: 7%;
+	}
+}
+
 .about-block {
 	.separator {
 		height: 5%;
@@ -334,7 +357,7 @@ body {
 
 			i {
 				@include inline-block;
-				background-image: url('../images/site-sprite-new.png');
+				background-image: url('../images/site-sprite-new4.png');
 				width: 55px;
 				height: 64px;
 				background-position: 0 0;
@@ -372,7 +395,7 @@ body {
 			//color: white;
 			text-transform: uppercase;
 			font-weight: 700;
-			/*font-size: 14px;*/
+			font-size: 14px;
 		}
 
 		.d {
@@ -431,23 +454,23 @@ body {
 
 			i {
 				@include inline-block;
-				background-image: url('../images/site-sprite-new.png');
+				background-image: url('../images/site-sprite-new4.png');
 				width: 64px;
 				height: 64px;
-				background-position: 0 -66px;
+				background-position: 0 -64px;
 			}
 
 			.flow-plan {
-				background-position: 0 -66px;
+				background-position: 0 -64px;
 			}
 			.flow-design {
-				background-position: -64px -66px;
+				background-position: -64px -64px;
 			}
 			.flow-dev {
-				background-position: -128px -66px;
+				background-position: -128px -64px;
 			}
 			.flow-deploy {
-				background-position: -192px -66px;
+				background-position: -192px -64px;
 			}
 		}
 
@@ -490,8 +513,172 @@ body {
 	}
 }
 
+.work_with-block {
+	.partners {
+		margin-left: 0;
+		
+		li {
+			border-bottom: 1px solid $lGray;
+			border-right: 1px solid $lGray;
+			padding-bottom: 16%;
+			width: 33.3%;
+			margin-left: 0;
+			position: relative;
+
+			&.last {
+				border-right: none;
+			}
+
+			&.last-row {
+				border-bottom: none;
+			}
+
+			a {
+/*				width: 100%;
+				height: 100%;*/
+				position: absolute;
+				/*left: 0; top: 0;*/
+				left: 50%; top: 50%;
+
+				> div {
+					position: absolute;
+					/*left: 50%; top: 50%;*/
+					background-image: url('../images/site-sprite-new4.png');
+					width: 55px;
+					height: 64px;
+					background-position: 0 -127px;
+					//@include opacity(0);
+
+					&.hover {
+						@include opacity(1);
+					}
+
+					&.muume {
+						width: 87px;
+						height: 69px;
+						margin-left: -43px;
+						margin-top: -34px;
+						background-position: -93px -127px;
+
+						&.hover {
+							background-position: 0 -127px;
+						}
+					}
+
+					&.eqs {
+						width: 153px;
+						height: 28px;
+						margin-left: -76px;
+						margin-top: -14px;
+						background-position: -180px -134px;
+
+						&.hover {
+							background-position: -180px -168px;
+						}
+					}
+
+					&.masterpayment {
+						width: 239px;
+						height: 34px;
+						margin-left: -119px;
+						margin-top: -17px;
+						background-position: 0 -230px;
+
+						&.hover {
+							background-position: 0 -196px;
+						}
+					}
+
+
+					&.meinprospekt {
+						width: 137px;
+						height: 32px;
+						margin-left: -68px;
+						margin-top: -16px;
+						background-position: -241px -230px;
+
+						&.hover {
+							background-position: -241px -196px;
+						}
+					}
+
+					&.rentarentner {
+						width: 141px;
+						height: 53px;
+						margin-left: -70px;
+						margin-top: -26px;
+						background-position: -144px -264px;
+
+						&.hover {
+							background-position: -3px -264px;
+						}
+					}
+
+					&.wantto {
+						width: 80px;
+						height: 80px;
+						margin-left: -40px;
+						margin-top: -40px;
+						background-position: -84px -317px;
+
+						&.hover {
+							background-position: -1px -317px;
+						}
+					}
+
+					&.vorwerk {
+						width: 135px;
+						height: 66px;
+						margin-left: -68px;
+						margin-top: -33px;
+						background-position: -136px -397px;
+
+						&.hover {
+							background-position: 0 -397px;
+						}
+					}
+
+					&.handyortung {
+						width: 181px;
+						height: 32px;
+						margin-left: -90px;
+						margin-top: -16px;
+						background-position: -164px -357px;
+
+						&.hover {
+							background-position: -164px -325px;
+						}
+					}
+
+					&.musicmonster {
+						width: 85px;
+						height: 68px;
+						margin-left: -42px;
+						margin-top: -34px;
+						background-position: -86px -463px;
+
+						&.hover {
+							background-position: 0 -463px;
+						}
+					}
+				}
+
+				&:hover {
+					> div {
+						//@include opacity(1);
+						
+						&.hover {
+							@include opacity(0);
+						}
+					}
+				} 
+			}
+		}
+	}
+}
+
 .works-block {
-	@include background-cover('../images/works-puma.jpg');
+	//@include background-cover('../images/works-puma.jpg');
 
 	h2, h4 {
 		font-weight: 700;
@@ -513,64 +700,122 @@ body {
 			color: $ddGray;
 		}
 	}
+
+	.tparrows.hidearrows {
+		@include opacity(1);
+	}
+
+	.tp-leftarrow.default {
+		margin-left: 20px;
+	}
+
+	.tp-rightarrow.default {
+		margin-right: 40px
+	}
+
+	.rar {
+		.rar-box {
+			background-color: white;
+			background-color: rgba(255,255,255,.7);
+			border-radius: 5px;
+			position: relative;
+
+			&:before,
+				&:after {
+				content: "";
+				position: absolute;
+				top: 5px; left: 2%;
+				width: 96%; height: 10px;
+				background-image: url('../images/dash_h.png');
+				background-repeat: repeat-x;
+				background-position: top left;
+			}
+
+			&:after {
+				top: auto; bottom: 0;
+			}
+
+			.rar-box-inner {
+				padding: 1.5em 2em;
+
+				&:before,
+					&:after {
+					content: "";
+					position: absolute;
+					top: 2%; left: 4px;
+					width: 10px; height: 96%;
+					background-image: url('../images/dash_v.png');
+					background-repeat: repeat-y;
+					background-position: top left;
+				}
+
+				&:after {
+					left: auto; right: 2px;
+				}
+			}
+		}
+		$nav_bull: 30px;
+		nav {
+			margin-bottom: 1em;
+
+			li {
+				margin-left: 4px;
+				@include inline-block;
+				padding: 0;
+				width: $nav_bull; height: $nav_bull;
+				line-height: $nav_bull;
+				border-radius: $nav_bull/2;
+				background-color: #333;
+				background-color: rgba(0,0,0,.5);
+				color: white;
+				text-align: center;
+				font-size: 18px;
+
+				&:hover {
+					background-color: #000;
+					background-color: rgba(0,0,0,.8);
+				}
+
+				i {
+					margin: 0;
+				}
+
+				&:first-child {
+					margin-left: 0;
+				}
+			}
+		}
+
+		.caption-wrapper .tvalign {
+			background-image: url('../images/works_rar3.jpg');
+			background-repeat: no-repeat;
+			background-position: center center;
+			max-width: 1090px;
+		}
+	}
+}
+
+.works-block,
+.intro-block {
+	position: relative;
+
+	.fullscreenbanner {
+		> ul > li {
+			padding: 0;
+		}
+
+		.caption-wrapper {
+			position: absolute;
+			width: 100%; height: 100%;
+			top: 0; left: 0;
+			white-space: normal;
+		}
+	}
 }
 
 .intro-block {
-	overflow: hidden;
 
-	.my-carousel {
-		height: 100%;
-		position: relative;
-	}
-
-	.my-slide {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		top: 0; left: 0;
-
-		&.slide-1 {
-			@include background-cover('../images/intro_slide_1.jpg');
-		}
-
-		&.slide-2 {
-			left: 100%;
-			@include background-cover('../images/intro_slide_2.jpg');
-		}
-	}
-/*
-	.my-indicators {
-		bottom: 1em;
-		position: absolute;
-		width: 100%;
-		text-align: center;
-
-		> li {
-			@include inline-block;
-		}
-
-		a {
-			display: block;
-			text-indent: -9999px;
-			background-color: $dGray;
-			border: 2px solid white;
-			border-radius: 7px;
-			height: 14px;
-			margin-left: 0.5em;
-			padding: 0;
-			width: 14px;
-
-			&:hover {
-				border: 3px solid white;
-			}
-
-		}
-		.active a {
-			background-color: $orange;
-		}
-	}
-*/
-	nav {
+	.skiplinks-nav {
 		a {
 			color: $ddGray;
 			text-align: center;
@@ -579,7 +824,7 @@ body {
 			.ico {
 				display: block;
 				margin: 0 auto 30px;
-				font-size: 65px;
+				font-size: 54px;
 				line-height: 1;
 				position: relative;
 				text-shadow: 0 0 20px #FFFFFF;
@@ -595,6 +840,7 @@ body {
 
 				i {
 					position: relative;
+					vertical-align: middle;
 				}
 			}
 
@@ -610,7 +856,7 @@ body {
 
 	.phone-calculator {
 		position: absolute;
-		height: 40%;
+		width: 452px; height: 40%;
 		margin-left: -630px;
 		left: 50%; bottom: 0;
 		border: none;
@@ -619,23 +865,23 @@ body {
 
 		a {
 			padding: 0;
+			display: block;
+			position: relative;
 			background: none;
 
-			span {
-				text-indent: -9999px;
-				@include background-cover('../images/calculator_v2_overlay_v2.png', '0 0');
-
-				position: absolute;
-				top: 0;
-				left: 0;
-				width: 100%;
-				height: 100%;
-			}
-
 			img {
-				height: 100%;
-				min-height: 450px;
+				/*height: 100% !important;*/
 				max-width: none;
+				max-height: 464px;
+				width: auto !important;
+
+				&.overlay {
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: auto;
+				}
 			}
 		}
 	}
@@ -645,12 +891,9 @@ body {
 
 	nav a:hover {
 		text-decoration: none;
-		color: $orange;
 
 		.ico {
-			/*			font-size: 85px;
-						margin-bottom: 20px;
-						margin-top: -10px;*/
+			color: $orange;
 		}
 
 		.ico:before {
@@ -658,83 +901,110 @@ body {
 		}
 
 		.txt {
-			//color: $orange;
 			text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.7);
 		}
 	}
 }
 
-.intro-block .skiplinks-nav.fixed {
-	left: 16px;
-	z-index: 2;
-	margin-top: -50px;
-
-	.ico i {
-		display: none;
+.intro-block.fixed {
+	.phone-calculator {
+		-webkit-transform: none !important;
+		-ms-transform: none !important;
+		-o-transform: none !important;
+		transform: none !important;
 	}
 
-	h4 {
-		font-size: 16px;
-		font-size: 1rem;
-		color: white !important;
-		text-shadow: none !important;
-	}
-
-	li {
-		float: none;
-		margin: 4px 0;
-		padding: 0;
-		width: 20px;
-		height: 16px;
-		position: relative;
-		color: $ddGray;
-		text-shadow: 1px 1px 2px rgba(200, 200, 200, .7), -1px -1px 2px rgba(60, 60, 60, .7);
-
-		&:before {
-			content: "\e6e0";
-			cursor: pointer;
-			display: block;
-			font-family: "entypo";
-			font-size: 40px;
-			height: 16px;
-			line-height: 20px;
-			overflow: hidden;
-			text-indent: -12px;
-			width: 16px;
+	.fullscreenbanner.loaded {
+		> ul > li.first-slide-intro {
+			z-index: 21 !important;
+			overflow-y: visible !important;
 		}
 
-		a {
-			/*display: block;*/
-			background-color: $orange;
-			position: absolute;
-			left: -120px; top: 0;
-			padding: 1px 7px 2px;
+		.skiplinks-nav {
+			width: 30px;
+			min-width: 0 !important;
+			left: 16px !important;
+			top: 50% !important;
+			margin-top: -50px !important;
+			padding: 0 !important;
+			position: fixed;
+			z-index: 2;
+			@include opacityImp(1);
+			-ms-transform: none !important;
+			-o-transform: none !important;
+			transform: none !important;
+			-webkit-backface-visibility: hidden; 
+			-webkit-transform: translateZ(0) !important;
+			
 
-			.ico {
-				position: absolute;
-				width: 0; 
-				height: 0;
-				border-width: 10px 10px 10px 16px;
-				border-color: transparent $orange transparent transparent;
-				border-style: solid;
-				left: -26px; top: 0;
+			.ico i {
+				display: none;
+			}
+
+			h4 {
+				font-size: 16px;
+				font-size: 1rem;
+				color: white !important;
+				text-shadow: none !important;
+			}
+
+			li {
+				float: none;
+				margin: 4px 0;
+				padding: 0;
+				width: 20px;
+				height: 16px;
+				position: relative;
+				color: $ddGray;
+				text-shadow: 1px 1px 2px rgba(200, 200, 200, .7), -1px -1px 2px rgba(60, 60, 60, .7);
 
 				&:before {
-					display: none;
+					content: "\e6e0";
+					cursor: pointer;
+					display: block;
+					font-family: "entypo";
+					font-size: 40px;
+					height: 16px;
+					line-height: 20px;
+					overflow: hidden;
+					text-indent: -12px;
+					width: 16px;
+				}
+
+				a {
+					/*display: block;*/
+					background-color: $orange;
+					position: absolute;
+					left: -120px; top: 0;
+					padding: 1px 7px 2px;
+
+					.ico {
+						position: absolute;
+						width: 0; 
+						height: 0;
+						border-width: 10px 10px 10px 16px;
+						border-color: transparent $orange transparent transparent;
+						border-style: solid;
+						left: -26px; top: 0;
+
+						&:before {
+							display: none;
+						}
+					}
+				}
+
+
+				&.active,
+				&:hover {
+					color: $orange;
+					overflow: visible;
+				}
+
+				&:hover a {
+					left: 30px;
+					text-decoration: none;
 				}
 			}
-		}
-
-
-		&.active,
-		&:hover {
-			color: $orange;
-			overflow: visible;
-		}
-
-		&:hover a {
-			left: 30px;
-			text-decoration: none;
 		}
 	}
 }
@@ -790,63 +1060,14 @@ body {
 @import 'media_queries';
 
 
-.iosSlider {
-	position: relative;
-	top: 0;
-	left: 0;
-	overflow: hidden;
-	width: 100%;
-	height: 100%;
-}
+.fullscreenbanner-container .tp-bullets {
+	@include transition(none);
 
-.iosSlider .slider {
-	width: 100%;
-	height: 100%;
-}
+	&.hidebullets {
+		@include opacity(1);
+	}
 
-.iosSlider .slider .item {
-	width: 100%;
-	height: 100%;
-	padding: 0 0 0 0;
-}
-
-.iosSlider .slider .item .inner {
-	position: relative;
-	top: 0;
-	left: 0;
-	width: 100%;
-	margin: 0 auto;
-	height: 100%;
-}
-
-.iosSlider .slider .item1 .inner {
-	@include background-cover('../images/intro_slide_1.jpg');
-}
-
-.iosSlider .slider .item2 .inner {
-	@include background-cover('../images/intro_slide_2.jpg');
-}
-
-.iosSlider .slider .item3 .inner {
-	@include background-cover('../images/intro_slide_2.jpg');
-}
-
-.iosSlider .slider .item4 .inner {
-	@include background-cover('../images/intro_slide_1.jpg');
-}
-
-.iosSlider .slider .item5 .inner {
-	@include background-cover('../images/intro_slide_2.jpg');
-}
-
-.my-carousel .my-indicators {
-	bottom: 1em;
-	position: absolute;
-	width: 100%;
-	text-align: center;
-	z-index: 1;
-
-	> .item {
+	.bullet {
 		@include inline-block;
 		background-color: $dGray;
 		border: 2px solid white;
@@ -859,9 +1080,9 @@ body {
 		&:hover {
 			border: 3px solid white;
 		}
-		
+
 		&.selected {
 			background-color: $orange;
 		}
 	}
-}
+} 
