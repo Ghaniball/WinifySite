@@ -24,58 +24,25 @@
 				 data-endeasing="Power1.easeIn"
 				 ng-class="{fixed: block !== 'intro'}">
 				<ul>
-					<li class="two columns text-center" ng-hide="block === 'intro'">
-						<a href="#{{path}}?intro"
-						   ng-click="skipTo('intro')">
+					<li ng-repeat="_block in homePageBlocks"
+						class="two columns text-center"
+						ng-class="{push_one: _block.name === 'skills', push_two: _block.name === 'work_with'}"
+						ng-if="_block.name !== 'intro'">
+						<a href="#{{path}}?{{_block.name}}"
+						   ng-click="skipTo(_block.name)">
 							<span class="ico">
-								<i class="icon-graduation-cap"></i>
+								<i class="icon-graduation-cap"
+								   ng-if="_block.name === 'skills'"></i>
+								<i class="icon-folder"
+								   ng-if="_block.name === 'works'"></i>
+								<i class="icon-info-circled"
+								   ng-if="_block.name === 'about'"></i>
+								<i class="icon-network"
+								   ng-if="_block.name === 'work_with'"></i>
+								<i class="fa fa-phone-square"
+								   ng-if="_block.name === 'contact'"></i>
 							</span>
-							<h4 class="txt">To&nbsp;top</h4>
-						</a>
-					</li>
-					<li class="two columns text-center push_one" ng-class="{active: block === 'skills'}">
-						<a href="#{{path}}?skills"
-						   ng-click="skipTo('skills')">
-							<span class="ico">
-								<i class="icon-graduation-cap"></i>
-							</span>
-							<h4 class="txt">Skills</h4>
-						</a>
-					</li>
-					<!--					<li class="two columns text-center" ng-class="{active: block === 'works'}">
-											<a href="#{{path}}?works"
-											   ng-click="skipTo('works')">
-												<span class="ico">
-													<i class="icon-folder"></i>
-												</span>
-												<h4 class="txt">Leistungen</h4>
-											</a>
-										</li>-->
-					<li class="two columns text-center" ng-class="{active: block === 'about'}">
-						<a href="#{{path}}?about"
-						   ng-click="skipTo('about')">
-							<span class="ico">
-								<i class="icon-info-circled"></i>
-							</span>
-							<h4 class="txt">Über uns</h4>
-						</a>
-					</li>
-					<li class="two columns text-center push_two" ng-class="{active: block === 'work_with'}">
-						<a href="#{{path}}?work_with"
-						   ng-click="skipTo('work_with')">
-							<span class="ico">
-								<i class="icon-network"></i>
-							</span>
-							<h4 class="txt">Partner</h4>
-						</a>
-					</li>
-					<li class="two columns text-center" ng-class="{active: block === 'contact'}">
-						<a href="#{{path}}?contact"
-						   ng-click="skipTo('contact')">
-							<span class="ico">
-								<i class="fa fa-phone-square"></i>
-							</span>
-							<h4 class="txt">Kontakt</h4>
+							<h4 class="txt">{{_block.text}}</h4>
 						</a>
 					</li>
 				</ul>
@@ -150,66 +117,13 @@
 
 <nav class="sidenav-bullets">
 	<ul>
-		<li ng-repeat="_block in homePageBlocks"
-			 ng-class="{active: block === _block}">
-			<a href="#{{path}}?{{_block}}"
-			   ng-click="skipTo(_block)">
-				<h4 class="txt">{{_block}}</h4>
+		<li ng-repeat="_block in homePageBlocks">
+			<a href="#{{path}}?{{_block.name}}"
+			   ng-class="{active: block === _block.name}"
+			   ng-click="skipTo(_block.name)">
+				<i class="icon-dot"></i>
+				<span>{{_block.text}}</span>
 			</a>
 		</li>
-<!--		<li class="two columns text-center" ng-hide="block === 'intro'">
-			<a href="#{{path}}?intro"
-			   ng-click="skipTo('intro')">
-				<span class="ico">
-					<i class="icon-graduation-cap"></i>
-				</span>
-				<h4 class="txt">To&nbsp;top</h4>
-			</a>
-		</li>
-		<li class="two columns text-center push_one" ng-class="{active: block === 'skills'}">
-			<a href="#{{path}}?skills"
-			   ng-click="skipTo('skills')">
-				<span class="ico">
-					<i class="icon-graduation-cap"></i>
-				</span>
-				<h4 class="txt">Skills</h4>
-			</a>
-		</li>
-							<li class="two columns text-center" ng-class="{active: block === 'works'}">
-								<a href="#{{path}}?works"
-								   ng-click="skipTo('works')">
-									<span class="ico">
-										<i class="icon-folder"></i>
-									</span>
-									<h4 class="txt">Leistungen</h4>
-								</a>
-							</li>
-		<li class="two columns text-center" ng-class="{active: block === 'about'}">
-			<a href="#{{path}}?about"
-			   ng-click="skipTo('about')">
-				<span class="ico">
-					<i class="icon-info-circled"></i>
-				</span>
-				<h4 class="txt">Über uns</h4>
-			</a>
-		</li>
-		<li class="two columns text-center push_two" ng-class="{active: block === 'work_with'}">
-			<a href="#{{path}}?work_with"
-			   ng-click="skipTo('work_with')">
-				<span class="ico">
-					<i class="icon-network"></i>
-				</span>
-				<h4 class="txt">Partner</h4>
-			</a>
-		</li>
-		<li class="two columns text-center" ng-class="{active: block === 'contact'}">
-			<a href="#{{path}}?contact"
-			   ng-click="skipTo('contact')">
-				<span class="ico">
-					<i class="fa fa-phone-square"></i>
-				</span>
-				<h4 class="txt">Kontakt</h4>
-			</a>
-		</li>-->
 	</ul>
 </nav>

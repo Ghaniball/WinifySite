@@ -69,22 +69,19 @@
 
 .carousel-control {
 	position: absolute;
-	top: 0;
-	left: -11%;
-	bottom: 0;
-	width: 15%;
+	top: 50%;
+	margin-top: -30px;
+	left: -60px;
+	width: 60px; height: 60px;
 	@include opacity(.5);
 	font-size: 20px;
 	color: #fff;
 	text-align: center;
 	text-shadow: 0 1px 2px rgba(0, 0, 0, .6);
 
-	&.left {
-
-	}
 	&.right {
 		left: auto;
-		right: -11%;
+		right: -60px;
 	}
 
 	// Hover/focus state
@@ -101,16 +98,12 @@
 	.icon-next,
 	.icon-left-open,
 	.icon-right-open {
-		position: absolute;
-		top: 50%;
 		z-index: 5;
 		display: inline-block;
-	}
-	.icon-prev,
-	.icon-left-open,
-	.icon-next,
-	.icon-right-open {
-		left: 50%;
+		font-size: 60px;
+		height: 60px;
+		line-height: 1;
+		margin: 0;
 	}
 
 	.icon-prev,
@@ -144,7 +137,7 @@
 	padding-left: 0;
 	list-style: none;
 	text-align: center;
-	
+
 	li {
 		display: inline-block;
 		width:  10px;
@@ -166,7 +159,7 @@
 		// set alpha transparency for the best results possible.
 		background-color: #000 \9; // IE8
 		background-color: rgba(0,0,0,0); // IE9
-		
+
 		&:first-child {
 			margin-left: 0;
 		}
@@ -201,20 +194,27 @@
 
 
 // Scale up controls for tablets and up
-@media screen and (min-width: 768px) {
+@media screen and (max-width: 767px) {
 
 	// Scale up the controls a smidge
 	.carousel-control {
-		.icon-left-open,
-		.icon-right-open,
+		top: auto;
+		bottom: -50px;
+		left: 0;
+		margin-top: 0;
+		width: 50px; height: 50px;
+
+		&.right {
+			right: 0;
+		}
+
+		// Toggles
 		.icon-prev,
-		.icon-next {
-			font-size: 60px;
-			height: 60px;
-			line-height: 1;
-			margin-left: -30px;
-			margin-top: -30px;
-			width: 60px;
+		.icon-next,
+		.icon-left-open,
+		.icon-right-open {
+			font-size: 50px;
+			height: 50px;
 		}
 	}
 

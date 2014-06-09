@@ -1,7 +1,32 @@
 'use strict';
 
 angular.module('winifySiteServices', [])
-  .constant('homePageBlocks', ['intro', 'skills', /*'works',*/'work_with', 'about', 'contact'])
+  .constant('homePageBlocks', [
+    {
+      name: 'intro',
+      text: 'To top'
+    },
+    {
+      name: 'skills',
+      text: 'Skills'
+    },
+    /*{
+     name: 'works',
+     text: 'Works'
+     },*/
+    {
+      name: 'about',
+      text: 'Über uns'
+    },
+    {
+      name: 'work_with',
+      text: 'Partner'
+    },
+    {
+      name: 'contact',
+      text: 'Kontakt'
+    }
+  ])
   .provider('getSearchKey', function() {
     this.blocks = [];
 
@@ -15,8 +40,8 @@ angular.module('winifySiteServices', [])
         return (function(b, s) {
           var i = 0, l = b.length;
           for (i; i < l; i++) {
-            if (b[i] in s) {
-              return b[i];
+            if (b[i].name in s) {
+              return b[i].name;
             }
           }
           return false;

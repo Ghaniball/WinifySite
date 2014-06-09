@@ -61,7 +61,6 @@ body {
 			margin: 0;
 			padding: 0;
 			line-height: 42px;
-			float: left;
 
 			&.copyright {
 				width: 40%;
@@ -69,6 +68,14 @@ body {
 
 			&.nav {
 				width: 40%;
+				
+				a:before {
+					content: "/\00a0";
+				}
+				a:first-child:before {
+					content: "";
+				}
+				
 			}
 
 			&.socbtns {
@@ -516,7 +523,7 @@ body {
 .work_with-block {
 	.partners {
 		margin-left: 0;
-		
+
 		li {
 			border-bottom: 1px solid $lGray;
 			border-right: 1px solid $lGray;
@@ -534,8 +541,8 @@ body {
 			}
 
 			a {
-/*				width: 100%;
-				height: 100%;*/
+				/*				width: 100%;
+								height: 100%;*/
 				position: absolute;
 				/*left: 0; top: 0;*/
 				left: 50%; top: 50%;
@@ -666,7 +673,7 @@ body {
 				&:hover {
 					> div {
 						//@include opacity(1);
-						
+
 						&.hover {
 							@include opacity(0);
 						}
@@ -815,6 +822,10 @@ body {
 
 .intro-block {
 
+	.sidenav-bullets {
+		display: none;
+	}
+
 	.skiplinks-nav {
 		a {
 			color: $ddGray;
@@ -828,15 +839,6 @@ body {
 				line-height: 1;
 				position: relative;
 				text-shadow: 0 0 20px #FFFFFF;
-
-				/*				&:before {
-									@include box-shadow(0 10px 80px 80px rgba(255, 255, 255, 0.5));
-									content: "";
-									height: 0; width: 0;
-									position: absolute;
-									left: 50%; top: 50%;
-									z-index: 0;
-								}*/
 
 				i {
 					position: relative;
@@ -870,7 +872,6 @@ body {
 			background: none;
 
 			img {
-				/*height: 100% !important;*/
 				max-width: none;
 				max-height: 464px;
 				width: auto !important;
@@ -914,83 +915,76 @@ body {
 		transform: none !important;
 	}
 
-	.fullscreenbanner.loaded {
-		> ul > li.first-slide-intro {
-			z-index: 21 !important;
-			overflow-y: visible !important;
-		}
+	.sidenav-bullets {
+		display: block;
+		position: fixed;
+		width: 30px;
+		left: 16px;
+		top: 50%;
+		margin-top: -50px;
+		z-index: 30;
 
-		.skiplinks-nav {
-			width: 30px;
-			min-width: 0 !important;
-			left: 16px !important;
-			top: 50% !important;
-			margin-top: -50px !important;
-			padding: 0 !important;
-			position: fixed;
-			z-index: 2;
-			@include opacityImp(1);
-			-ms-transform: none !important;
-			-o-transform: none !important;
-			transform: none !important;
-			-webkit-backface-visibility: hidden; 
-			-webkit-transform: translateZ(0) !important;
-			
-
-			.ico i {
-				display: none;
-			}
-
-			h4 {
-				font-size: 16px;
-				font-size: 1rem;
-				color: white !important;
-				text-shadow: none !important;
-			}
+		ul {
+			display: block;
 
 			li {
-				float: none;
-				margin: 4px 0;
 				padding: 0;
-				width: 20px;
-				height: 16px;
-				position: relative;
-				color: $ddGray;
-				text-shadow: 1px 1px 2px rgba(200, 200, 200, .7), -1px -1px 2px rgba(60, 60, 60, .7);
-
-				&:before {
-					content: "\e6e0";
-					cursor: pointer;
-					display: block;
-					font-family: "entypo";
-					font-size: 40px;
-					height: 16px;
-					line-height: 20px;
-					overflow: hidden;
-					text-indent: -12px;
-					width: 16px;
-				}
 
 				a {
-					/*display: block;*/
-					background-color: $orange;
-					position: absolute;
-					left: -120px; top: 0;
-					padding: 1px 7px 2px;
+					position: relative;
+					display: block;
+					line-height: 20px;
 
-					.ico {
+					i {
+						width: 16px; height: 16px;
+						text-shadow: 1px 1px 2px rgba(200, 200, 200, .7), -1px -1px 2px rgba(60, 60, 60, .7);
+						font-size: 40px;
+						text-indent: -10px;
+						line-height: 20px;
+						color: $ddGray;
+						overflow: hidden;
+
+					}
+
+					&.active i,
+					&:hover i {
+						color: $orange;
+					}
+
+
+					span {
 						position: absolute;
-						width: 0; 
-						height: 0;
-						border-width: 10px 10px 10px 16px;
-						border-color: transparent $orange transparent transparent;
-						border-style: solid;
-						left: -26px; top: 0;
+						top: -2px;
+						left: -120px;
+						font-size: 16px;
+						font-size: 1rem;
+						height: 24px;
+						line-height: 22px;
+						padding: 0 7px;
+						background-color: $orange;
+						white-space: nowrap;
+						color: white;
 
 						&:before {
-							display: none;
+							content: "";
+							position: absolute;
+							width: 0; 
+							height: 0;
+							border-width: 12px 12px 12px 14px;
+							border-color: transparent $orange transparent transparent;
+							border-style: solid;
+							left: -26px; top: 0;
 						}
 					}
+
+					&:hover {
+						text-decoration: none;
+						/*width: 120px;*/
+
+						span {
+							left: 40px;
+						}
+					} 
 				}
 
 
@@ -999,14 +993,103 @@ body {
 					color: $orange;
 					overflow: visible;
 				}
-
-				&:hover a {
-					left: 30px;
-					text-decoration: none;
-				}
 			}
 		}
 	}
+
+	/*
+		.fullscreenbanner.loaded {
+			> ul > li.first-slide-intro {
+				z-index: 21 !important;
+				overflow-y: visible !important;
+			}
+	
+			.skiplinks-nav {
+				width: 30px;
+				min-width: 0 !important;
+				left: 16px !important;
+				top: 50% !important;
+				margin-top: -50px !important;
+				padding: 0 !important;
+				position: fixed;
+				z-index: 2;
+				@include opacityImp(1);
+				-ms-transform: none !important;
+				-o-transform: none !important;
+				transform: none !important;
+				-webkit-backface-visibility: hidden; 
+				-webkit-transform: translateZ(0) !important;
+				
+	
+				.ico i {
+					display: none;
+				}
+	
+				h4 {
+					font-size: 16px;
+					font-size: 1rem;
+					color: white !important;
+					text-shadow: none !important;
+				}
+	
+				li {
+					float: none;
+					margin: 4px 0;
+					padding: 0;
+					width: 20px;
+					height: 16px;
+					position: relative;
+					color: $ddGray;
+					text-shadow: 1px 1px 2px rgba(200, 200, 200, .7), -1px -1px 2px rgba(60, 60, 60, .7);
+	
+					&:before {
+						content: "\e6e0";
+						cursor: pointer;
+						display: block;
+						font-family: "entypo";
+						font-size: 40px;
+						height: 16px;
+						line-height: 20px;
+						overflow: hidden;
+						text-indent: -12px;
+						width: 16px;
+					}
+	
+					a {
+						background-color: $orange;
+						position: absolute;
+						left: -120px; top: 0;
+						padding: 1px 7px 2px;
+	
+						.ico {
+							position: absolute;
+							width: 0; 
+							height: 0;
+							border-width: 10px 10px 10px 16px;
+							border-color: transparent $orange transparent transparent;
+							border-style: solid;
+							left: -26px; top: 0;
+	
+							&:before {
+								display: none;
+							}
+						}
+					}
+	
+	
+					&.active,
+					&:hover {
+						color: $orange;
+						overflow: visible;
+					}
+	
+					&:hover a {
+						left: 30px;
+						text-decoration: none;
+					}
+				}
+			}
+		}*/
 }
 
 .quotes-block {
@@ -1029,6 +1112,9 @@ body {
 		text-decoration: none;
 		color: #545557;
 		line-height: 1;
+		text-indent: -42px;
+		overflow: hidden;
+		height: 340px;
 	}
 
 	.quotes-list {
