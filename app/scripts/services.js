@@ -8,7 +8,7 @@ angular.module('winifySiteServices', [])
     },
     {
       name: 'skills',
-      text: 'Skills'
+      text: 'Kompetenz'
     },
     /*{
      name: 'works',
@@ -20,7 +20,7 @@ angular.module('winifySiteServices', [])
     },
     {
       name: 'work_with',
-      text: 'Partner'
+      text: 'Projekte'
     },
     {
       name: 'contact',
@@ -151,7 +151,7 @@ angular.module('winifySiteServices', [])
   .factory('quotesModel', [function() {
       return [
         {
-          'text': 'Es ist immer wieder schön zu sehen, wie nach und nach durch die zunehmende Kreativität des Winify Teams sich virtuelle Lösungen, die aus der Masse heraus stechen, bilden. Was mir jedoch besonders gefällt ist die Professionalität, mit deren Winify seine Kunden von der ersten Idee, über das Konzept bis zum Launch begleitet. Bitte so weitermachen liebe Winify Team.',
+          'text': 'Die Zusammenarbeit mit Winify hat immer Freude bereitet. Über die Zeit hat sich ein persönlich-professionelles Verhältnis entwickelt, in dem wir uns gut aufgehoben fühlen. Winify ist immer bereit auf Anmerkungen und Kritik einzugehen. Wir diskutieren auf Augenhöhe und holen so sicher das Beste heraus.',
           'author': {
             'name': 'Cashless Nation AG',
             'desc': ''
@@ -165,9 +165,9 @@ angular.module('winifySiteServices', [])
           }
         },
         {
-          'text': 'Winify entwickelt gemeinsam mit dem Kunden den Service, der genau zu allen Bedürfnissen passt. Das in so einer fruchtbaren Gemeinschaft dann für den Kunden sehr nützliche Produkte entstehen, ist dabei nur die logische Konsequenz. Auch das Preis-Leistungs-Verhältnis ist absolut in Ordnung. Jetzt bin ich mal gespannt, was von Winify noch so nachkommt.',
+          'text': 'Wir haben mit einem kleineren Auftrag mit der Winify AG begonnen und waren sehr zufrieden. Nach und nach haben wir die Zusammenarbeit ausgebaut und mittlerweile ist Winify unser wichtigster Software und Produkt Partner.',
           'author': {
-            'name': 'EquityStory AG',
+            'name': 'MUUME AG',
             'desc': ''
           }
         }

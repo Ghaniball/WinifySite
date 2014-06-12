@@ -3,7 +3,10 @@
 	<a class="toggle" gumby-trigger="#nav1 > ul" href="#"><i class="icon-menu"></i></a>
 	<div class="four columns logo">
 		<a href="#">
-			<img src="/images/logo_winify.png" />
+			<img ng-show="block === 'intro'"
+				 src="/images/logo_winify.png" />
+			<img ng-hide="block === 'intro'"
+				 src="/images/logo-des.png" />
 			<span>Winify</span>
 		</a>
 	</div>
@@ -12,10 +15,10 @@
 			   ng-click="skipTo('intro')">Home</a></li>
 		<li><a href="#{{path}}?skills"
 			   ng-click="skipTo('skills')">Leistungen</a></li>
-		<li><a href="#{{path}}?work_with"
-			   ng-click="skipTo('work_with')">Partner</a></li>
 		<li><a href="#{{path}}?about"
 			   ng-click="skipTo('about')">Wir</a></li>
+		<li><a href="#{{path}}?work_with"
+			   ng-click="skipTo('work_with')">Projekte</a></li>
 		<li><a href="#{{path}}?contact"
 			   ng-click="skipTo('contact')">Kontakt</a></li>
 	</ul>

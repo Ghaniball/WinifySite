@@ -40,6 +40,7 @@ body {
 		&.negative-caption {
 			color: white;
 			font-weight: 300;
+			text-shadow: 0 5px 1px rgba(0, 0, 0, 0.5);
 
 			span {
 				color: white;
@@ -47,7 +48,16 @@ body {
 			}
 		}
 	}
-
+	
+	.about-block h2,
+	.skills-block h2 {
+		text-transform: none;
+		
+		span {
+			font-weight: 400;
+		}
+	}
+	
 	#footer {
 		background-color: $dGray;
 		color: white;
@@ -155,7 +165,7 @@ body {
 
 	#map_container {
 		height: 100%;
-		background: url("../images/gmap_v2.jpg") no-repeat center center;
+		background: url("../images/gmap_v2.jpg") no-repeat top center;
 	}
 }
 
@@ -230,13 +240,16 @@ body {
 
 
 	&.active {
-		background-color: #ddd;
+		/*background-color: #ddd;
 		background-color: rgba(255,255,255,0.9);
 
 		&:hover {
 			background-color: #fff;
-		}
-
+		}*/
+		
+		background-color: #fff;
+		@include box-shadow(0 0 4px 0 rgba(0, 0, 0, 0.3));
+		
 		.navbar {
 			min-height: 52px;
 		}
@@ -257,9 +270,9 @@ body {
 			display: none;
 		}
 
-		.navbar .logo a > img {
+/*		.navbar .logo a > img {
 			height: 38px;
-		}
+		}*/
 
 		.navbar .logo a:hover {
 			border-bottom: 4px solid $orange;
