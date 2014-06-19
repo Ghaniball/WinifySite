@@ -23,6 +23,7 @@
 			//-webkit-animation-play-state: running;
 			@include transition(opacity ease-in-out .2s);
 		}
+		
 		.phone-calculator a:hover .overlay {
 			@include animation(none);
 			-webkit-animation-play-state: paused;
@@ -83,19 +84,10 @@
 	.work_with-block .partners li a > div {
 		//@include transition(opacity 0.2s ease-in-out 0s);
 		
-		&.hover {
-			@include transition(opacity 0.15s ease-in-out 0s);
+		&:first-child {
+			@include transition(opacity 0.2s ease-in-out 0s);
 		}
 	}
 }
 
 
-
-@include keyframes(blink_calc) {
-	0%, 100% {
-		opacity: 1;
-	}
-	50% {
-		opacity: 0;
-	}
-}

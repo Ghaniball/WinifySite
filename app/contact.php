@@ -20,46 +20,45 @@ $writerInfo = new \Zend\Log\Writer\Stream($config->logPath . date('Y-m-d') . '.l
 $logger = new \Zend\Log\Logger();
 $logger->addWriter($writerInfo);
 
+//die(var_dump($request));
 
-//if ($request->isPost()) {
-$form = new WnfSite\Form\ContactForm();
-$form->setInputFilter(new WnfSite\Form\ContactFilter());
+if ($request->isPost()) {
+	$form = new WnfSite\Form\ContactForm();
+	$form->setInputFilter(new WnfSite\Form\ContactFilter());
 
-//$form->setData($request->getPost());
-$form->setData($request->getQuery());
-
-// Validate the form
-if ($form->isValid())
-{
-	$logger->info($form->getData());
-	try {
-		//	$mailService = new WnfSite\Service\MailService;
-		//	$mailService->setConfig($config->mail)
-		//			->setContent($form->getData())
-		//			->send();
+	$form->setData($request->getPost());
+	//$form->setData($request->getQuery());
 	
-		$response['status'] = 'success';
-	} catch (Exception $ex) {
-		$writerErr = new \Zend\Log\Writer\Stream($config->logPath . 'mail_send_error_' . date('Y-m-d') . '.log');
+	// Validate the form
+	if ($form->isValid()) {
+		$logger->info($form->getData());
+		try {
+				$mailService = new WnfSite\Service\MailService;
+				$mailService->setConfig($config->mail)
+						->setContent($form->getData())
+						->send();
 
-		$loggerErr = new \Zend\Log\Logger();
-		$loggerErr->addWriter($writerErr);
-		$loggerErr->err($ex->getMessage());
-		$loggerErr->err($ex->getTraceAsString());
-	
+			$response['status'] = 'success';
+		} catch (Exception $ex) {
+			$writerErr = new \Zend\Log\Writer\Stream($config->logPath . 'mail_send_error_' . date('Y-m-d') . '.log');
+
+			$loggerErr = new \Zend\Log\Logger();
+			$loggerErr->addWriter($writerErr);
+			$loggerErr->err($ex->getMessage());
+			$loggerErr->err($ex->getTraceAsString());
+
+			$response['status'] = 'error';
+			$response['reason'] = 'Mail not send';
+			$response['messages'] = $ex->getMessage();
+		}
+	} else {
+		$logger->err($form->getData());
+
 		$response['status'] = 'error';
-		$response['reason'] = 'Mail not send';
-		$response['messages'] = $ex->getMessage();
+		$response['reason'] = 'Form not valid';
+		$response['messages'] = $form->getMessages();
 	}
 
-} else {
-	$logger->err($form->getData());
-	
-	$response['status'] = 'error';
-	$response['reason'] = 'Form not valid';
-	$response['messages'] = $form->getMessages();
+	die(json_encode($response));
+	//die($request->getQuery('callback') . '(' . json_encode($response) . ')');
 }
-
-die($request->getQuery('callback') . '(' . json_encode($response) . ')');
-
-//}

@@ -1,0 +1,152 @@
+/* 
+    Created on : 19.06.2014, 13:02:15
+    Author     : igodorogea
+*/
+
+
+@mixin parner-logo($w, $h, $x, $y, $hor: false) {
+	width: $w;
+	height: $h;
+	margin-left: 0 - $w/2;
+	margin-top: 0 - $h/2;
+	@if ($hor == true) {
+		background-position: $x -$w  $y;
+	}
+	@else {
+		background-position: $x $y -$h;
+	}
+
+	&.hover {
+		background-position: $x $y;
+	}
+}
+
+.work_with-block {
+	.partners {
+		margin-left: 0;
+
+		li {
+			border-bottom: 1px solid $lGray;
+			border-right: 1px solid $lGray;
+			padding-bottom: 23%;
+			width: 33.333333%;
+			margin-left: 0;
+			position: relative;
+
+			&.last {
+				border-right: none;
+			}
+
+			&.last-row {
+				border-bottom: none;
+			}
+
+			a {
+				position: absolute;
+				left: 50%; top: 50%;
+
+				> div {
+					position: absolute;
+					background-image: url('../images/site-sprite.png');
+					width: 0;
+					height: 0;
+					background-position: 0 0;
+
+					&:first-child {
+						z-index: 2;
+						@include opacity(0);
+					}
+
+					&.muume {
+						@include parner-logo(216px, 48px, 0, -140px);
+					}
+
+					&.pcp {
+						@include parner-logo(171px, 100px, 0, -240px);
+					}
+
+					&.iwant2 {
+						@include parner-logo(100px, 100px, -216px, -140px, true);
+					}
+
+					&.vorwerk {
+						@include parner-logo(182px, 70px, -171px, -240px);
+					}
+
+					&.after-buy {
+						@include parner-logo(152px, 80px, -416px, -140px);
+					}
+
+					&.cashless-nation {
+						@include parner-logo(209px, 120px, -353px, -300px);
+					}
+				}
+
+
+				&:hover > div:first-child {
+					@include opacity(1);
+				} 
+			}
+		}
+	}
+}
+
+.no-touch .work_with-block .partners li a > div:first-child {
+	@include transition(opacity 0.2s ease-in-out 0s);
+}
+
+
+@media only screen and (max-height: 760px), only screen and (max-width: 1000px) {
+	.work_with-block {
+		&, .tvalign, .tcvalign {
+			display: block;
+			height: auto;
+		}
+
+		.tcvalign {
+			padding: 2em 0;
+		}
+
+		.separator {
+			height: 3em;
+		}
+	}
+}
+
+@media only screen and (max-width: 767px) {
+	.work_with-block .partners {
+		li {
+			width: 50%;
+			padding-bottom: 150px;
+
+			&:nth-child(odd) {
+				border-right: 1px solid $lGray !important;
+			}
+
+			&:nth-child(even) {
+				border-right: none !important;
+			}
+
+			&.last + .last-row {
+				border-bottom: 1px solid $lGray;
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 560px) {
+	.work_with-block .partners {
+		li {
+			width: 100%;
+
+			&.last + .last-row + .last-row {
+				border-bottom: 1px solid $lGray;
+			}
+			
+			&:nth-child(odd) {
+				border-right: none !important;
+			}
+		}
+
+	}
+}

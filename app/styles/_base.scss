@@ -1,16 +1,7 @@
-// bower:scss
-// endbower
-
-@import "compass";
-@import "mixins";
-
-$footerHeight : 70px;
-$lGray: #f7f7f7;
-$dGray: #58595b;
-$ddGray: #393a39;
-$orange: #f58220;
-$dorange: #eb702b;
-$ddorange: #E26B29;
+/* 
+    Created on : 19.06.2014, 12:47:40
+    Author     : igodorogea
+*/
 
 body, html {
 	height:100%;
@@ -24,7 +15,6 @@ body {
 		height: $footerHeight;
 	}
 }
-
 .my-main-body {
 	min-height:100%;
 }
@@ -67,7 +57,6 @@ a:hover {
 i.left-icon {
 	margin-left: 0;
 }
-
 i.right-icon {
 	margin-right: 0;
 }
@@ -160,4 +149,116 @@ i.right-icon {
 
 small {
 	font-size: 14px;
+}
+
+h2 {
+	margin: 1em 0;
+}
+
+#footer {
+	background-color: $dGray;
+	color: white;
+
+	a {
+		color: white;
+	}
+
+	li {
+		display: block;
+		margin: 0;
+		padding: 0;
+		line-height: 42px;
+
+		&.copyright {
+			width: 40%;
+		}
+
+		&.nav {
+			width: 60%;
+
+			a {
+				margin-left: 1em;
+				position: relative;
+
+				&:before {
+					content: "/";
+					left: -12px;
+					position: absolute;
+					top: -8px;
+				}
+
+				&:first-child {
+					margin-left: 0;
+
+					&:before {
+						content: "";
+					}
+				}
+			}
+
+
+		}
+
+		&.socbtns {
+			width: 20%;
+
+			a {
+				font-size: 42px;
+				@include inline-block;
+			}
+		}
+	}
+}
+
+.fullscreenbanner-container .tp-bullets {
+	@include transition(none);
+
+	&.hidebullets {
+		@include opacity(1);
+	}
+
+	.bullet {
+		@include inline-block;
+		background-color: $dGray;
+		border: 2px solid white;
+		border-radius: 7px;
+		height: 14px;
+		margin-left: 0.5em;
+		padding: 0;
+		width: 14px;
+
+		&:hover {
+			border: 3px solid white;
+		}
+
+		&.selected {
+			background-color: $orange;
+		}
+	}
+}
+
+@media only screen and (max-width: 930px) {
+	body #footer{
+		height: auto !important;
+
+		li {
+			float: none;
+			text-align: left;
+			width: auto !important;
+		}
+	}
+}
+
+@media only screen and (max-width: 400px) {
+	body #footer{
+		li.nav a {
+			display: block;
+			line-height: 1.625;
+			margin-left: 0;
+			
+			&:before {
+				content: "";
+			}
+		}
+	}
 }

@@ -1,0 +1,23 @@
+/* 
+    Created on : 19.06.2014, 12:57:09
+    Author     : igodorogea
+*/
+
+
+.gmap-block {
+	height: 40%;
+	
+	&.impressum {
+		height: 430px;
+		margin: 1em 0;
+	}
+	
+	&.impressum2 {
+		height: 600px;
+	}
+	
+	#map_container {
+		height: 100%;
+		background: url("../images/gmap.jpg") no-repeat top center;
+	}
+}

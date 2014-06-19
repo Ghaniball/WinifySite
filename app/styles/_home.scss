@@ -1,0 +1,145 @@
+/* 
+    Created on : 19.06.2014, 12:48:20
+    Author     : igodorogea
+*/
+
+body.home {
+	.my-main-body {
+		height: 100%;
+		min-height: 0;
+
+		#main {
+			height: 100%;
+			margin-top: 0;
+		}
+
+		.my-rasporka {
+			display: none;
+		}
+
+		#footer {
+			margin-top: 0;
+			height: 10%;
+			min-height: 70px;
+		}
+	}
+
+	> #footer {
+		display: none;
+	}
+
+	h2 {
+		margin: 0;
+		text-transform: uppercase;
+		font-weight: 400;
+		color: $dGray;
+
+		span {
+			color: $orange;
+			font-weight: 700;
+		}
+
+		&.negative {
+			color: white;
+
+			span {
+				color: white;
+			}
+		}
+
+		&.negative-caption {
+			color: white;
+			font-weight: 300;
+			text-shadow: 0 5px 1px rgba(0, 0, 0, 0.5);
+
+			span {
+				color: white;
+				font-weight: 600;
+			}
+		}
+	}
+}
+
+.intro-block,
+.skills-block,
+.works-block,
+.work_with-block,
+.contact-block,
+.about-block {
+	background-color: $llGray;
+	height: 100%;
+}
+
+.flow-block,
+.quotes-block,
+.contact-block {
+	background-color: $dGray;
+	height: 50%;
+	color: white;
+}
+
+
+.intro-block {
+	.separator {
+		height: 24%;
+	}
+}
+
+.skills-block {
+	.separator {
+		height: 10%;
+	}
+}
+
+.flow-block {
+	.separator {
+		height: 10%;
+	}
+}
+
+.works-block {
+	.separator {
+		height: 10%;
+	}
+}
+
+.work_with-block {
+	.separator {
+		height: 7%;
+	}
+}
+
+.about-block {
+	.separator {
+		height: 5%;
+	}
+}
+
+.works-block,
+.intro-block {
+	position: relative;
+
+	.fullscreenbanner {
+		> ul > li {
+			padding: 0;
+		}
+
+		.caption-wrapper {
+			position: absolute;
+			width: 100%; height: 100%;
+			top: 0; left: 0;
+			white-space: normal;
+		}
+	}
+}
+
+
+@import "home/intro";
+@import "home/skills";
+@import "home/flow";
+@import "home/about";
+@import "home/quotes";
+//@import "home/portfolio";
+@import "home/partners";
+@import "home/contact";
+@import "home/gmap";

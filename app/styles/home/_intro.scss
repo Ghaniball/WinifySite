@@ -1,0 +1,228 @@
+/* 
+    Created on : 19.06.2014, 12:49:00
+    Author     : igodorogea
+*/
+
+
+.intro-block {
+	.sidenav-bullets {
+		display: none;
+	}
+
+	.skiplinks-nav {
+		a {
+			color: $ddGray;
+			text-align: center;
+			@include inline-block;
+
+			.ico {
+				display: block;
+				margin: 0 auto 30px;
+				font-size: 54px;
+				line-height: 1;
+				position: relative;
+				text-shadow: 0 0 20px #FFFFFF;
+
+				i {
+					position: relative;
+					vertical-align: middle;
+				}
+			}
+
+			.txt {
+				position: relative;
+				font-weight: 400;
+				padding: 0;
+				color: inherit;
+				text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
+			}
+		}
+	}
+
+	.phone-calculator {
+		position: absolute;
+		width: 452px; height: 40%;
+		margin-left: -630px;
+		left: 50%; bottom: 0;
+		border: none;
+		overflow: hidden;
+		background: none;
+
+		a {
+			padding: 0;
+			display: block;
+			position: relative;
+			background: none;
+
+			img {
+				max-width: none;
+				max-height: 464px;
+				width: auto !important;
+
+				&.overlay {
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: auto;
+				}
+			}
+		}
+	}
+
+}
+
+.intro-block.active {
+
+	nav a:hover {
+		text-decoration: none;
+
+		.ico {
+			color: $orange;
+		}
+
+		.ico:before {
+			@include box-shadow(0 10px 70px 70px rgba(255, 255, 255, 0.6));
+		}
+
+		.txt {
+			text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.7);
+		}
+	}
+}
+
+.intro-block.fixed {
+	.phone-calculator {
+		-webkit-transform: none !important;
+		-ms-transform: none !important;
+		-o-transform: none !important;
+		transform: none !important;
+	}
+
+	.sidenav-bullets {
+		display: block;
+		position: fixed;
+		width: 30px;
+		left: 16px;
+		top: 50%;
+		margin-top: -50px;
+		z-index: 30;
+
+		ul {
+			display: block;
+
+			li {
+				padding: 0;
+
+				a {
+					position: relative;
+					display: block;
+					line-height: 20px;
+
+					i {
+						width: 16px; height: 16px;
+						text-shadow: 1px 1px 2px rgba(200, 200, 200, .7), -1px -1px 2px rgba(60, 60, 60, .7);
+						font-size: 40px;
+						text-indent: -10px;
+						line-height: 20px;
+						color: $ddGray;
+						overflow: hidden;
+
+					}
+
+					&.active i,
+					&:hover i {
+						color: $orange;
+					}
+
+
+					span {
+						position: absolute;
+						top: -2px;
+						left: -120px;
+						font-size: 16px;
+						font-size: 1rem;
+						height: 24px;
+						line-height: 22px;
+						padding: 0 7px;
+						background-color: $orange;
+						white-space: nowrap;
+						color: white;
+
+						&:before {
+							content: "";
+							position: absolute;
+							width: 0; 
+							height: 0;
+							border-width: 12px 12px 12px 14px;
+							border-color: transparent $orange transparent transparent;
+							border-style: solid;
+							left: -26px; top: 0;
+						}
+					}
+
+					&:hover {
+						text-decoration: none;
+
+						span {
+							left: 40px;
+						}
+					} 
+				}
+
+
+				&.active,
+				&:hover {
+					color: $orange;
+					overflow: visible;
+				}
+			}
+		}
+	}
+}
+
+
+.no-touch .intro-block.active .active {
+	nav {
+		a, a .txt {
+			@include transition(color ease-in-out .1s);
+		}
+	}
+
+	.phone-calculator a .overlay {
+		@include animation(blink_calc 2s ease-in-out infinite 2s);
+		//-webkit-animation-play-state: running;
+		@include transition(opacity ease-in-out .2s);
+	}
+	.phone-calculator a:hover .overlay {
+		@include animation(none);
+		-webkit-animation-play-state: paused;
+		opacity: 0;
+	}
+}
+
+.no-touch .intro-block.fixed .sidenav-bullets {
+	li {
+		@include transition(color .2s ease-in-out 0.1s);
+
+		a span {
+			@include transition(left .2s ease-in-out 0.1s);
+		}
+	}
+}
+
+
+@include keyframes(blink_calc) {
+	0%, 100% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0;
+	}
+}
+
+@media only screen and (max-width: 1040px) {
+	.intro-block.fixed .sidenav-bullets {
+		display: none;
+	}
+}

@@ -1,6 +1,36 @@
 'use strict';
 
 angular.module('winifySiteCtrls', [])
+  .controller('FooterPagesCtrl', [
+    '$rootScope',
+    '$scope',
+    '$window',
+    '$anchorScroll',
+    'gmapService',
+    function($rootScope, $scope, $window, $anchorScroll, gmapService) {
+      var mapLoaded = false;
+      
+      
+      $rootScope.isHome = false;
+      $anchorScroll();
+
+      $scope.loadTopMenu = function(title) {
+        $window.document.title = title + ' :: Winify';
+        $window.Gumby.initialize('toggles');
+        $window.Gumby.initialize('fixed');
+      };
+
+      $scope.initializeGMap = function() {
+        if (mapLoaded) {
+          return;
+        }
+        mapLoaded = true;
+        
+        gmapService.init();
+      };
+
+    }
+  ])
   .controller('HomeCtrl', [
     '$rootScope',
     '$scope',
@@ -9,25 +39,24 @@ angular.module('winifySiteCtrls', [])
     '$window',
     '$timeout',
     '$http',
-    'getSearchKey',
+    'searchKey',
+    'gmapService',
     'homePageBlocks',
     'skillsModel',
     'quotesModel',
-    function($rootScope, $scope, $location, $routeParams, $window, $timeout, $http, getSearchKey, homePageBlocks, skillsModel, quotesModel)
+    function($rootScope, $scope, $location, $routeParams, $window, $timeout, $http, searchKey, gmapService, homePageBlocks, skillsModel, quotesModel)
     {
       var $ = $window.jQuery,
         $w = $($window),
         delay = 0,
-        mapLoaded = false,
-        google = $window.google;
+        mapLoaded = false;
+        
+      $window.document.title = 'Home :: Winify';
 
-
-      window.console.log(homePageBlocks);
-      
       $rootScope.isHome = true;
       $scope.offsetTop = false;
       $scope.path = $location.path();
-      $scope.block = getSearchKey || 'intro';
+      $scope.block = searchKey.get() || 'intro';
       $scope.homePageBlocks = homePageBlocks;
 
       $scope.skipTo = function(block) {
@@ -72,63 +101,9 @@ angular.module('winifySiteCtrls', [])
         if (mapLoaded) {
           return;
         }
-
         mapLoaded = true;
-
-
-        var styles = [
-          {'featureType': 'water', 'stylers': [{'visibility': 'on'}, {'color': '#e0f0fa'}]},
-          {'featureType': 'landscape', 'stylers': [{'visibility': 'on'}, {'color': '#fff6e5'}]},
-          {'featureType': 'road', 'stylers': [{'visibility': 'on'}, {'color': '#ffffff'}]},
-          {'featureType': 'road', 'elementType': 'labels.text.fill', 'stylers': [{'visibility': 'on'}, {'color': '#3e444f'}]},
-          {'featureType': 'road', 'elementType': 'geometry.stroke', 'stylers': [{'color': '#d3d5d6'}]},
-          {'featureType': 'poi.park', 'stylers': [{'color': '#ebf3e1'}]},
-          {'featureType': 'poi.medical', 'elementType': 'geometry', 'stylers': [{'visibility': 'on'}, {'color': '#ecf0eb'}]},
-          {'featureType': 'water', 'elementType': 'labels.text.fill', 'stylers': [{'visibility': 'on'}, {'color': '#000000'}]}
-        ];
-
-        var styledMap = new google.maps.StyledMapType(styles, {name: 'Styled Map'});
-        var mapOptions = {center: new google.maps.LatLng(0,0), scrollwheel: false, zoom: 16, mapTypeControlOptions: {mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'map_style']}};
-        var map = new google.maps.Map(document.getElementById('map_container'), mapOptions);
-        map.mapTypes.set('map_style', styledMap);
-        map.setMapTypeId('map_style');
         
-        var bounds = new google.maps.LatLngBounds();
-        
-        var markerPosPol = new google.maps.LatLng(50.057118, 19.92484);
-        var markerPol = new google.maps.Marker({position: markerPosPol, map: map, title: 'Winify'});
-        bounds.extend(markerPosPol);
-        
-        var markerPosMold = new google.maps.LatLng(47.02948428, 28.84300053);
-        var markerMold = new google.maps.Marker({position: markerPosMold, map: map, title: 'Winify'});
-        bounds.extend(markerPosMold);
-        
-        var markerPosSchw = new google.maps.LatLng(47.1861859, 8.473614);
-        var markerSchw = new google.maps.Marker({position: markerPosSchw, map: map, title: 'Winify'});
-        bounds.extend(markerPosSchw);
-        
-        map.fitBounds(bounds);
-
-        var contentStringPol = '<p class="info-window">Winify Sp. z o.o. - Poland<br/>ul. Syrokomli 22/6<br/>30-102 Kraków</p>';
-        var infowindowPol = new google.maps.InfoWindow({content: contentStringPol});
-
-        google.maps.event.addListener(markerPol, 'click', function() {
-          infowindowPol.open(map, markerPol);
-        });
-
-        var contentStringMold = '<p class="info-window">Winify SRL. - Moldova<br/>str. A. Puskin 47/1, of 4,<br/>MD-2005 Chișinău</p>';
-        var infowindowMold = new google.maps.InfoWindow({content: contentStringMold});
-
-        google.maps.event.addListener(markerMold, 'click', function() {
-          infowindowMold.open(map, markerMold);
-        });
-
-        var contentStringSchw = '<p class="info-window">Winify AG - Switzerland<br/>Alte Steinhauserstrasse 1<br/>6330 Cham</p>';
-        var infowindowSchw = new google.maps.InfoWindow({content: contentStringSchw});
-
-        google.maps.event.addListener(markerSchw, 'click', function() {
-          infowindowSchw.open(map, markerSchw);
-        });
+        gmapService.init();
       };
 
       $scope.initIntroSlider = function() {
@@ -162,30 +137,30 @@ angular.module('winifySiteCtrls', [])
           }
         });
       };
-/*
-      $scope.initWorksSlider = function() {
-        var revapi = $('.works-block .fullscreenbanner').revolution(
-          {
-            delay: 10000,
-            startwidth: 1170,
-            startheight: 500,
-            hideThumbs: 10,
-            onHoverStop: 'off',
-            fullWidth: 'off',
-            fullScreen: 'on',
-            fullScreenOffsetContainer: '',
-            keyboardNavigation: 'off'
-          });
-
-
-        revapi.bind('revolution.slide.onloaded', function() {
-          revapi.revpause()
-            .bind('revolution.slide.onchange', function() {
-              revapi.revpause();
-            });
-        });
-      };
-*/
+      /*
+       $scope.initWorksSlider = function() {
+       var revapi = $('.works-block .fullscreenbanner').revolution(
+       {
+       delay: 10000,
+       startwidth: 1170,
+       startheight: 500,
+       hideThumbs: 10,
+       onHoverStop: 'off',
+       fullWidth: 'off',
+       fullScreen: 'on',
+       fullScreenOffsetContainer: '',
+       keyboardNavigation: 'off'
+       });
+       
+       
+       revapi.bind('revolution.slide.onloaded', function() {
+       revapi.revpause()
+       .bind('revolution.slide.onchange', function() {
+       revapi.revpause();
+       });
+       });
+       };
+       */
       $scope.initQuotesSlider = function() {
         if ($scope.block !== 'works' && $scope.block !== 'about') {
           $scope.$broadcast('pause.quotes.slide');
@@ -203,37 +178,84 @@ angular.module('winifySiteCtrls', [])
       $scope.contactData = {};
       $scope.contact = {
         submited: false,
-        sent: false
+        sent: false,
+        errorMessages: [],
+        stripErrors: true
+      };
+
+      $scope.contactScope = false;
+      $scope.initFormScope = function(formScope) {
+        $scope.contactScope = formScope;
       };
 
       $scope.submitContact = function(isValid) {
         $scope.contact.submited = true;
+        $scope.contact.errorMessages = [];
 
-        window.console.log(isValid);
-        window.console.log($scope.contactData);
+//        window.console.log(isValid);
+//        window.console.log($scope.contactScope);
 
         if (isValid) {
-          $scope.contactData.callback = 'JSON_CALLBACK';
-          $http.jsonp('http://192.168.3.134:8524/contact.php', {params: $scope.contactData})
+          $http({
+            url: '/contact.php',
+            data: $.param($scope.contactData),
+            method: 'POST',
+            headers: {'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'}
+          })
             .success(function(data, status, headers, config) {
               if (data.status === 'success') {
                 $scope.contact.sent = true;
-                
-              } else {
-                
+              } else if (data.status === 'error') {
+                $scope.contact.submited = false;
+
+                for (var field in data.messages) {
+                  for (var reason in data.messages[field]) {
+                    switch (reason) {
+                      case 'isEmpty' :
+                        $scope.contact.errorMessages.push('Field "' + field + '" is required');
+                        break;
+
+                      case 'stringLengthTooShort' :
+                        $scope.contact.errorMessages.push('Field "' + field + '" is to short');
+                        break;
+
+                      case 'stringLengthTooLong' :
+                        $scope.contact.errorMessages.push('Field "' + field + '" is to long');
+                        break;
+
+                      case 'emailAddressInvalid' :
+                      case 'emailAddressInvalidFormat':
+                      case 'emailAddressInvalidHostname':
+                      case 'emailAddressInvalidMxRecord':
+                      case 'emailAddressInvalidSegment':
+                      case 'emailAddressDotAtom':
+                      case 'emailAddressQuotedString':
+                      case 'emailAddressInvalidLocalPart':
+                      case 'emailAddressLengthExceeded' :
+                        $scope.contact.errorMessages.push('Email is not valid');
+                    }
+                  }
+                }
+
+                $scope.contact.stripErrors = false;
+                stripErrors();
               }
-              
-              window.console.log('success');
-              window.console.log(data);
             })
             .error(function(data, status, headers, config) {
+              $scope.contact.submited = false;
               window.console.log('error');
             });
         } else {
-          $timeout(function() {
-            $scope.contact.submited = false;
-          }, 3000);
+          $scope.contact.stripErrors = false;
+          $scope.contact.submited = false;
+          stripErrors();
         }
       };
+
+      function stripErrors() {
+        $timeout(function() {
+          $scope.contact.stripErrors = true;
+        }, 3000);
+      }
     }
   ]);

@@ -9,7 +9,6 @@
 	}
 }
 @media only screen and (max-height: 600px) {
-
 	.skills-block {
 		&, .tvalign, .tcvalign {
 			display: block;
@@ -98,6 +97,7 @@
 	.work_with-block .partners {
 		li {
 			width: 50%;
+			padding-bottom: 150px;
 
 			&:nth-child(odd) {
 				border-right: 1px solid $lGray !important;
@@ -107,8 +107,7 @@
 				border-right: none !important;
 			}
 
-			&.last + .last-row,
-			&.last + .last-row + .last-row {
+			&.last + .last-row {
 				border-bottom: 1px solid $lGray;
 			}
 		}
@@ -138,8 +137,11 @@
 	.work_with-block .partners {
 		li {
 			width: 100%;
-			padding-bottom: 24%;
 
+			&.last + .last-row + .last-row {
+				border-bottom: 1px solid $lGray;
+			}
+			
 			&:nth-child(odd) {
 				border-right: none !important;
 			}
@@ -149,7 +151,7 @@
 }
 
 @media only screen and (max-width: 930px) {
-	body #footer{
+	body #footer {
 		height: auto !important;
 
 		li {
@@ -161,12 +163,12 @@
 }
 
 @media only screen and (max-width: 400px) {
-	body #footer{
-
+	body #footer {
 		li.nav a {
 			display: block;
 			line-height: 1.625;
-
+			margin-left: 0;
+			
 			&:before {
 				content: "";
 			}

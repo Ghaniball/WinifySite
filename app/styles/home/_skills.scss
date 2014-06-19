@@ -1,0 +1,135 @@
+/* 
+    Created on : 19.06.2014, 13:00:15
+    Author     : igodorogea
+*/
+
+
+.skill-list {
+	li {
+		overflow: hidden;
+		float: left;
+		position: relative;
+		width: 19.6%; height: 0;
+		padding-top: 18%;
+		margin-left: 0.5%;
+
+		&:first-child {
+			margin-left: 0;
+		}
+
+		.skill {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			padding: 24px 10px;
+			left: 0; top: 0;
+			font-size: 14px;
+			line-height: 1.3;
+			//background-color: $dGray;
+			//color: white;
+
+			&:hover {
+				background-color: white;
+				//background-color: rgba(255,255,255,.7);
+				border: 2px solid $orange;
+				border-radius: 4px;
+				padding: 22px 8px;
+			}
+		}
+
+		.ico {
+			display: block;
+			height: 64px;
+			margin-bottom: 2em;
+			text-align: center;
+
+			i {
+				@include inline-block;
+				background-image: url('../images/site-sprite.png');
+				width: 55px;
+				height: 64px;
+				background-position: 0 0;
+			}
+
+			.skill-dev {
+				width: 79px;
+				background-position: -275px 0;
+			}
+
+			.skill-manage {
+				width: 67px;
+				background-position: -208px 0;
+			}
+
+			.skill-test {
+				width: 55px;
+				background-position: -153px 0;
+			}
+
+			.skill-design {
+				width: 82px;
+				background-position: -71px 0;
+			}
+
+			.skill-admin {
+				width: 71px;
+				background-position: 0 0;
+			}
+		}
+
+		.h {
+			padding: 0;
+			margin-bottom: 1em;
+			//color: white;
+			text-transform: uppercase;
+			font-weight: 700;
+			font-size: 14px;
+		}
+
+		.d {
+			line-height: 1.2;
+			display: none;
+		}
+	}
+}
+
+.no-touch .skill-list li .skill {
+	.ico {
+		@include opacity(1);
+		@include transition(opacity 0.2s ease-in-out 0.1s, margin-top 0.2s ease-in-out 0.1s);
+	}
+
+	.d {
+		display: block;
+		@include opacity(0);
+		@include transition(opacity 0.2s ease-in-out 0.1s);
+	}
+
+	&:hover {
+		.ico {
+			@include opacity(0);
+			margin-top: -92px;
+		}
+
+		.d {
+			@include opacity(1);
+		}
+	}
+}
+
+@media only screen and (max-height: 600px) {
+	.skills-block {
+		&, .tvalign, .tcvalign {
+			display: block;
+			height: auto;
+		}
+
+		.tcvalign {
+			padding: 2em 0;
+		}
+
+		.separator {
+			height: 3em;
+		}
+	}
+}

@@ -1,0 +1,48 @@
+/* 
+    Created on : 19.06.2014, 12:56:26
+    Author     : igodorogea
+*/
+
+.contact-block {
+	background-color: $orange;
+
+	form {
+		max-width: 540px;
+		margin: 0 auto;
+		position: relative;
+
+		.field {
+			margin-bottom: 15px;
+
+			.input.textarea {
+				height: 87px;
+				resize: vertical;
+			}
+		}
+
+		.form-overlay {
+			background: url("../images/assets/c4ba0df1.loader.gif") no-repeat scroll center center #FFFFFF;
+			height: 104%;
+			left: -2%;
+			@include opacity(0.6);
+			position: absolute;
+			top: -4%;
+			width: 104%;
+			border-radius: 4px;
+		}
+	}
+}
+
+
+@media only screen and (max-height: 650px) {
+	.contact-block {
+		&, .tvalign, .tcvalign {
+			display: block;
+			height: auto;
+		}
+
+		.tcvalign {
+			padding: 1em 0;
+		}
+	}
+}

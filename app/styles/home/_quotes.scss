@@ -1,0 +1,77 @@
+/* 
+    Created on : 19.06.2014, 13:05:39
+    Author     : igodorogea
+*/
+
+
+.quotes-block {
+	position: relative;
+
+	> * {
+		position: relative;
+		z-index: 1;
+	}
+
+	&:before {
+		content: "\e621"; 
+		font-size: 400px;
+		font-family: 'entypo';
+		height: inherit;
+		left: 50%; top: 50%;
+		margin-top: -200px;
+		margin-left: -150px;
+		position: absolute;
+		text-decoration: none;
+		color: #545557;
+		line-height: 1;
+		text-indent: -42px;
+		overflow: hidden;
+		height: 340px;
+	}
+
+	.quotes-list {
+		padding: 0 7em;
+		position: relative;
+
+		.quote,
+		.author-desc {
+			font-style: italic;
+		}
+
+		.quote {
+			margin-bottom: 3em;
+		}
+
+		.author {
+			color: $orange;
+			font-weight: 700;
+		}
+
+		.carousel-inner > .item {
+			padding: 0 20px;
+			@include transition(.7s ease-in-out left);
+		}
+	}
+}
+
+
+@media only screen and (max-width: 767px) {
+	.quotes-block {
+		&, .tvalign, .tcvalign {
+			display: block;
+			height: auto;
+		}
+		
+		.tcvalign {
+			padding: 2em 0;
+		}
+		
+		.quotes-list {
+			padding: 0;
+			
+			.quote {
+				margin-bottom: 1.5em;
+			}
+		}
+	}
+}

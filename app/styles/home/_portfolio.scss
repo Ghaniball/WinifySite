@@ -1,0 +1,121 @@
+/* 
+    Created on : 19.06.2014, 13:03:17
+    Author     : igodorogea
+*/
+
+
+.works-block {
+	h2, h4 {
+		font-weight: 700;
+		line-height: 1.2;
+		padding: 0;
+	}
+
+	h2 {
+		color: $ddGray;
+		margin: 0;
+	}
+
+	h4 {
+		margin-bottom: 2em;
+
+		&.semibold {
+			margin: 0;
+			font-weight: 600;
+			color: $ddGray;
+		}
+	}
+
+	.tparrows.hidearrows {
+		@include opacity(1);
+	}
+
+	.tp-leftarrow.default {
+		margin-left: 20px;
+	}
+
+	.tp-rightarrow.default {
+		margin-right: 40px
+	}
+
+	.rar {
+		.rar-box {
+			background-color: white;
+			background-color: rgba(255,255,255,.7);
+			border-radius: 5px;
+			position: relative;
+
+			&:before,
+				&:after {
+				content: "";
+				position: absolute;
+				top: 5px; left: 2%;
+				width: 96%; height: 10px;
+				background-image: url('../images/dash_h.png');
+				background-repeat: repeat-x;
+				background-position: top left;
+			}
+
+			&:after {
+				top: auto; bottom: 0;
+			}
+
+			.rar-box-inner {
+				padding: 1.5em 2em;
+
+				&:before,
+					&:after {
+					content: "";
+					position: absolute;
+					top: 2%; left: 4px;
+					width: 10px; height: 96%;
+					background-image: url('../images/dash_v.png');
+					background-repeat: repeat-y;
+					background-position: top left;
+				}
+
+				&:after {
+					left: auto; right: 2px;
+				}
+			}
+		}
+		$nav_bull: 30px;
+		nav {
+			margin-bottom: 1em;
+
+			li {
+				margin-left: 4px;
+				@include inline-block;
+				padding: 0;
+				width: $nav_bull; height: $nav_bull;
+				line-height: $nav_bull;
+				border-radius: $nav_bull/2;
+				background-color: #333;
+				background-color: rgba(0,0,0,.5);
+				color: white;
+				text-align: center;
+				font-size: 18px;
+
+				&:hover {
+					background-color: #000;
+					background-color: rgba(0,0,0,.8);
+				}
+
+				i {
+					margin: 0;
+				}
+
+				&:first-child {
+					margin-left: 0;
+				}
+			}
+		}
+
+		.caption-wrapper .tvalign {
+			background-image: url('../images/works_rar3.jpg');
+			background-repeat: no-repeat;
+			background-position: center center;
+			max-width: 1090px;
+		}
+	}
+}

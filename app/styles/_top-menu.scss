@@ -1,0 +1,139 @@
+/* 
+    Created on : 19.06.2014, 12:58:34
+    Author     : igodorogea
+*/
+
+
+.top-menu {
+	background-color: #444;
+	background-color: rgba(0,0,0, .8);
+	position: fixed;
+	top: 0;
+	z-index: 30;
+	width: 100%;
+	
+	&.unfixed {
+		position: fixed !important;
+		top: 0 !important;
+	}
+
+	.navbar {
+		min-height: $topMenuH;
+	}
+
+	.navbar .logo,
+	.navbar .logo a,
+	.navbar ul li,
+	.navbar ul li > a {
+		height: 100%;
+		line-height: $topMenuH;
+	}
+
+	.navbar ul li > a {
+		height: $topMenuH;
+	}
+
+	.navbar {
+		margin-bottom: 0;
+		max-width: 100%;
+
+		.logo {
+			a {
+				padding: 0 20px;
+				float: left;
+				font-size:22px;
+
+				img {
+					@include inline-block;
+					margin-top: -3px;
+
+					&.small-logo {
+						display: none;
+					}
+				}
+
+				> span {
+					margin-left: 12px;
+				}
+			}
+		}
+
+		a {
+			color: white;
+
+			&:hover {
+				text-decoration: none;
+			}
+		}
+
+		ul {
+			display: block;
+			float: right;
+			text-align: right;
+
+			li {
+				@include inline-block;
+			}
+		}
+	}
+
+
+	&.active,
+	&.fixed {
+		.navbar .logo a img.big-logo {
+			display: none;
+		}
+
+		.navbar .logo a img.small-logo {
+			@include inline-block;
+		}
+
+		background-color: #fff;
+		@include box-shadow(0 0 4px 0 rgba(0, 0, 0, 0.3));
+
+		.navbar {
+			min-height: 52px;
+		}
+
+		.navbar .logo,
+		.navbar .logo a,
+		.navbar ul li,
+		.navbar ul li > a {
+			line-height: $topMenuHA;
+		}
+
+		.navbar ul li > a,
+		.navbar .logo a {
+			height: $topMenuHA;
+		}
+
+		.navbar .logo a > span {
+			display: none;
+		}
+
+		.navbar .logo a:hover {
+			border-bottom: 4px solid $orange;
+		}
+
+		.navbar ul li > a {
+			font-size: 14px;
+			color: $dGray;
+			padding: 0 1em;
+
+			&:hover {
+				color: $orange;
+				border-bottom: 4px solid $orange;
+			}
+		}
+	}
+
+	&.foot-page + .row {
+		padding-top: $topMenuH + 10;
+	}
+}
+
+.gumby-no-touch .navbar .logo a:hover,
+.gumby-no-touch .navbar ul li:hover > a,
+.gumby-touch .navbar ul li.active > a {
+	background: none;
+}
