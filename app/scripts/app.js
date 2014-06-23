@@ -2,9 +2,9 @@
 
 angular
   .module('winifySiteApp', [
-    'ngCookies',
+    /*'ngCookies',
     'ngResource',
-    'ngSanitize',
+    'ngSanitize',*/
     'ngRoute',
     'winifySiteHomeCtrl',
     'winifySiteFooterPagesCtrl',
@@ -50,12 +50,11 @@ angular
         .when('/datenschutz', {
           templateUrl: 'views/datenschutz.html',
           controller: 'FooterPagesCtrl'
-        })
+        })/*
         .when('/calculator', {
           templateUrl: 'views/calculator.html',
-          controller: 'CalculatorCtrl'/*,
-          reloadOnSearch: false*/
-        })
+          controller: 'CalculatorCtrl'
+        })*/
 //        .when('/calculator/agreement', {
 //          templateUrl: 'views/calculator/agreement.html',
 //          controller: 'CalculatorCtrl'

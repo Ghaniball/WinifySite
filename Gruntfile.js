@@ -22,7 +22,7 @@ module.exports = function (grunt) {
     yeoman: {
       // configurable paths
       app: require('./bower.json').appPath || 'app',
-      dist: 'dist'
+      dist: '../WinifyDist/dist'
     },
 
     // Watches files for changes and runs tasks based on the changed files
@@ -125,7 +125,10 @@ module.exports = function (grunt) {
             '<%= yeoman.dist %>/*',
             '!<%= yeoman.dist %>/.git*'
           ]
-        }]
+        }],
+        options: {
+          force: true
+        }
       },
       server: '.tmp'
     },
@@ -321,17 +324,12 @@ module.exports = function (grunt) {
           cwd: '.tmp/images',
           dest: '<%= yeoman.dist %>/images',
           src: ['generated/*']
-        }/*, {
-          expand: true,
-          cwd: '<%= yeoman.app %>/bower_components/gumby/fonts/',
-          src: ['**'],
-          dest: '<%= yeoman.dist %>/fonts/'
         }, {
           expand: true,
-          cwd: '<%= yeoman.app %>/bower_components/fontawesome/fonts/',
-          src: ['**'],
-          dest: '<%= yeoman.dist %>/fonts/'
-        }*/]
+          cwd: '<%= yeoman.app %>/../',
+          src: ['app_php/**', 'composer.json', 'composer.lock', 'composer.phar'],
+          dest: '<%= yeoman.dist %>/../'
+        }]
       },
       styles: {
         expand: true,
