@@ -279,7 +279,7 @@ angular.module('winifySiteDirectives', [])
         replace: true,
         controller: 'CarouselController',
         require: 'carousel',
-        templateUrl: 'views/template/carousel/carousel.html',
+        templateUrl: 'views/carousel/carousel.html',
         scope: {
           interval: '=',
           noTransition: '=',
@@ -293,7 +293,7 @@ angular.module('winifySiteDirectives', [])
       restrict: 'EA',
       transclude: true,
       replace: true,
-      templateUrl: 'views/template/carousel/slide.html',
+      templateUrl: 'views/carousel/slide.html',
       scope: {
         active: '=?'
       },

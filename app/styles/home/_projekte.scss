@@ -21,7 +21,7 @@
 	}
 }
 
-.work_with-block {
+.projekte-block {
 	.partners {
 		margin-left: 0;
 
@@ -47,7 +47,7 @@
 
 				> div {
 					position: absolute;
-					background-image: url('../images/site-sprite.png');
+					background-image: url('../images/site-sprite1.png');
 					width: 0;
 					height: 0;
 					background-position: 0 0;
@@ -70,7 +70,7 @@
 					}
 
 					&.vorwerk {
-						@include parner-logo(182px, 70px, -171px, -240px);
+						@include parner-logo(184px, 72px, -171px, -240px);
 					}
 
 					&.after-buy {
@@ -78,7 +78,7 @@
 					}
 
 					&.cashless-nation {
-						@include parner-logo(209px, 120px, -353px, -300px);
+						@include parner-logo(209px, 120px, -355px, -300px);
 					}
 				}
 
@@ -91,13 +91,13 @@
 	}
 }
 
-.no-touch .work_with-block .partners li a > div:first-child {
+.no-touch .projekte-block .partners li a > div:first-child {
 	@include transition(opacity 0.2s ease-in-out 0s);
 }
 
 
 @media only screen and (max-height: 760px), only screen and (max-width: 1000px) {
-	.work_with-block {
+	.projekte-block {
 		&, .tvalign, .tcvalign {
 			display: block;
 			height: auto;
@@ -114,7 +114,7 @@
 }
 
 @media only screen and (max-width: 767px) {
-	.work_with-block .partners {
+	.projekte-block .partners {
 		li {
 			width: 50%;
 			padding-bottom: 150px;
@@ -135,7 +135,7 @@
 }
 
 @media only screen and (max-width: 560px) {
-	.work_with-block .partners {
+	.projekte-block .partners {
 		li {
 			width: 100%;
 

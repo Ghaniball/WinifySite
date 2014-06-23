@@ -1,6 +1,10 @@
 'use strict';
 
 angular.module('winifySiteServices', [])
+  .constant('calcModel', {
+    'prop1': 'value1',
+    'prop2': 'value2'
+  })
   .constant('homePageBlocks', [
     {
       name: 'intro',
@@ -19,7 +23,7 @@ angular.module('winifySiteServices', [])
       text: 'Über uns'
     },
     {
-      name: 'work_with',
+      name: 'projekte',
       text: 'Projekte'
     },
     {
@@ -32,7 +36,7 @@ angular.module('winifySiteServices', [])
       return {
         'get': function() {
           var search = $location.search() || {};
-          
+
           return (function(b, s) {
             var i = 0, l = b.length;
             for (i; i < l; i++) {
@@ -152,7 +156,7 @@ angular.module('winifySiteServices', [])
       }
     },
     {
-      'text': 'Gemäß der Devise „Einer für alle – Alle für einen“ hat sich hier ein hervorragendes Team gefunden, das durchgängig schöne Webseiten und gute Software anbietet, die alle  kühnsten Ideen der Kunden aufreihen. Winify bietet qualitative Produkte an, von denen alle nur profitieren können. Mein Fazit: Winify macht einen guten Job, der ihr Geld auf alle Fälle wert ist.',
+      'text': 'Winify hat uns bei der Erstellung unseres Services App sehr geholfen. Es war weniger ein Auftraggeber-Auftragnehmer Verhältnis, als eine Partnerschaft auf Augenhöhe. Wir haben uns so lange Ideen und Konzepte hin- und her gespielt bis alle zufrieden waren. Klarer Fall: Daumen hoch!',
       'author': {
         'name': 'WERBEANSTALT Schweiz AG',
         'desc': ''

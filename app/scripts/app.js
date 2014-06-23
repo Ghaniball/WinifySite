@@ -6,9 +6,31 @@ angular
     'ngResource',
     'ngSanitize',
     'ngRoute',
-    'winifySiteCtrls',
+    'winifySiteHomeCtrl',
+    'winifySiteFooterPagesCtrl',
+    'winifySiteCalculatorCtrl',
     'winifySiteServices',
     'winifySiteDirectives'
+  ])
+  .run([
+    '$rootScope',
+    '$location',
+    '$window',
+    function($rootScope, $location, $window) {
+//      $rootScope.$on('$routeChangeSuccess', function() {
+//        $window.console.log($location.path());
+//        $window.ga('send', 'pageview', $location.path());
+//        $window._gaq.push(['_trackPageview', $location.path()]);
+//      });
+
+      $rootScope.loadTopMenu = function(title) {
+        if (typeof title === 'string') {
+          $window.document.title = title + ' :: Winify';
+        }
+        $window.Gumby.initialize('toggles');
+        $window.Gumby.initialize('fixed');
+      };
+    }
   ])
   .config(['$routeProvider', function($routeProvider) {
       $routeProvider
@@ -19,24 +41,28 @@ angular
         })
         .when('/agb', {
           templateUrl: 'views/agb.html',
-          controller: 'FooterPagesCtrl'/*,
-          reloadOnSearch: false*/
+          controller: 'FooterPagesCtrl'
         })
         .when('/impressum', {
           templateUrl: 'views/impressum.html',
-          controller: 'FooterPagesCtrl'/*,
-          reloadOnSearch: false*/
-        })
-        .when('/impressum2', {
-          templateUrl: 'views/impressum2.html',
-          controller: 'FooterPagesCtrl'/*,
-          reloadOnSearch: false*/
+          controller: 'FooterPagesCtrl'
         })
         .when('/datenschutz', {
           templateUrl: 'views/datenschutz.html',
-          controller: 'FooterPagesCtrl'/*,
+          controller: 'FooterPagesCtrl'
+        })
+        .when('/calculator', {
+          templateUrl: 'views/calculator.html',
+          controller: 'CalculatorCtrl'/*,
           reloadOnSearch: false*/
         })
+//        .when('/calculator/agreement', {
+//          templateUrl: 'views/calculator/agreement.html',
+//          controller: 'CalculatorCtrl'
+//        })
+//        .when('/calculator', {
+//          redirectTo: '/calculator/agreement'
+//        })
         .otherwise({
           redirectTo: '/home'
         });

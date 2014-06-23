@@ -7,7 +7,7 @@
 	 wnf-scroll-pos="{{offsetTop}}"
 	 ng-class="{active: block === 'intro', fixed: block !== 'intro'}">
 	<div class="fullscreenbanner-container"
-		 ng-include="'views/partials/home/intro.html'"
+		 ng-include="'views/home/intro.html'"
 		 onload="initIntroSlider()"></div>
 </div>
 
@@ -15,7 +15,7 @@
 	 wnf-scroll-pos="{{offsetTop}}">
 	<div class="tvalign row">
 		<div class="tcvalign text-center"
-			 ng-include="'views/partials/home/skills.html'"
+			 ng-include="'views/home/skills.html'"
 			 onload="loadSkillsBlock()"></div>
 	</div>
 </div>
@@ -23,21 +23,21 @@
 <div class="flow-block">
 	<div class="tvalign row">
 		<div class="tcvalign text-center"
-			 ng-include="'views/partials/home/flow.html'"
+			 ng-include="'views/home/flow.html'"
 			 onload=""></div>
 	</div>
 </div>
 
 <!--<div class="works-block" wnf-scroll-pos="{{offsetTop}}">
 	<div class="fullscreenbanner-container"
-		 ng-include="'views/partials/home/works.html'"
+		 ng-include="'views/home/works.html'"
 		 onload="initWorksSlider()"></div>
 </div>-->
 
 <div class="about-block" wnf-scroll-pos="{{offsetTop}}">
 	<div class="tvalign row">
 		<div class="tcvalign text-center"
-			 ng-include="'views/partials/home/about.html'"
+			 ng-include="'views/home/about.html'"
 			 onload=""></div>
 	</div>
 </div>
@@ -45,15 +45,15 @@
 <div class="quotes-block">
 	<div class="tvalign row">
 		<div class="tcvalign text-center"
-			 ng-include="'views/partials/home/quotes.html'"
+			 ng-include="'views/home/quotes.html'"
 			 onload=""></div>
 	</div>
 </div>
 
-<div class="work_with-block" wnf-scroll-pos="{{offsetTop}}">
+<div class="projekte-block" wnf-scroll-pos="{{offsetTop}}">
 	<div class="tvalign row">
 		<div class="tcvalign text-center"
-			 ng-include="'views/partials/home/work_with.html'"
+			 ng-include="'views/home/projekte.html'"
 			 onload=""></div>
 	</div>
 </div>
@@ -61,13 +61,13 @@
 <div class="contact-block" wnf-scroll-pos="{{offsetTop}}">
 	<div class="tvalign row">
 		<div class="tcvalign text-center"
-			 ng-include="'views/partials/home/contact.html'"
+			 ng-include="'views/home/contact.html'"
 			 onload=""></div>
 	</div>
 </div>
 
 <div class="gmap-block"
-	 ng-include="'views/partials/home/gmap.html'"></div>
+	 ng-include="'views/home/gmap.html'"></div>
 
 <div id="footer"
 	 ng-include="'views/partials/footer.html'"></div>

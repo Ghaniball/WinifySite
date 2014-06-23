@@ -26,7 +26,7 @@
 				<ul>
 					<li ng-repeat="_block in homePageBlocks"
 						class="two columns text-center"
-						ng-class="{push_one: _block.name === 'skills', push_two: _block.name === 'work_with'}"
+						ng-class="{push_one: _block.name === 'skills', push_two: _block.name === 'projekte'}"
 						ng-if="_block.name !== 'intro'">
 						<a href="#{{path}}?{{_block.name}}"
 						   ng-click="skipTo(_block.name)">
@@ -38,7 +38,7 @@
 								<i class="icon-info-circled"
 								   ng-if="_block.name === 'about'"></i>
 								<i class="icon-network"
-								   ng-if="_block.name === 'work_with'"></i>
+								   ng-if="_block.name === 'projekte'"></i>
 								<i class="fa fa-phone-square"
 								   ng-if="_block.name === 'contact'"></i>
 							</span>

@@ -63,7 +63,7 @@ body.home {
 .intro-block,
 .skills-block,
 .works-block,
-.work_with-block,
+.projekte-block,
 .contact-block,
 .about-block {
 	background-color: $llGray;
@@ -103,7 +103,7 @@ body.home {
 	}
 }
 
-.work_with-block {
+.projekte-block {
 	.separator {
 		height: 7%;
 	}
@@ -140,6 +140,6 @@ body.home {
 @import "home/about";
 @import "home/quotes";
 //@import "home/portfolio";
-@import "home/partners";
+@import "home/projekte";
 @import "home/contact";
 @import "home/gmap";
