@@ -3,7 +3,7 @@
 namespace WnfSite\Service;
 
 use Zend\Mail\Message,
-	Zend\Mail\Transport\Smtp as SmtpTransport,
+	Zend\Mail\Transport,
 	Zend\Mime\Message as MimeMessage,
 	Zend\Mime\Part as MimePart,
 	Zend\Mail\Transport\SmtpOptions;
@@ -17,14 +17,17 @@ class MailService {
 		$mailCfg = $this->config;
 
 		$message = new Message();
-		$message->setFrom($mailCfg->from->mail, $mailCfg->from->name)
+		$message//->setFrom($mailCfg->from->mail, $mailCfg->from->name)
 				->addTo($mailCfg->to->mail, $mailCfg->to->name)
-				//->addTo($mailCfg->cc->mail, $mailCfg->cc->name)
+				->addTo($mailCfg->cc->mail, $mailCfg->cc->name)
 				//->addTo($mailCfg->bcc->mail, $mailCfg->bcc->name)
 				->setSubject($mailCfg->subject);
 
 		// Setup SMTP transport using LOGIN authentication
-		$transport = new SmtpTransport();
+		//$transport = new Transport\SmtpTransport();
+
+		$transport = new Transport\Sendmail();
+
 		$options = new SmtpOptions(array(
 			'host' => $mailCfg->smtp->host,
 			'connection_class' => 'login',
@@ -45,7 +48,7 @@ class MailService {
 
 		$message->setBody($body);
 
-		$transport->setOptions($options);
+		//$transport->setOptions($options);
 		$transport->send($message);
 	}
 

@@ -17,11 +17,11 @@ angular
     '$location',
     '$window',
     function($rootScope, $location, $window) {
-//      $rootScope.$on('$routeChangeSuccess', function() {
+      $rootScope.$on('$routeChangeSuccess', function() {
 //        $window.console.log($location.path());
-//        $window.ga('send', 'pageview', $location.path());
-//        $window._gaq.push(['_trackPageview', $location.path()]);
-//      });
+        $window.ga('send', 'pageview', $location.path());
+        $window._gaq.push(['_trackPageview', $location.path()]);
+      });
 
       $rootScope.loadTopMenu = function(title) {
         if (typeof title === 'string') {
