@@ -1,0 +1,12 @@
+<div style="height: 7%"></div><h2 class="negative">Wir würden gerne mehr über<br><span>Ihr Projekt</span> erfahren.</h2><div style="height: 7%"></div><form name="contactForm" ng-init="initFormScope(this)" ng-if="!contact.sent" ng-submit="submitContact(contactForm.$valid)" novalidate><ul class="form-error" ng-show="contact.stripErrors === false"><!--		<li ng-repeat="err in contactForm.$error.required" class="danger alert">
+			Field "{{err.$name}}" is required
+		</li>
+		<li ng-repeat="err in contactForm.$error.minlength" class="danger alert">
+			Field "{{err.$name}}" is to short
+		</li>
+		<li ng-repeat="err in contactForm.$error.maxlength" class="danger alert">
+			Field "{{err.$name}}" is to long
+		</li>
+		<li ng-repeat="err in contact.errorMessages" class="danger alert">
+			{{err}}
+		</li>--><li class="danger alert">Bitte füllen Sie alle Felder aus!</li></ul><ul class="two_up tiles"><li><div class="field" ng-class="{danger: !contactForm.name.$valid && !contact.stripErrors}"><input name="name" ng-model="contactData.name" class="input" type="text" placeholder="Name" required ng-minlength="2" ng-maxlength="50"></div><div class="field" ng-class="{danger: !contactForm.email.$valid && !contact.stripErrors}"><input name="email" ng-model="contactData.email" class="input" type="email" placeholder="Email" required></div><div class="text-left"><span class="office-phone"><i class="icon-phone"></i>+41 41 511 2684</span></div></li><li><div class="field" ng-class="{danger: !contactForm.message.$valid && !contact.stripErrors}"><textarea name="message" ng-model="contactData.message" class="input textarea" placeholder="Ihre Nachricht" required ng-minlength="4" ng-maxlength="500"></textarea></div><div class="text-right"><div class="btn medium info"><button type="submit">Abschicken</button></div></div></li></ul><div class="form-overlay" ng-if="contactForm.$valid && contact.submited"></div></form><div class="success-message" ng-if="contact.sent"><div style="height: 3%"></div><h3>Vielen Dank, wir haben Ihre Nachricht erhalten!</h3><div style="height: 3%"></div></div><div style="height: 7%"></div>
