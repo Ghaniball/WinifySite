@@ -43,7 +43,8 @@
 		position: absolute;
 		width: 452px; height: 40%;
 		margin-left: -630px;
-		left: 50%; bottom: 0;
+		left: 50%; bottom: 0 !important;
+		top: auto !important;
 		border: none;
 		overflow: hidden;
 		background: none;
@@ -69,7 +70,6 @@
 			}
 		}
 	}
-
 }
 
 .intro-block.active {

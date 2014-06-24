@@ -7,3 +7,34 @@
 b {
 	font-weight: 600;
 }
+
+h2 {
+	/*margin: 1em 0;*/
+	text-transform: uppercase;
+	font-weight: 400;
+	color: $dGray;
+
+	span {
+		color: $orange;
+		font-weight: 700;
+	}
+
+	&.negative {
+		color: white;
+
+		span {
+			color: white;
+		}
+	}
+
+	&.negative-caption {
+		color: white;
+		font-weight: 300;
+		text-shadow: 0 5px 1px rgba(0, 0, 0, 0.5);
+
+		span {
+			color: white;
+			font-weight: 600;
+		}
+	}
+}

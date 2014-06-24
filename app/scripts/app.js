@@ -36,8 +36,7 @@ angular
       $routeProvider
         .when('/home', {
           templateUrl: 'views/home.html',
-          controller: 'HomeCtrl',
-          reloadOnSearch: false
+          controller: 'HomeCtrl'
         })
         .when('/agb', {
           templateUrl: 'views/agb.html',
@@ -50,11 +49,11 @@ angular
         .when('/datenschutz', {
           templateUrl: 'views/datenschutz.html',
           controller: 'FooterPagesCtrl'
-        })/*
+        })
         .when('/calculator', {
           templateUrl: 'views/calculator.html',
           controller: 'CalculatorCtrl'
-        })*/
+        })/**/
 //        .when('/calculator/agreement', {
 //          templateUrl: 'views/calculator/agreement.html',
 //          controller: 'CalculatorCtrl'

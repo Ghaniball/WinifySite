@@ -4,11 +4,20 @@
 	 ng-include="'views/partials/top_menu.html'"
 	 onload="loadTopMenu('Calculator')"></div>
 
-<div ng-include="'views/calculator/agreement.html'"
-	 ng-if="query.agreement"></div>
+<div class="tvalign row">
+	<div class="tcvalign text-center"
+		 ng-include="'views/calculator/agreement.html'"
+		 ng-if="query.agreement"></div>
+</div>
 
-<div ng-include="'views/calculator/platform.html'"
-	 ng-if="query.platform"></div>
+<div class="tvalign row">
+	<div class="tcvalign text-center"
+		 ng-include="'views/calculator/platform.html'"
+		 ng-if="query.platform"></div>
+</div>
 
-<div ng-include="'views/calculator/mobile.html'"
-	 ng-if="query.mobile"></div>
+<div class="tvalign row">
+	<div class="tcvalign text-center"
+		 ng-include="'views/calculator/mobile.html'"
+		 ng-if="query.mobile"></div>
+</div>

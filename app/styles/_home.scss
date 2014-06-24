@@ -4,6 +4,10 @@
 */
 
 body.home {
+	h2 {
+		margin: 0;
+	}
+	
 	.my-main-body {
 		height: 100%;
 		min-height: 0;
@@ -27,37 +31,6 @@ body.home {
 	> #footer {
 		display: none;
 	}
-
-	h2 {
-		margin: 0;
-		text-transform: uppercase;
-		font-weight: 400;
-		color: $dGray;
-
-		span {
-			color: $orange;
-			font-weight: 700;
-		}
-
-		&.negative {
-			color: white;
-
-			span {
-				color: white;
-			}
-		}
-
-		&.negative-caption {
-			color: white;
-			font-weight: 300;
-			text-shadow: 0 5px 1px rgba(0, 0, 0, 0.5);
-
-			span {
-				color: white;
-				font-weight: 600;
-			}
-		}
-	}
 }
 
 .intro-block,
@@ -66,7 +39,7 @@ body.home {
 .projekte-block,
 .contact-block,
 .about-block {
-	background-color: $llGray;
+	/*background-color: $llGray;*/
 	height: 100%;
 }
 
