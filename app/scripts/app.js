@@ -36,7 +36,8 @@ angular
       $routeProvider
         .when('/home', {
           templateUrl: 'views/home.html',
-          controller: 'HomeCtrl'
+          controller: 'HomeCtrl',
+          reloadOnSearch: false
         })
         .when('/agb', {
           templateUrl: 'views/agb.html',

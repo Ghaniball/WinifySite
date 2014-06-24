@@ -128,12 +128,12 @@ angular.module('winifySiteHomeCtrl', [])
        };
        */
       $scope.initQuotesSlider = function() {
-        if ($scope.block !== 'works' && $scope.block !== 'about') {
+        if ($scope.block !== 'projekte' && $scope.block !== 'about') {
           $scope.$broadcast('pause.quotes.slide');
         }
 
         $scope.$watch('block', function(val) {
-          if (val === 'works' || val === 'about') {
+          if (val === 'projekte' || val === 'about') {
             $scope.$broadcast('play.quotes.slide');
           } else {
             $scope.$broadcast('pause.quotes.slide');
