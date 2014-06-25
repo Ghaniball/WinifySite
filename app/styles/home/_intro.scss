@@ -181,7 +181,6 @@
 	}
 }
 
-
 .no-touch .intro-block.active .active {
 	nav {
 		a, a .txt {
@@ -225,4 +224,8 @@
 	.intro-block.fixed .sidenav-bullets {
 		display: none;
 	}
+}
+
+.intro-block.intro-mobile {
+	@include background-cover('../images/intro_slide_21.jpg');
 }

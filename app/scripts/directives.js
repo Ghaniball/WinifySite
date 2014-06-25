@@ -11,9 +11,18 @@ angular.module('winifySiteDirectives', [])
             min = element.offset().top - 155;
             max = element.outerHeight() + min + 155;
 
+//            if (element.hasClass('intro-block')) {
+//              window.console.log(min);
+//              window.console.log(max);
+//              window.console.log(scrollTop);
+//              window.console.log(scrollTop > min && scrollTop < max && scrollTop >= 0);
+//            }
             if (scrollTop > min && scrollTop < max && scrollTop >= 0) {
-              scope.block = element.attr('class').match(/\w+(?=-block)/gi)[0];
-              // window.console.log(scope);
+              scope.home.block = element.attr('class').match(/\w+(?=-block)/gi)[0];
+//              if (element.hasClass('intro-block')) {
+//                window.console.log('intro scope:');
+//                window.console.log(scope);
+//              }
             }
           });
         }
@@ -231,7 +240,7 @@ angular.module('winifySiteDirectives', [])
           restartTimer();
         }
       };
-      
+
       $scope.pause = function() {
         if (!$scope.noPause) {
           isPlaying = false;
@@ -267,10 +276,10 @@ angular.module('winifySiteDirectives', [])
           currentIndex--;
         }
       };
-      
+
       $scope.$on('pause.quotes.slide', $scope.pause);
       $scope.$on('play.quotes.slide', $scope.play);
-      
+
     }])
   .directive('carousel', [function() {
       return {

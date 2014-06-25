@@ -22,7 +22,7 @@
 				 data-easing="Power4.easeOut"
 				 data-endspeed="300"
 				 data-endeasing="Power1.easeIn"
-				 ng-class="{fixed: block !== 'intro'}">
+				 ng-class="{fixed: home.block !== 'intro'}">
 				<ul>
 					<li ng-repeat="_block in homePageBlocks"
 						class="two columns text-center"
@@ -165,7 +165,7 @@
 	<ul>
 		<li ng-repeat="_block in homePageBlocks">
 			<a href="#{{path}}?{{_block.name}}"
-			   ng-class="{active: block === _block.name}"
+			   ng-class="{active: home.block === _block.name}"
 			   ng-click="skipTo(_block.name)">
 				<i class="icon-dot"></i>
 				<span>{{_block.text}}</span>

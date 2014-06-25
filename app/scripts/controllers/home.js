@@ -14,7 +14,8 @@ angular.module('winifySiteHomeCtrl', [])
     'homePageBlocks',
     'skillsModel',
     'quotesModel',
-    function($rootScope, $scope, $location, $routeParams, $window, $timeout, $http, searchKey, gmapService, homePageBlocks, skillsModel, quotesModel)
+    'BSizeService',
+    function($rootScope, $scope, $location, $routeParams, $window, $timeout, $http, searchKey, gmapService, homePageBlocks, skillsModel, quotesModel, BSizeService)
     {
       var $ = $window.jQuery,
         $w = $($window),
@@ -26,8 +27,11 @@ angular.module('winifySiteHomeCtrl', [])
       $rootScope.isHome = true;
       $scope.offsetTop = false;
       $scope.path = $location.path();
-      $scope.block = searchKey.get() || 'intro';
+      $scope.home = {
+        'block': searchKey.get() || 'intro'
+      }
       $scope.homePageBlocks = homePageBlocks;
+      $scope.BrowserSize = BSizeService.get(true);
 
       $scope.skipTo = function(block) {
         //window.console.log('skipto: ' + block);
@@ -37,7 +41,7 @@ angular.module('winifySiteHomeCtrl', [])
       };
 
       $scope.loadSkillsBlock = function() {
-        $scope.skipTo($scope.block);
+        $scope.skipTo($scope.home.block);
 
         $w.on('scroll', function() {
           clearTimeout(delay);
@@ -50,7 +54,7 @@ angular.module('winifySiteHomeCtrl', [])
         });
       };
 
-      $scope.$watch('block', function(val) {
+      $scope.$watch('home.block', function(val) {
         //window.console.log('block: ' + val);
         $location.search(val);
       });
@@ -90,12 +94,12 @@ angular.module('winifySiteHomeCtrl', [])
         revapi.bind('revolution.slide.onloaded', function() {
           $(this).addClass('loaded');
 
-          if ($scope.block !== 'intro') {
+          if ($scope.home.block !== 'intro') {
             revapi.revpause();
           }
         });
 
-        $scope.$watch('block', function(val) {
+        $scope.$watch('home.block', function(val) {
           if (val === 'intro') {
             revapi.revresume();
           } else {
@@ -128,11 +132,11 @@ angular.module('winifySiteHomeCtrl', [])
        };
        */
       $scope.initQuotesSlider = function() {
-        if ($scope.block !== 'projekte' && $scope.block !== 'about') {
+        if ($scope.home.block !== 'projekte' && $scope.home.block !== 'about') {
           $scope.$broadcast('pause.quotes.slide');
         }
 
-        $scope.$watch('block', function(val) {
+        $scope.$watch('home.block', function(val) {
           if (val === 'projekte' || val === 'about') {
             $scope.$broadcast('play.quotes.slide');
           } else {
@@ -223,5 +227,16 @@ angular.module('winifySiteHomeCtrl', [])
           $scope.contact.stripErrors = true;
         }, 3000);
       }
+
+
+      $scope.$on('browser.resize', function($event, arg) {
+        window.console.log(arg);
+
+        $scope.BrowserSize = arg;
+      });
+
+      $scope.$on('$destroy', function() {
+        BSizeService.off();
+      });
     }
   ]);

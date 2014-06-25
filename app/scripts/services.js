@@ -31,6 +31,39 @@ angular.module('winifySiteServices', [])
       text: 'Kontakt'
     }
   ])
+  .factory('BSizeService', ['$window', '$timeout', '$rootScope',
+    function($window, $timeout, $rootScope) {
+      return {
+        'get': function(onResize) {
+          var $w = angular.element($window),
+            size = {
+              'width': $w.width(),
+              'height': $w.height()
+            };
+
+          //window.console.log($rootScope);
+
+          if (onResize) {
+            (function resize() {
+              $w.on('resize', function() {
+                $w.off('resize');
+                $rootScope.$broadcast('browser.resize', {
+                  'width': $w.width(),
+                  'height': $w.height()
+                });
+
+                $timeout(resize, 200);
+              });
+            })();
+          }
+
+          return size;
+        },
+        'stop': function() {
+          angular.element($window).off('resize');
+        }
+      };
+    }])
   .factory('searchKey', ['homePageBlocks', '$location',
     function(homePageBlocks, $location) {
       return {
