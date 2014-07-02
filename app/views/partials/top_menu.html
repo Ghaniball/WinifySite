@@ -1,25 +1,29 @@
-<div class="row navbar" id="nav1">
+<div class="navbar" id="nav1">
 	<!-- Toggle for mobile navigation, targeting the <ul> -->
 	<a class="toggle" gumby-trigger="#nav1 > ul" href="#"><i class="icon-menu"></i></a>
-	<div class="four columns logo">
-		<a href="#">
+
+	<div class="pull_left logo">
+		<a href="#home?intro"
+			   ng-click="skipTo('intro');sendEvent($event,'S0WinifyLogo');">
 			<img class="big-logo"
-				 src="/images/logo_winify.png" />
-			<img class="small-logo"
-				 src="/images/logo-des.png" />
-			<span>Winify</span>
+				 src="/images/logo_winify.png"/>
+			<!--<img class="small-logo"-->
+				 <!--src="/images/logo-des.png"/>-->
+			<span ng-hide="BrowserSize.width < 875">Winify</span>
 		</a>
 	</div>
-	<ul class="eight columns">
+	<ul class="pull_right">
 		<li><a href="#home?intro"
-			   ng-click="skipTo('intro')">Home</a></li>
+			   ng-click="skipTo('intro');sendEvent($event,'S0WinifyHome');">Home</a></li>
 		<li><a href="#home?skills"
-			   ng-click="skipTo('skills')">Leistungen</a></li>
+			   ng-click="skipTo('skills');sendEvent($event,'S0Skills');">Leistungen</a></li>
 		<li><a href="#home?about"
-			   ng-click="skipTo('about')">Wir</a></li>
+			   ng-click="skipTo('about');sendEvent($event,'S0About');">Wir</a></li>
 		<li><a href="#home?projekte"
-			   ng-click="skipTo('projekte')">Projekte</a></li>
+			   ng-click="skipTo('projekte');sendEvent($event,'S0Projekte');">Projekte</a></li>
 		<li><a href="#home?contact"
-			   ng-click="skipTo('contact')">Kontakt</a></li>
+			   ng-click="skipTo('contact');sendEvent($event,'S0Contact');">Kontakt</a></li>
+		<li><a href="/calculator/"
+			   ng-click="sendEvent($event,'S0Calculator');">Projektrechner</a></li>
 	</ul>
 </div>

@@ -1,5 +1,5 @@
 <div class="top-menu"
-	 ng-class="{active: block !== 'intro'}"
+	 ng-class="{active: block !== 'intro' || BrowserSize.width < 768}"
 	 ng-include="'views/partials/top_menu.html'"
 	 onload="loadTopMenu()"></div>
 
@@ -15,12 +15,12 @@
 	 wnf-scroll-pos="{{offsetTop}}">
 	<div class="tvalign row">
 		<div class="tcvalign text-center"
-			 ng-include="'views/home/skills.html'"
-			 onload="loadSkillsBlock()"></div>
+			 ng-include="'views/home/skills.html'"></div>
 	</div>
 </div>
 
-<div class="flow-block">
+<div class="flow-block"
+	 ng-if="BrowserSize.width >= 768">
 	<div class="tvalign row">
 		<div class="tcvalign text-center"
 			 ng-include="'views/home/flow.html'"
@@ -67,7 +67,9 @@
 </div>
 
 <div class="gmap-block"
+	 ng-if="BrowserSize.width >= 768"
 	 ng-include="'views/home/gmap.html'"></div>
 
 <div id="footer"
-	 ng-include="'views/partials/footer.html'"></div>
+	 ng-include="'views/partials/footer.html'"
+	 onload=""></div>

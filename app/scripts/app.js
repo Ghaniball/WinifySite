@@ -3,8 +3,8 @@
 angular
   .module('winifySiteApp', [
     /*'ngCookies',
-    'ngResource',
-    'ngSanitize',*/
+     'ngResource',
+     'ngSanitize',*/
     'ngRoute',
     'winifySiteHomeCtrl',
     'winifySiteFooterPagesCtrl',
@@ -16,20 +16,86 @@ angular
     '$rootScope',
     '$location',
     '$window',
-    function($rootScope, $location, $window) {
+    '$timeout',
+    'BSizeService',
+    function($rootScope, $location, $window, $timeout, BSizeService) {
+
+      $rootScope.timerInitial = new Date().getTime();
+
       $rootScope.$on('$routeChangeSuccess', function() {
-//        $window.console.log($location.path());
+        //$window.console.log($location.path());
         $window.ga('send', 'pageview', $location.path());
         $window._gaq.push(['_trackPageview', $location.path()]);
-      });
 
-      $rootScope.loadTopMenu = function(title) {
-        if (typeof title === 'string') {
-          $window.document.title = title + ' :: Winify';
+        $rootScope.timerInitial = new Date().getTime();
+      });
+      /*
+       $rootScope.$on('$viewContentLoaded', function() {
+       console.log('$viewContentLoaded');
+       $timeout(AnalyticsService.run, 500);
+       });
+       */
+      $rootScope.sendEvent = function(ev, label) {
+        var $this = angular.element(ev.currentTarget);
+/*
+        try {
+          console.log(ev);
+          console.log($this.prop('tagName'));
+          console.log($this.attr('href').charAt(0));
+          console.log($this.attr('target'));
+        } catch (err) {
         }
+        ev.preventDefault();*/
+        if ($this.prop('tagName') === 'A' && $this.attr('href').charAt(0) !== '#' && $this.attr('target') !== '_blank') {
+          ev.preventDefault();
+          $window.ga('send', {
+            'hitType': 'event',
+            'eventCategory': 'WebsiteBtns',
+            'eventAction': 'WebsiteClicks',
+            'eventLabel': label,
+            'eventValue': Math.round((new Date().getTime() - $rootScope.timerInitial) / 1000),
+            'hitCallback': function() {
+              $window.document.location = $this.attr('href');
+            }
+          });
+        } else {
+          $window.ga('send', {
+            'hitType': 'event',
+            'eventCategory': 'WebsiteBtns',
+            'eventAction': 'WebsiteClicks',
+            'eventLabel': label,
+            'eventValue': Math.round((new Date().getTime() - $rootScope.timerInitial) / 1000)
+          });
+        }
+
+        console.log('send event: ' + label);
+      };
+      /*
+       $rootScope.$on('$locationChangeSuccess', function() {
+       $window.console.log(arguments);
+       });
+       */
+      $rootScope.loadTopMenu = function(title) {
+        /* console.log('loadtopmenu');
+         if (typeof title === 'string') {
+         $window.document.title = title + ' :: Winify';
+         }*/
         $window.Gumby.initialize('toggles');
         $window.Gumby.initialize('fixed');
       };
+
+      $rootScope.BrowserSize = BSizeService.get(true);
+
+
+      $rootScope.$on('browser.resize', function($event, arg) {
+        //window.console.log(arg);
+
+        $rootScope.BrowserSize = arg;
+      });
+
+      $rootScope.$on('$destroy', function() {
+        BSizeService.off();
+      });
     }
   ])
   .config(['$routeProvider', function($routeProvider) {

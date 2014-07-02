@@ -3,15 +3,14 @@
     Author     : igodorogea
 */
 
-
 .top-menu {
 	background-color: #444;
-	background-color: rgba(0,0,0, .8);
+	background-color: rgba(0, 0, 0, .8);
 	position: fixed;
 	top: 0;
-	z-index: 30;
+	z-index: 40;
 	width: 100%;
-	
+
 	&.unfixed {
 		position: fixed !important;
 		top: 0 !important;
@@ -25,12 +24,19 @@
 	.navbar .logo a,
 	.navbar ul li,
 	.navbar ul li > a {
-		height: 100%;
 		line-height: $topMenuH;
 	}
 
+	.navbar .logo,
+	.navbar ul li {
+		height: 100%;
+		padding: 0 20px;
+	}
+
+	.navbar .logo a,
 	.navbar ul li > a {
 		height: $topMenuH;
+		padding: 0;
 	}
 
 	.navbar {
@@ -38,10 +44,11 @@
 		max-width: 100%;
 
 		.logo {
+			margin: 0;
+
 			a {
-				padding: 0 20px;
 				float: left;
-				font-size:22px;
+				font-size: 22px;
 
 				img {
 					@include inline-block;
@@ -77,22 +84,31 @@
 		}
 	}
 
+	.navbar .logo a:hover {
+		border-bottom: 4px solid $orange;
+	}
+
+	.navbar ul li > a:hover {
+		color: $orange;
+		border-bottom: 4px solid $orange;
+	}
 
 	&.active,
 	&.fixed {
 		.navbar .logo a img.big-logo {
-			display: none;
+			width: 58px;
+			height: auto;
 		}
 
-		.navbar .logo a img.small-logo {
-			@include inline-block;
-		}
+		//		.navbar .logo a img.small-logo {
+		//			@include inline-block;
+		//		}
 
 		background-color: #fff;
 		@include box-shadow(0 0 4px 0 rgba(0, 0, 0, 0.3));
 
 		.navbar {
-			min-height: 52px;
+			min-height: $topMenuHA;
 		}
 
 		.navbar .logo,
@@ -107,6 +123,10 @@
 			height: $topMenuHA;
 		}
 
+		.navbar .logo,
+		.navbar ul li {
+			padding: 0 1em;
+		}
 		.navbar .logo a > span {
 			display: none;
 		}
@@ -118,7 +138,6 @@
 		.navbar ul li > a {
 			font-size: 14px;
 			color: $dGray;
-			padding: 0 1em;
 
 			&:hover {
 				color: $orange;
@@ -136,4 +155,35 @@
 .gumby-no-touch .navbar ul li:hover > a,
 .gumby-touch .navbar ul li.active > a {
 	background: none;
+}
+
+@media only screen and (max-width: 767px) {
+	.top-menu.active,
+	.top-menu.fixed {
+		position: absolute !important;
+
+		.navbar ul {
+			top: $topMenuHA;
+			background-color: white;
+
+			li {
+				min-height: 40px;
+				border-top: 1px solid #ccc;
+
+				&,
+				> a {
+					line-height: 40px;
+				}
+
+				> a {
+					height: 40px;
+				}
+			}
+		}
+	}
+
+	.gumby-touch .navbar a:hover {
+		color: $orange !important;
+		border-bottom: 4px solid $orange;
+	}
 }

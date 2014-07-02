@@ -6,6 +6,10 @@
 .contact-block {
 	background-color: $orange;
 
+	.separator {
+		height: 3em;
+	}
+
 	form {
 		max-width: 540px;
 		margin: 0 auto;
@@ -34,15 +38,31 @@
 }
 
 
-@media only screen and (max-height: 650px) {
+@media only screen and (max-width: 767px) {
 	.contact-block {
+		.tiles.two_up {
+			overflow: visible;
+			margin-left: 0;
+		}
+		
+		.tiles.two_up > li,
+		.tiles.two_up > .tile {
+			float: none;
+			width: auto;
+			margin: 0;
+
+			&.submit-btn {
+				margin-top: -50px;
+			}
+		}
+
 		&, .tvalign, .tcvalign {
 			display: block;
 			height: auto;
 		}
 
 		.tcvalign {
-			padding: 1em 0;
+			padding: 3em 0;
 		}
 	}
 }

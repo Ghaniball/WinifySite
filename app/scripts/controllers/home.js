@@ -21,7 +21,7 @@ angular.module('winifySiteHomeCtrl', [])
         delay = 0,
         mapLoaded = false;
 
-      $window.document.title = 'Home :: Winify';
+      //$window.document.title = 'Home :: Winify';
 
       $rootScope.isHome = true;
       $scope.offsetTop = false;
@@ -31,12 +31,23 @@ angular.module('winifySiteHomeCtrl', [])
 
       $scope.skipTo = function(block) {
         //window.console.log('skipto: ' + block);
+        //window.console.log('block.top: ' + $('.' + block + '-block').offset().top);
         $('html,body').animate({
           'scrollTop': $('.' + block + '-block').offset().top
-        }, 900, 'easeInOutExpo');
+        }, 900, 'easeInOutExpo', function() {
+          $('#nav1 > ul').removeClass('active');
+        });
       };
 
-      $scope.loadSkillsBlock = function() {
+      $scope.initScrollTo = function() {
+        //window.console.log('loadSkillsBlock: ' + $scope.block);
+        //window.console.log('body.height: ' + $('body')[0].scrollHeight);
+        
+        //$('[class*="-block"]').each(function() {
+          //window.console.log($(this).attr('class'));
+          //window.console.log($(this).height());
+        //});
+        
         $scope.skipTo($scope.block);
 
         $w.on('scroll', function() {
@@ -55,10 +66,6 @@ angular.module('winifySiteHomeCtrl', [])
         $location.search(val);
       });
 
-//      $scope.$on('$locationChangeSuccess', function() {
-//        //window.console.log(arguments);
-//      });
-
       $scope.quotes = quotesModel;
 
       $scope.skills = skillsModel;
@@ -75,7 +82,7 @@ angular.module('winifySiteHomeCtrl', [])
       $scope.initIntroSlider = function() {
         var revapi = $('.intro-block .fullscreenbanner').revolution(
           {
-            delay: 10000,
+            delay: 15000,
             startwidth: 1170,
             startheight: 500,
             hideThumbs: 10,
@@ -87,21 +94,31 @@ angular.module('winifySiteHomeCtrl', [])
             navigationArrows: 'none'
           });
 
-        revapi.bind('revolution.slide.onloaded', function() {
-          $(this).addClass('loaded');
+        
+        if($window.Gumby.touchEvents && $window.Gumby.touchDevice) {
+          //window.console.log('=============touch============');
+          revapi.bind('revolution.slide.onloaded', function() {
+            $(this).addClass('loaded');
 
-          if ($scope.block !== 'intro') {
             revapi.revpause();
-          }
-        });
+          });
+        } else {
+          revapi.bind('revolution.slide.onloaded', function() {
+            $(this).addClass('loaded');
 
-        $scope.$watch('block', function(val) {
-          if (val === 'intro') {
-            revapi.revresume();
-          } else {
-            revapi.revpause();
-          }
-        });
+            if ($scope.block !== 'intro') {
+              revapi.revpause();
+            }
+          });
+
+          $scope.$watch('block', function(val) {
+            if (val === 'intro') {
+              revapi.revresume();
+            } else {
+              revapi.revpause();
+            }
+          });
+        }
       };
       /*
        $scope.initWorksSlider = function() {
@@ -223,5 +240,8 @@ angular.module('winifySiteHomeCtrl', [])
           $scope.contact.stripErrors = true;
         }, 3000);
       }
+
+
+      //$scope.$on('$destroy', function() {});
     }
   ]);

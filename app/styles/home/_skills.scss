@@ -18,6 +18,7 @@
 		}
 
 		.skill {
+			text-align: center;
 			position: absolute;
 			width: 100%;
 			height: 100%;
@@ -93,7 +94,7 @@
 	}
 }
 
-.no-touch .skill-list li .skill {
+.skill-list .skill {
 	.ico {
 		@include opacity(1);
 		@include transition(opacity 0.2s ease-in-out 0.1s, margin-top 0.2s ease-in-out 0.1s);
@@ -113,6 +114,93 @@
 
 		.d {
 			@include opacity(1);
+		}
+	}
+}
+
+@media only screen and (max-width: 940px) {
+	.skill-list li {
+		padding-top: 185px;
+	}
+
+	.skill-list li:first-child + li + li .h {
+		margin-left: -5px;
+	}
+}
+
+@media only screen and (max-width: 890px) {
+	.skill-list li .h {
+		font-size: 13px;
+	}
+}
+
+@media only screen and (max-width: 830px) {
+	.skill-list li .h {
+		font-size: 12px;
+	}
+
+	.skill-list li:first-child + li + li .h {
+		margin-left: -8px;
+	}
+}
+
+@media only screen and (max-width: 767px) {
+	.skills-block {
+		&, .tvalign, .tcvalign {
+			display: block;
+			height: auto;
+		}
+
+		.tcvalign {
+			padding: 2em 0;
+		}
+
+		.separator {
+			height: 3em;
+		}
+		
+		.skill-list li {
+			width: auto;
+			height: auto;
+			padding: 0;
+			float: none;
+
+			.skill {
+				text-align: left;
+				position: static;
+				margin-bottom: 4em;
+				padding: 0;
+
+				&:hover {
+					background: none;
+					border: none;
+					padding: 0;
+				}
+
+				.ico {
+					width: 100px;
+					float: left;
+				}
+
+				.ico,
+				.d {
+					@include transition(none);
+					filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100) !important;
+					opacity: 1 !important;
+					margin-top: 0 !important;
+				}
+
+				.h,
+				.d {
+					margin-left: 120px;
+					font-size: 17.6px;
+					font-size: 1.1rem;
+				}
+
+				.d {
+					display: block;
+				}
+			}
 		}
 	}
 }

@@ -329,6 +329,11 @@ module.exports = function (grunt) {
           cwd: '<%= yeoman.app %>/../',
           src: ['app_php/**', 'composer.json', 'composer.lock', 'composer.phar'],
           dest: '<%= yeoman.dist %>/../'
+        }, {
+          expand: true,
+          cwd: '<%= yeoman.app %>/bower_components/gumby/js/libs',
+          src: ['jquery.mobile.custom.min.js'],
+          dest: '<%= yeoman.dist %>/js/libs'
         }]
       },
       styles: {
@@ -336,6 +341,12 @@ module.exports = function (grunt) {
         cwd: '<%= yeoman.app %>/styles',
         dest: '.tmp/styles/',
         src: '{,*/}*.css'
+      },
+      server: {
+        expand: true,
+        cwd: '<%= yeoman.app %>/bower_components/gumby/js/libs',
+        src: ['jquery.mobile.custom.min.js'],
+        dest: '.tmp/js/libs'
       }
     },
 
@@ -399,6 +410,7 @@ module.exports = function (grunt) {
       'clean:server',
       'bowerInstall',
       'concurrent:server',
+      'copy:server',
       'autoprefixer',
       'connect:livereload',
       'watch'

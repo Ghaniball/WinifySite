@@ -1,35 +1,37 @@
-
 <div class="fullscreenbanner">
 	<ul>
 		<li class="first-slide-intro"
 			data-transition="fade"
 			data-slotamount="4"
-			data-masterspeed="1000">
+			data-masterspeed="2500">
 			<img src="images/intro-bg6.jpg"
 				 alt="slidebg1"
 				 data-bgfit="cover"
 				 data-bgposition="center center"
 				 data-bgrepeat="no-repeat">
 
-			<!-- LAYERS -->
-			<!-- LAYER NR. 1 -->
-			<nav class="skiplinks-nav row caption lft"
-				 data-x="center"
-				 data-y="center"
-				 data-voffset="-50"
-				 data-speed="400"
-				 data-start="800"
-				 data-easing="Power4.easeOut"
-				 data-endspeed="300"
-				 data-endeasing="Power1.easeIn"
-				 ng-class="{fixed: block !== 'intro'}">
-				<ul>
-					<li ng-repeat="_block in homePageBlocks"
-						class="two columns text-center"
-						ng-class="{push_one: _block.name === 'skills', push_two: _block.name === 'projekte'}"
-						ng-if="_block.name !== 'intro'">
-						<a href="#{{path}}?{{_block.name}}"
-						   ng-click="skipTo(_block.name)">
+
+			<!--<div class="caption-wrapper row">-->
+				<!--<div class="caption-position">-->
+					<!-- LAYERS -->
+					<!-- LAYER NR. 1 -->
+					<nav class="skiplinks-nav row caption lft"
+						 data-x="center"
+						 data-y="center"
+						 data-voffset="-50"
+						 data-speed="400"
+						 data-start="800"
+						 data-easing="Power4.easeOut"
+						 data-endspeed="300"
+						 data-endeasing="Power1.easeIn"
+						 ng-class="{fixed: block !== 'intro'}">
+						<ul>
+							<li ng-repeat="_block in homePageBlocks"
+								class="two columns text-center"
+								ng-class="{push_one: _block.name === 'skills', push_two: _block.name === 'projekte'}"
+								ng-if="_block.name !== 'intro'">
+								<a href="#{{path}}?{{_block.name}}"
+								   ng-click="skipTo(_block.name); sendEvent($event,'S1' + (_block.name.charAt(0).toUpperCase() + _block.name.slice(1)));">
 							<span class="ico">
 								<i class="icon-graduation-cap"
 								   ng-if="_block.name === 'skills'"></i>
@@ -42,37 +44,43 @@
 								<i class="fa fa-phone-square"
 								   ng-if="_block.name === 'contact'"></i>
 							</span>
-							<h4 class="txt">{{_block.text}}</h4>
+									<h4 class="txt">{{_block.text}}</h4>
+								</a>
+							</li>
+						</ul>
+					</nav>
+
+					<!-- LAYER NR. 3 -->
+					<div class="phone-calculator caption lfb"
+						 data-x="center"
+						 data-y="bottom"
+						 data-speed="600"
+						 data-start="800">
+						<a href="/calculator/"
+						   ng-click="sendEvent($event,'S1iPhoneCalcBtn');">
+							<img src="images/calculator_v2.png" alt=""/>
+							<img class="overlay" src="images/calculator_v2_overlay_v2.png" alt=""/>
 						</a>
-					</li>
-				</ul>
-			</nav>
+					</div>
 
-			<!-- LAYER NR. 2 -->
-			<div class="tp-caption skewfromright large bxwide orange btn"
-				 data-x="center"
-				 data-y="center"
-				 data-voffset="200"
-				 data-speed="400"
-				 data-start="1500"
-				 data-easing="Power4.easeOut"
-				 data-endspeed="300"
-				 data-endeasing="Power1.easeIn">
-				<a href="/calculator/">Projektrechner</a>
-			</div>
-
-			<!-- LAYER NR. 3 -->
-			<div class="phone-calculator caption lfb"
-				 data-x="center"
-				 data-y="bottom"
-				 data-speed="600"
-				 data-start="800">
-				<a href="/calculator/">
-					<img src="images/calculator_v2.png" alt="" />
-					<img class="overlay" src="images/calculator_v2_overlay_v2.png" alt="" />
-				</a>
-			</div>
-
+					<!-- LAYER NR. 2 -->
+					<div class="tp-caption skewfromright large bxwide orange btn big-btn"
+						 data-x="center"
+						 data-y="center"
+						 data-voffset="200"
+						 data-speed="400"
+						 data-start="1500"
+						 data-easing="Power4.easeOut"
+						 data-endspeed="300"
+						 data-endeasing="Power1.easeIn">
+						<a href="/calculator/"
+						   ng-click="sendEvent($event,'S1CalcBtn');">
+							Projektrechner <br/>
+							<span>Hier in wenigen Schritten die Kosten Ihres Projektes (Webseite oder App) berechnen.</span>
+						</a>
+					</div>
+				<!--</div>-->
+			<!--</div>-->
 		</li>
 		<li data-transition="fade"
 			data-slotamount="4"
@@ -83,14 +91,15 @@
 				 data-bgposition="center center"
 				 data-bgrepeat="no-repeat">
 
-			<div class="caption-wrapper">
-				<div class="row">
-					<!--LAYERS--> 
-					<!--LAYER NR. 1--> 
+			<div class="caption-wrapper row">
+				<div class="caption-position">
+					<!--LAYERS-->
+					<!--LAYER NR. 1-->
 					<h2 class="negative-caption tp-caption lft"
 						data-y="center"
-						data-x="0"
+						data-x="left"
 						data-voffset="-100"
+						data-hoffset="0"
 						data-speed="600"
 						data-start="1000"
 						data-easing="Power4.easeOut"
@@ -100,7 +109,7 @@
 						Ihre <span>Ideen.</span>
 					</h2>
 
-					<!--LAYER NR. 2--> 
+					<!--LAYER NR. 2-->
 					<div class="tp-caption skewfromleft large bxwide orange btn"
 						 data-y="center"
 						 data-x="0"
@@ -110,12 +119,13 @@
 						 data-endspeed="300"
 						 data-endeasing="Power1.easeIn">
 						<a href="#{{path}}?about"
-						   ng-click="skipTo('about')">Über uns</a>
+						   ng-click="skipTo('about');sendEvent($event,'S2About');">Über uns</a>
 					</div>
 				</div>
 			</div>
 		</li>
-		<li data-transition="slideleft"
+		<li class="contact-slide"
+			data-transition="slideleft"
 			data-slotamount="4"
 			data-masterspeed="1000">
 			<img src="images/intro-bg.jpg"
@@ -124,10 +134,10 @@
 				 data-bgposition="center center"
 				 data-bgrepeat="no-repeat">
 
-			<div class="caption-wrapper">
-				<div class="row">
-					<!--LAYERS--> 
-					<!--LAYER NR. 1--> 
+			<div class="caption-wrapper row">
+				<div class="caption-position">
+					<!--LAYERS-->
+					<!--LAYER NR. 1-->
 					<h2 class="negative-caption tp-caption lft"
 						data-y="center"
 						data-x="0"
@@ -141,24 +151,24 @@
 						Lassen Sie uns gemeinsam etwas neues ausprobieren!
 					</h2>
 
-					<!--LAYER NR. 2--> 
+					<!--LAYER NR. 2-->
 					<div class="tp-caption skewfromleft large bxwide orange btn"
 						 data-y="center"
 						 data-x="0"
-						 data-voffset="30"
+						 data-voffset="50"
 						 data-speed="600"
 						 data-start="1400"
 						 data-easing="Power4.easeOut"
 						 data-endspeed="300"
 						 data-endeasing="Power1.easeIn">
 						<a href="#{{path}}?contact"
-						   ng-click="skipTo('contact')">Kontakt</a>
+						   ng-click="skipTo('contact');sendEvent($event,'S2Contact');">Kontakt</a>
 					</div>
 				</div>
 			</div>
 		</li>
 	</ul>
-	<div class="tp-bannertimer tp-bottom"></div>	
+	<div class="tp-bannertimer tp-bottom"></div>
 </div>
 
 <nav class="sidenav-bullets">

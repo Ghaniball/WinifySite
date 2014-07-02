@@ -30,7 +30,162 @@ angular.module('winifySiteServices', [])
       name: 'contact',
       text: 'Kontakt'
     }
-  ])
+  ])/*
+  .factory('AnalyticsService', ['$window', '$timeout', '$rootScope',
+    function($window, $timeout, $rootScope) {
+      return {
+        'run': function() {
+          var $ = angular.element;
+          //top menu
+          $('#nav1').find('li a').click(function() {
+            switch($(this).attr('href')) {
+              case '#home?intro':
+                sendEvent('S0WinifyHome');
+                break;
+
+              case '#home?skills':
+                sendEvent('S0Skills');
+                break;
+
+              case '#home?about':
+                sendEvent('S0About');
+                break;
+
+              case '#home?projekte':
+                sendEvent('S0Projekte');
+                break;
+
+              case '#home?contact':
+                sendEvent('S0Contact');
+                break;
+            }
+          });
+
+          // intro block
+          $('.intro-block a').click(function() {
+            switch($(this).attr('href')) {
+              case '/calculator/':
+                if ($(this).parent().hasClass('phone-calculator')) {
+                  sendEvent('W1iPhoneCalcBtn');
+                } else {
+                  sendEvent('W1CalcBtn');
+                }
+                break;
+
+              case '#home?skills':
+                sendEvent('W1Skills');
+                break;
+
+              case '#home?about':
+                if ($(this).parent().prop('tagName') === 'LI') {
+                  sendEvent('W1About');
+                } else {
+                  sendEvent('W2About');
+                }
+                break;
+
+              case '#home?projekte':
+                sendEvent('W1Projekte');
+                break;
+
+              case '#home?contact':
+                if ($(this).parent().prop('tagName') === 'LI') {
+                  sendEvent('W1Contact');
+                } else {
+                  sendEvent('W2Contact');
+                }
+                break;
+            }
+          });
+
+          // projekte block
+          $('.projekte-block .partners a').click(function() {
+            switch($(this).attr('href')) {
+              case 'http://muume.com/':
+                sendEvent('W3ProjectMUUME');
+                break;
+
+              case 'http://pcp-europe.com/':
+                sendEvent('W3ProjectPCP');
+                break;
+
+              case 'http://www.iwant2.com/':
+                sendEvent('W3ProjectW2');
+                break;
+
+              case 'http://corporate.vorwerk.de/de/home/':
+                sendEvent('W3ProjectVORWERK');
+                break;
+
+              case 'http://www.afterbuy.de/':
+                sendEvent('W3ProjectAFTERBUY');
+                break;
+
+              case 'http://cashlessnation.com/':
+                sendEvent('W3ProjectCashlessNation');
+                break;
+            }
+          });
+
+          // contact form
+          $('.contact-block form button').click(function() {
+            sendEvent('W3ContactFormBtn');
+          });
+
+          // socials
+          $('.social-nav a').click(function() {
+            switch($(this).attr('href')) {
+              case 'https://www.facebook.com/Winify':
+                sendEvent('W3FBbutton');
+                break;
+
+              case 'https://twitter.com/Winify_com':
+                sendEvent('W3TwitterButton');
+                break;
+            }
+          });
+
+
+          function sendEvent(label) {
+            $window.ga('send', 'event', 'WebsiteBtns', 'WebsiteClicks', label, (new Date().getTime() - $rootScope.timerInitial)/1000);
+          }
+
+        }
+      };
+    }])*/
+  .factory('BSizeService', ['$window', '$timeout', '$rootScope',
+    function($window, $timeout, $rootScope) {
+      return {
+        'get': function(onResize) {
+          var $w = angular.element($window),
+            size = {
+              'width': $w.width(),
+              'height': $w.height()
+            };
+
+          //window.console.log($rootScope);
+
+          if (onResize) {
+            (function resize() {
+              $w.on('resize', function() {
+                $w.off('resize');
+                $rootScope.$broadcast('browser.resize', {
+                  'width': $w.width(),
+                  'height': $w.height()
+                });
+
+                $timeout(resize, 200);
+              });
+            })();
+          }
+
+          return size;
+        },
+        'stop': function() {
+          angular.element($window).off('resize');
+        }
+      };
+    }])
   .factory('searchKey', ['homePageBlocks', '$location',
     function(homePageBlocks, $location) {
       return {
@@ -170,7 +325,7 @@ angular.module('winifySiteServices', [])
       }
     }
   ])
-  .factory('gmapService', ['$window', function($window) {
+  .factory('gmapService', ['$window', '$rootScope', function($window, $rootScope) {
       var styles = [
         {'featureType': 'water', 'stylers': [{'visibility': 'on'}, {'color': '#e0f0fa'}]},
         {'featureType': 'landscape', 'stylers': [{'visibility': 'on'}, {'color': '#fff6e5'}]},
@@ -187,9 +342,13 @@ angular.module('winifySiteServices', [])
       return {
         init: function() {
 
-          function addMarker(coords, infoTxt) {
+          function sendEvent(label) {
+            $window.ga('send', 'event', 'WebsiteBtns', 'WebsiteClicks', label, (new Date().getTime()-$rootScope.timerInitial)/1000);
+          }
+
+          function addMarker(coords, infoTxt, code) {
             var markerPos = new google.maps.LatLng(coords[0], coords[1]);
-            var marker = new google.maps.Marker({position: markerPos, map: map, title: 'Winify'});
+            var marker = new google.maps.Marker({position: markerPos, map: map, title: 'Winify', secretCode: code});
             bounds.extend(markerPos);
 
 
@@ -197,6 +356,28 @@ angular.module('winifySiteServices', [])
 
             google.maps.event.addListener(marker, 'click', function() {
               infoWindow.open(map, marker);
+
+              switch(marker.secretCode) {
+                case 'cham':
+                  sendEvent('S3MapCH');
+                  break;
+
+                case 'berlin':
+                  sendEvent('S3MapDEBelin');
+                  break;
+
+                case 'munchen':
+                  sendEvent('S3MapDEMunich');
+                  break;
+
+                case 'krakow':
+                  sendEvent('S3MapPL');
+                  break;
+
+                case 'chisinau':
+                  sendEvent('S3MapMD');
+                  break;
+              }
             });
           }
 
@@ -217,15 +398,15 @@ angular.module('winifySiteServices', [])
           };
 
           // Schweiz
-          addMarker([47.1861859, 8.473614], infoTexts.schweiz);
+          addMarker([47.1861859, 8.473614], infoTexts.schweiz, 'cham');
           // Deutschland Berlin
-          addMarker([52.533502, 13.349253], infoTexts.berlin);
+          addMarker([52.533502, 13.349253], infoTexts.berlin, 'berlin');
           // Deutschland Munchen
-          addMarker([48.131939, 11.503241], infoTexts.munchen);
+          addMarker([48.131939, 11.503241], infoTexts.munchen, 'munchen');
           // Poland
-          addMarker([50.057118, 19.92484], infoTexts.poland);
+          addMarker([50.057118, 19.92484], infoTexts.poland, 'krakow');
           // Moldova
-          addMarker([47.02948428, 28.84300053], infoTexts.moldova);
+          addMarker([47.02948428, 28.84300053], infoTexts.moldova, 'chisinau');
 
           map.fitBounds(bounds);
         }

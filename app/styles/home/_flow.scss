@@ -43,6 +43,7 @@
 			left: 0; top: 0;
 			background-color: $dGray;
 			color: white;
+			text-align: center;
 		}
 
 		.ico {
@@ -104,11 +105,6 @@
 			}
 		}
 
-		.flow:hover .d {
-			visibility: visible;
-			bottom: 75px;
-			@include opacity(1);
-		}
 	}
 }
 
@@ -116,22 +112,9 @@
 	.d {
 		@include transition(opacity .3s ease-in-out 0.1s, bottom .3s ease-in-out 0.1s);
 	}
-}
-
-@media only screen and (max-height: 750px) {
-
-	.flow-block {
-		&, .tvalign, .tcvalign {
-			display: block;
-			height: auto;
-		}
-
-		.tcvalign {
-			padding: 1em 0;
-		}
-
-		.separator {
-			height: 2em;
-		}
+	.flow:hover .d {
+		visibility: visible;
+		bottom: 75px;
+		@include opacity(1);
 	}
 }

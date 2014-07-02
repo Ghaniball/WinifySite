@@ -1191,7 +1191,7 @@ border-style:none;
 .tpclear		{	clear:both;}
 
 
-.tp-bullets									{	z-index:1000; position:absolute;
+.tp-bullets									{	z-index:21; position:absolute;
 												-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
 												-moz-opacity: 1;
 												-khtml-opacity: 1;
@@ -1367,7 +1367,7 @@ border-style:none;
 /************************************
 		-	TP BANNER TIMER		-
 *************************************/
-.tp-bannertimer								{	width:100%; height:10px; background:url(../images/assets/timer.png);position:absolute; z-index:200;top:0px;}
+.tp-bannertimer								{	width:100%; height:10px; background:url(../images/assets/timer.png);position:absolute; z-index:30;top:0px;}
 .tp-bannertimer.tp-bottom					{	bottom:0px;height:5px; top:auto;}
 
 
