@@ -3,9 +3,9 @@ WinifySite
 
 ##Dependencies
 * [Yeoman](http://yeoman.io/)
-	** [node.js](http://nodejs.org/download/)
+	* [node.js](http://nodejs.org/download/)
 * [SASS](http://sass-lang.com/)/[COMPASS](http://compass-style.org/)
-	** [ruby](https://www.ruby-lang.org/en/installation/)
+	* [ruby](https://www.ruby-lang.org/en/installation/)
 
 
 ##Instalation
@@ -31,14 +31,13 @@ composer install
 bower install
 ```
 
-Download archive(ask for access)
-https://drive.google.com/file/d/0B4sZm5QeE5FVNjNpNGVQQnhOVG8/edit?usp=sharing
-and paste config folder inside <project root>/app_php/WnfSite/
+Download this [archive](https://drive.google.com/file/d/0B4sZm5QeE5FVNjNpNGVQQnhOVG8/edit?usp=sharing)(ask for access)  
+and paste `config` folder inside `<project root>/app_php/WnfSite/`
 
 
-go to <project root>/app/bower_components/jqueryui/.bower.json
-find this line "ui/jquery-ui.js"
-change it to "ui/jquery.ui.efect.js"
+go to `<project root>/app/bower_components/jqueryui/.bower.json`  
+find this line `"ui/jquery-ui.js"`  
+change it to `"ui/jquery.ui.efect.js"`
 
 
 ##Usage
