@@ -477,11 +477,11 @@ module.exports = function (grunt) {
     exec: {
       gitadd: {
         cwd: '<%= yeoman.dist %>/../',
-        cmd: 'git add .'
+        cmd: 'git add --all .'
       },
       gitcommit: {
         cwd: '<%= yeoman.dist %>/../',
-        cmd: 'git commit -m"Test commit"'
+        cmd: 'git commit -m"Auto deploy"'
       },
       gitpush: {
         cwd: '<%= yeoman.dist %>/../',
