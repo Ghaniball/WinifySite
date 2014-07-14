@@ -30,7 +30,7 @@
 								class="two columns text-center"
 								ng-class="{push_one: _block.name === 'skills', push_two: _block.name === 'projekte'}"
 								ng-if="_block.name !== 'intro'">
-								<a href="#{{path}}?{{_block.name}}"
+								<a href="{{path}}?{{_block.name}}"
 								   ng-click="skipTo(_block.name); sendEvent($event,'S1' + (_block.name.charAt(0).toUpperCase() + _block.name.slice(1)));">
 							<span class="ico">
 								<i class="icon-graduation-cap"
@@ -118,7 +118,7 @@
 						 data-easing="Power4.easeOut"
 						 data-endspeed="300"
 						 data-endeasing="Power1.easeIn">
-						<a href="#{{path}}?about"
+						<a href="{{path}}?about"
 						   ng-click="skipTo('about');sendEvent($event,'S2About');">Über uns</a>
 					</div>
 				</div>
@@ -161,7 +161,7 @@
 						 data-easing="Power4.easeOut"
 						 data-endspeed="300"
 						 data-endeasing="Power1.easeIn">
-						<a href="#{{path}}?contact"
+						<a href="{{path}}?contact"
 						   ng-click="skipTo('contact');sendEvent($event,'S2Contact');">Kontakt</a>
 					</div>
 				</div>
@@ -171,10 +171,10 @@
 	<div class="tp-bannertimer tp-bottom"></div>
 </div>
 
-<nav class="sidenav-bullets">
+<!--<nav class="sidenav-bullets">
 	<ul>
 		<li ng-repeat="_block in homePageBlocks">
-			<a href="#{{path}}?{{_block.name}}"
+			<a href="{{path}}?{{_block.name}}"
 			   ng-class="{active: block === _block.name}"
 			   ng-click="skipTo(_block.name)">
 				<i class="icon-dot"></i>
@@ -182,4 +182,4 @@
 			</a>
 		</li>
 	</ul>
-</nav>
+</nav>-->

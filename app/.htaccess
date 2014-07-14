@@ -541,3 +541,16 @@ FileETag None
 # <IfModule mod_headers.c>
 #    Header set Connection Keep-Alive
 # </IfModule>
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+	
+	RewriteCond %{QUERY_STRING} ^_escaped_fragment_=(.*)$
+    RewriteRule ^$ /snapshots/index.html? [L,NC]
+    RewriteCond %{QUERY_STRING} ^_escaped_fragment_=(.*)$
+    RewriteRule ^(.*)$ /snapshots/$1.html? [L,NC]
+
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule (.*) index.html [QSA,L]
+</IfModule>

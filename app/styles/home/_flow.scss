@@ -118,3 +118,20 @@
 		@include opacity(1);
 	}
 }
+
+@media only screen and (max-height: 680px), only screen and (max-width: 930px) {
+	.flow-block {
+		&, .tvalign, .tcvalign {
+			display: block;
+			height: auto;
+		}
+
+		.tcvalign {
+			padding: 2em 0;
+		}
+
+		.separator {
+			height: 2em;
+		}
+	}
+}

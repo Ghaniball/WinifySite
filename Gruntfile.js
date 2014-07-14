@@ -7,6 +7,8 @@
 // use this if you want to recursively match all subfolders:
 // 'test/spec/**/*.js'
 
+var modRewrite = require('connect-modrewrite');
+
 module.exports = function (grunt) {
 
   // Load grunt tasks automatically
@@ -76,7 +78,17 @@ module.exports = function (grunt) {
           base: [
             '.tmp',
             '<%= yeoman.app %>'
-          ]
+          ],
+          // MODIFIED: Add this middleware configuration
+          middleware: function(connect, options) {
+            var middlewares = [];
+ 
+            middlewares.push(modRewrite(['^[^\\.]*$ /index.html [L]'])); //Matches everything that does not contain a '.' (period)
+            options.base.forEach(function(base) {
+              middlewares.push(connect.static(base));
+            });
+            return middlewares;
+          }
         }
       },
       test: {
@@ -87,6 +99,24 @@ module.exports = function (grunt) {
             'test',
             '<%= yeoman.app %>'
           ]
+        }
+      },
+      snapshot: {
+        options: {
+          port: 9011,
+          base: [
+            '.tmp',
+            '<%= yeoman.app %>'
+          ],
+          middleware: function(connect, options) {
+            var middlewares = [];
+ 
+            middlewares.push(modRewrite(['^[^\\.]*$ /index.html [L]'])); //Matches everything that does not contain a '.' (period)
+            options.base.forEach(function(base) {
+              middlewares.push(connect.static(base));
+            });
+            return middlewares;
+          }
         }
       },
       dist: {
@@ -314,8 +344,10 @@ module.exports = function (grunt) {
             '*.{ico,png,txt}',
             '.htaccess',
             '*.html',
+            '*.xml',
             '*.php',
-            'views/{,*/}{,*/}*.html',
+            'views/{,*/}*.html',
+            '!views/home/*.html',
             'images/{,*/}*.{webp}',
             'fonts/**'
           ]
@@ -334,7 +366,18 @@ module.exports = function (grunt) {
           cwd: '<%= yeoman.app %>/bower_components/gumby/js/libs',
           src: ['jquery.mobile.custom.min.js'],
           dest: '<%= yeoman.dist %>/js/libs'
+        }, {
+          expand: true,
+          cwd: '<%= yeoman.app %>/../',
+          src: ['snapshots/**'],
+          dest: '<%= yeoman.dist %>/../'
         }]
+      },
+      case: {
+        expand: true,
+        cwd: '<%= yeoman.app %>/views',
+        dest: '.tmp/case/',
+        src: 'home.html'
       },
       styles: {
         expand: true,
@@ -391,6 +434,60 @@ module.exports = function (grunt) {
     //   dist: {}
     // },
 
+    // Configuration to be run (and then tested).
+    nginclude: {
+      dist: {
+        options: {
+          assetsDirs: ['<%= yeoman.app %>']
+        },
+        files: {
+          '<%= yeoman.dist %>/views/home.html': ['<%= yeoman.app %>/views/home.html']
+        },
+      }
+    },
+    htmlSnapshot: {
+      all: {
+        options: {
+          snapshotPath: '<%= yeoman.dist %>/snapshots/',
+          sitePath: 'http://winify-site.lc/',
+          fileNamePrefix: '',
+          msWaitForPages: 3000,
+          removeScripts: true,
+          removeLinkTags: true,
+          removeMetaTags: true,
+          replaceStrings: [
+            {'<html ': '<!doctype html><html '}
+          ],
+          sanitize: function (requestUri) {
+            if (/\/$/.test(requestUri)) {
+              return 'index';
+            } else {
+              return requestUri;
+            }
+          },
+          urls: [
+            '/',
+            'datenschutz',
+            'impressum',
+            'agb'
+          ]
+        }
+      }
+    },
+    exec: {
+      gitadd: {
+        cwd: '<%= yeoman.dist %>/../',
+        cmd: 'git add .'
+      },
+      gitcommit: {
+        cwd: '<%= yeoman.dist %>/../',
+        cmd: 'git commit -m"Test commit"'
+      },
+      gitpush: {
+        cwd: '<%= yeoman.dist %>/../',
+        cmd: 'git push origin'
+      }
+    },
     // Test settings
     karma: {
       unit: {
@@ -430,6 +527,12 @@ module.exports = function (grunt) {
     'karma'
   ]);
 
+  grunt.registerTask('seoSnapshot', [
+    'clean:server',
+    'connect:snapshot',
+    'htmlSnapshot'
+  ]);
+
   grunt.registerTask('build', [
     'clean:dist',
     'bowerInstall',
@@ -438,13 +541,17 @@ module.exports = function (grunt) {
     'autoprefixer',
     'concat',
     'ngmin',
+    //'seoSnapshot',
     'copy:dist',
+    'nginclude:dist',
     'cdnify',
     'cssmin',
     'uglify',
     'rev',
     'usemin',
-    'htmlmin'
+    'htmlmin',
+    'htmlSnapshot',
+    'exec'
   ]);
 
   grunt.registerTask('default', [

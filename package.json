@@ -1,7 +1,6 @@
 {
   "name": "winifysite",
   "version": "0.0.0",
-  "dependencies": {},
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-autoprefixer": "~0.4.0",
@@ -31,7 +30,11 @@
     "grunt-karma": "^0.8.3",
     "karma": "^0.12.16",
     "karma-ng-html2js-preprocessor": "^0.1.0",
-    "karma-jasmine": "^0.1.5"
+    "karma-jasmine": "^0.1.5",
+    "grunt-nginclude": "^0.4.1",
+    "grunt-html-snapshot": "^0.6.1",
+    "grunt-nginclude": "^0.4.1",
+    "grunt-exec": "^0.4.5"
   },
   "engines": {
     "node": ">=0.10.0"

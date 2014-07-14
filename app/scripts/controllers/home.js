@@ -22,10 +22,11 @@ angular.module('winifySiteHomeCtrl', [])
         mapLoaded = false;
 
       //$window.document.title = 'Home :: Winify';
+      
+      window.console.log($location);
 
       $rootScope.isHome = true;
       $scope.offsetTop = false;
-      $scope.path = $location.path();
       $scope.block = searchKey.get() || 'intro';
       $scope.homePageBlocks = homePageBlocks;
 

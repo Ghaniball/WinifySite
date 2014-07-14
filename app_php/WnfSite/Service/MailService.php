@@ -47,6 +47,11 @@ class MailService {
 		$body->addPart($html);
 
 		$message->setBody($body);
+		
+		// Set UTF-8 charset
+		$headers = $message->getHeaders();
+		$headers->removeHeader('Content-Type');
+		$headers->addHeaderLine('Content-Type', 'text/html; charset=UTF-8');
 
 		//$transport->setOptions($options);
 		$transport->send($message);

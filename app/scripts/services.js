@@ -30,129 +30,56 @@ angular.module('winifySiteServices', [])
       name: 'contact',
       text: 'Kontakt'
     }
-  ])/*
-  .factory('AnalyticsService', ['$window', '$timeout', '$rootScope',
-    function($window, $timeout, $rootScope) {
+  ])
+  .factory('AnalyticsEvents', ['$window', '$rootScope',
+    function($window, $rootScope) {
       return {
-        'run': function() {
-          var $ = angular.element;
-          //top menu
-          $('#nav1').find('li a').click(function() {
-            switch($(this).attr('href')) {
-              case '#home?intro':
-                sendEvent('S0WinifyHome');
-                break;
-
-              case '#home?skills':
-                sendEvent('S0Skills');
-                break;
-
-              case '#home?about':
-                sendEvent('S0About');
-                break;
-
-              case '#home?projekte':
-                sendEvent('S0Projekte');
-                break;
-
-              case '#home?contact':
-                sendEvent('S0Contact');
-                break;
-            }
-          });
-
-          // intro block
-          $('.intro-block a').click(function() {
-            switch($(this).attr('href')) {
-              case '/calculator/':
-                if ($(this).parent().hasClass('phone-calculator')) {
-                  sendEvent('W1iPhoneCalcBtn');
-                } else {
-                  sendEvent('W1CalcBtn');
-                }
-                break;
-
-              case '#home?skills':
-                sendEvent('W1Skills');
-                break;
-
-              case '#home?about':
-                if ($(this).parent().prop('tagName') === 'LI') {
-                  sendEvent('W1About');
-                } else {
-                  sendEvent('W2About');
-                }
-                break;
-
-              case '#home?projekte':
-                sendEvent('W1Projekte');
-                break;
-
-              case '#home?contact':
-                if ($(this).parent().prop('tagName') === 'LI') {
-                  sendEvent('W1Contact');
-                } else {
-                  sendEvent('W2Contact');
-                }
-                break;
-            }
-          });
-
-          // projekte block
-          $('.projekte-block .partners a').click(function() {
-            switch($(this).attr('href')) {
-              case 'http://muume.com/':
-                sendEvent('W3ProjectMUUME');
-                break;
-
-              case 'http://pcp-europe.com/':
-                sendEvent('W3ProjectPCP');
-                break;
-
-              case 'http://www.iwant2.com/':
-                sendEvent('W3ProjectW2');
-                break;
-
-              case 'http://corporate.vorwerk.de/de/home/':
-                sendEvent('W3ProjectVORWERK');
-                break;
-
-              case 'http://www.afterbuy.de/':
-                sendEvent('W3ProjectAFTERBUY');
-                break;
-
-              case 'http://cashlessnation.com/':
-                sendEvent('W3ProjectCashlessNation');
-                break;
-            }
-          });
-
-          // contact form
-          $('.contact-block form button').click(function() {
-            sendEvent('W3ContactFormBtn');
-          });
-
-          // socials
-          $('.social-nav a').click(function() {
-            switch($(this).attr('href')) {
-              case 'https://www.facebook.com/Winify':
-                sendEvent('W3FBbutton');
-                break;
-
-              case 'https://twitter.com/Winify_com':
-                sendEvent('W3TwitterButton');
-                break;
-            }
-          });
-
-
-          function sendEvent(label) {
-            $window.ga('send', 'event', 'WebsiteBtns', 'WebsiteClicks', label, (new Date().getTime() - $rootScope.timerInitial)/1000);
+        'send': function(ev, label) {
+          var $this = angular.element(ev.currentTarget);
+          /*
+           try {
+           console.log(ev);
+           console.log($this.prop('tagName'));
+           console.log($this.attr('href').charAt(0));
+           console.log($this.attr('target'));
+           } catch (err) {
+           }
+           ev.preventDefault();*/
+          
+          function isUnparsedLink($el) {
+            return $el.prop('tagName') === 'A' &&
+              ($el.attr('target') === '_self' ||
+                ($el.attr('href').indexOf('http') === 0 && $el.attr('target') !== '_blank'));
           }
-
+          
+          //window.console.log(isUnparsedLink($this));
+          //window.console.log($this);
+          if (isUnparsedLink($this)) {
+            ev.preventDefault();
+            $window.ga('send', {
+              'hitType': 'event',
+              'eventCategory': 'WebsiteBtns',
+              'eventAction': 'WebsiteClicks',
+              'eventLabel': label,
+              'eventValue': Math.round((new Date().getTime() - $rootScope.timerInitial) / 1000),
+              'hitCallback': function() {
+                $window.document.location = $this.attr('href');
+              }
+            });
+          } else {
+            $window.ga('send', {
+              'hitType': 'event',
+              'eventCategory': 'WebsiteBtns',
+              'eventAction': 'WebsiteClicks',
+              'eventLabel': label,
+              'eventValue': Math.round((new Date().getTime() - $rootScope.timerInitial) / 1000)
+            });
+          }
+          
+          //console.log('send event: ' + label);
         }
       };
-    }])*/
+    }])
   .factory('BSizeService', ['$window', '$timeout', '$rootScope',
     function($window, $timeout, $rootScope) {
       return {
@@ -343,7 +270,7 @@ angular.module('winifySiteServices', [])
         init: function() {
 
           function sendEvent(label) {
-            $window.ga('send', 'event', 'WebsiteBtns', 'WebsiteClicks', label, (new Date().getTime()-$rootScope.timerInitial)/1000);
+            $window.ga('send', 'event', 'WebsiteBtns', 'WebsiteClicks', label, (new Date().getTime() - $rootScope.timerInitial) / 1000);
           }
 
           function addMarker(coords, infoTxt, code) {
@@ -357,7 +284,7 @@ angular.module('winifySiteServices', [])
             google.maps.event.addListener(marker, 'click', function() {
               infoWindow.open(map, marker);
 
-              switch(marker.secretCode) {
+              switch (marker.secretCode) {
                 case 'cham':
                   sendEvent('S3MapCH');
                   break;
