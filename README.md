@@ -11,25 +11,25 @@ WinifySite
 ##Instalation
 
 clone repository
-'''bash
+```bash
 git clone https://github.com/Ghaniball/WinifySite.git
-'''
+```
 
 Go into repo folder
-'''bash
+```bash
 cd WinifySite
-'''
+```
 
 and run:
-'''bash
+```bash
 npm install
-'''
-'''bash
+```
+```bash
 composer install
-'''
-'''bash
+```
+```bash
 bower install
-'''
+```
 
 Download archive(ask for access)
 https://drive.google.com/file/d/0B4sZm5QeE5FVNjNpNGVQQnhOVG8/edit?usp=sharing
@@ -43,12 +43,12 @@ change it to "ui/jquery.ui.efect.js"
 
 ##Usage
 after that run:
-'''bash
+```bash
 grunt serve
-'''
+```
 to launch live preview
 and
-'''bash
+```bash
 grunt
-'''
+```
 to create a distribution folder
