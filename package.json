@@ -33,8 +33,8 @@
     "karma-jasmine": "^0.1.5",
     "grunt-nginclude": "^0.4.1",
     "grunt-html-snapshot": "^0.6.1",
-    "grunt-nginclude": "^0.4.1",
-    "grunt-exec": "^0.4.5"
+    "grunt-exec": "^0.4.5",
+    "connect-modrewrite": "^0.7.6"
   },
   "engines": {
     "node": ">=0.10.0"
