@@ -61,8 +61,10 @@ angular
     '$timeout',
     'BSizeService',
     'AnalyticsEvents',
-    function($rootScope, $location, $window, $timeout, BSizeService, AnalyticsEvents) {
-
+    'homePageBlocks',
+    function($rootScope, $location, $window, $timeout, BSizeService, AnalyticsEvents, homePageBlocks) {
+      $rootScope.homePageBlocks = homePageBlocks;
+      
       $rootScope.timerInitial = new Date().getTime();
 
       $rootScope.path = $location.$$html5 ? '/' : '/#!/';

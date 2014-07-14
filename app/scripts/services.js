@@ -8,11 +8,11 @@ angular.module('winifySiteServices', [])
   .constant('homePageBlocks', [
     {
       name: 'intro',
-      text: 'To top'
+      text: 'Home'
     },
     {
       name: 'skills',
-      text: 'Kompetenz'
+      text: 'Leistungen'
     },
     /*{
      name: 'works',
@@ -20,7 +20,7 @@ angular.module('winifySiteServices', [])
      },*/
     {
       name: 'about',
-      text: 'Über uns'
+      text: 'Wir'
     },
     {
       name: 'projekte',

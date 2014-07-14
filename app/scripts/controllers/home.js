@@ -11,10 +11,9 @@ angular.module('winifySiteHomeCtrl', [])
     '$http',
     'searchKey',
     'gmapService',
-    'homePageBlocks',
     'skillsModel',
     'quotesModel',
-    function($rootScope, $scope, $location, $routeParams, $window, $timeout, $http, searchKey, gmapService, homePageBlocks, skillsModel, quotesModel)
+    function($rootScope, $scope, $location, $routeParams, $window, $timeout, $http, searchKey, gmapService, skillsModel, quotesModel)
     {
       var $ = $window.jQuery,
         $w = $($window),
@@ -28,7 +27,6 @@ angular.module('winifySiteHomeCtrl', [])
       $rootScope.isHome = true;
       $scope.offsetTop = false;
       $scope.block = searchKey.get() || 'intro';
-      $scope.homePageBlocks = homePageBlocks;
 
       $scope.skipTo = function(block) {
         //window.console.log('skipto: ' + block);

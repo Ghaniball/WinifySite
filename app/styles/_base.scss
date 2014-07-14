@@ -249,15 +249,16 @@ h2 {
 	.bullet {
 		@include inline-block;
 		background-color: $dGray;
-		border: 2px solid white;
-		border-radius: 7px;
-		height: 14px;
-		margin-left: 0.5em;
+		border: 3px solid white;
+		border-radius: 10px;
+		height: 20px;
+		margin-left: 0.75em;
 		padding: 0;
-		width: 14px;
+		width: 20px;
+		cursor: pointer;
 
 		&:hover {
-			border: 3px solid white;
+			border: 4px solid white;
 		}
 
 		&.selected {
