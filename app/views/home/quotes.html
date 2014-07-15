@@ -1,8 +1,8 @@
 <div class="quotes-list">
-	<div carousel="" interval="5000">
-		<div slide=""
-			 ng-repeat="quote in quotes"
-			 after-repeat="initQuotesSlider();initScrollTo();initAlalytics();">
+	<div data-carousel="" data-interval="5000">
+		<div data-slide=""
+			 data-ng-repeat="quote in quotes"
+			 data-after-repeat="initQuotesSlider();initScrollTo();initAlalytics();">
 			<div class="quote">{{quote.text}}</div>
 
 			<div class="author">{{quote.author.name}}</div>

@@ -77,19 +77,19 @@
 			})();
 		</script>
 	</head>
-	<body ng-app="winifySiteApp" ng-class="{home:isHome}">
+	<body data-ng-app="winifySiteApp" data-ng-class="{home:isHome}">
 		<!--[if lt IE 8]>
 		<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
 			your browser</a> to improve your experience.</p>
 		<![endif]-->
 
 		<section class="my-main-body">
-			<div id="main" ng-view=""></div>
+			<div id="main" data-ng-view=""></div>
 
 			<div class="my-rasporka"></div>
 		</section>
 
-		<div id="footer" ng-if="!isHome" ng-include="'views/partials/footer.html'"></div>
+		<div id="footer" data-ng-if="!isHome" data-ng-include="'views/partials/footer.html'"></div>
 
 		<!-- build:js({.tmp,app}) scripts/ie8.js -->
 		<!--[if lt IE 9]>

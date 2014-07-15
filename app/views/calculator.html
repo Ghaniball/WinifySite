@@ -1,23 +1,23 @@
 <div class="top-menu foot-page"
 	 gumby-fixed="top"
 	 gumby-offset="-100"
-	 ng-include="'views/partials/top_menu.html'"
+	 data-ng-include="'views/partials/top_menu.html'"
 	 onload="loadTopMenu('Calculator')"></div>
 
 <div class="tvalign row">
 	<div class="tcvalign text-center"
-		 ng-include="'views/calculator/agreement.html'"
-		 ng-if="query.agreement"></div>
+		 data-ng-include="'views/calculator/agreement.html'"
+		 data-ng-if="query.agreement"></div>
 </div>
 
 <div class="tvalign row">
 	<div class="tcvalign text-center"
-		 ng-include="'views/calculator/platform.html'"
-		 ng-if="query.platform"></div>
+		 data-ng-include="'views/calculator/platform.html'"
+		 data-ng-if="query.platform"></div>
 </div>
 
 <div class="tvalign row">
 	<div class="tcvalign text-center"
-		 ng-include="'views/calculator/mobile.html'"
-		 ng-if="query.mobile"></div>
+		 data-ng-include="'views/calculator/mobile.html'"
+		 data-ng-if="query.mobile"></div>
 </div>

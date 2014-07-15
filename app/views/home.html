@@ -1,47 +1,47 @@
 <div class="top-menu"
-	 ng-class="{active: block !== 'intro' || BrowserSize.width < 768}"
-	 ng-include="'views/partials/top_menu.html'"
+	 data-ng-class="{active: block !== 'intro' || BrowserSize.width < 768}"
+	 data-ng-include="'views/partials/top_menu.html'"
 	 onload="loadTopMenu()"></div>
 
 <div class="intro-block"
-	 wnf-scroll-pos="{{offsetTop}}"
-	 ng-class="{active: block === 'intro', fixed: block !== 'intro'}">
+	 data-wnf-scroll-pos="{{offsetTop}}"
+	 data-ng-class="{active: block === 'intro', fixed: block !== 'intro'}">
 	<div class="fullscreenbanner-container"
-		 ng-include="'views/home/intro.html'"
-		 replace-ng-include=""
+		 data-ng-include="'views/home/intro.html'"
+		 data-replace-ng-include=""
 		 onload="initIntroSlider()"></div>
 </div>
 
 <div class="skills-block"
-	 wnf-scroll-pos="{{offsetTop}}">
+	 data-wnf-scroll-pos="{{offsetTop}}">
 	<div class="tvalign row">
 		<div class="tcvalign text-center"
-			 replace-ng-include=""
-			 ng-include="'views/home/skills.html'"></div>
+			 data-replace-ng-include=""
+			 data-ng-include="'views/home/skills.html'"></div>
 	</div>
 </div>
 
 <div class="flow-block"
-	 ng-if="BrowserSize.width >= 768">
+	 data-ng-if="BrowserSize.width >= 768">
 	<div class="tvalign row">
 		<div class="tcvalign text-center"
-			 replace-ng-include=""
-			 ng-include="'views/home/flow.html'"
+			 data-replace-ng-include=""
+			 data-ng-include="'views/home/flow.html'"
 			 onload=""></div>
 	</div>
 </div>
 
-<!--<div class="works-block" wnf-scroll-pos="{{offsetTop}}">
+<!--<div class="works-block" data-wnf-scroll-pos="{{offsetTop}}">
 	<div class="fullscreenbanner-container"
-		 ng-include="'views/home/works.html'"
+		 data-ng-include="'views/home/works.html'"
 		 onload="initWorksSlider()"></div>
 </div>-->
 
-<div class="about-block" wnf-scroll-pos="{{offsetTop}}">
+<div class="about-block" data-wnf-scroll-pos="{{offsetTop}}">
 	<div class="tvalign row">
 		<div class="tcvalign text-center"
-			 replace-ng-include=""
-			 ng-include="'views/home/about.html'"
+			 data-replace-ng-include=""
+			 data-ng-include="'views/home/about.html'"
 			 onload=""></div>
 	</div>
 </div>
@@ -49,34 +49,34 @@
 <div class="quotes-block">
 	<div class="tvalign row">
 		<div class="tcvalign text-center"
-			 replace-ng-include=""
-			 ng-include="'views/home/quotes.html'"
+			 data-replace-ng-include=""
+			 data-ng-include="'views/home/quotes.html'"
 			 onload=""></div>
 	</div>
 </div>
 
-<div class="projekte-block" wnf-scroll-pos="{{offsetTop}}">
+<div class="projekte-block" data-wnf-scroll-pos="{{offsetTop}}">
 	<div class="tvalign row">
 		<div class="tcvalign text-center"
-			 replace-ng-include=""
-			 ng-include="'views/home/projekte.html'"
+			 data-replace-ng-include=""
+			 data-ng-include="'views/home/projekte.html'"
 			 onload=""></div>
 	</div>
 </div>
 
-<div class="contact-block" wnf-scroll-pos="{{offsetTop}}">
+<div class="contact-block" data-wnf-scroll-pos="{{offsetTop}}">
 	<div class="tvalign row">
 		<div class="tcvalign text-center"
-			 replace-ng-include=""
-			 ng-include="'views/home/contact.html'"
+			 data-replace-ng-include=""
+			 data-ng-include="'views/home/contact.html'"
 			 onload=""></div>
 	</div>
 </div>
 
 <div class="gmap-block"
-	 ng-if="BrowserSize.width >= 768"
-	 ng-include="'views/partials/gmap.html'"></div>
+	 data-ng-if="BrowserSize.width >= 768"
+	 data-ng-include="'views/partials/gmap.html'"></div>
 
 <div id="footer"
-	 ng-include="'views/partials/footer.html'"
+	 data-ng-include="'views/partials/footer.html'"
 	 onload=""></div>

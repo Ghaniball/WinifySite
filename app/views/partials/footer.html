@@ -4,7 +4,7 @@
 			<div class="pull_left">
 				<nav class="footer-nav">
 					<a href="/calculator/"
-					   ng-click="sendEvent($event, 'S3Calculator');"
+					   data-ng-click="sendEvent($event, 'S3Calculator');"
 					   target="_self">Projektrechner</a>
 					<a href="{{path}}agb">Haftungsausschluss</a>
 					<a href="{{path}}impressum">Impressum</a>
@@ -16,10 +16,10 @@
 
 			<nav class="social-nav pull_right">
 				<a href="https://www.facebook.com/Winify"
-				   ng-click="sendEvent($event, 'S3FBbutton');"
+				   data-ng-click="sendEvent($event, 'S3FBbutton');"
 				   target="_blank"><i class="fa fa-facebook-square"></i></a>
 				<a href="https://twitter.com/Winify_com"
-				   ng-click="sendEvent($event, 'S3TwitterButton');"
+				   data-ng-click="sendEvent($event, 'S3TwitterButton');"
 				   target="_blank"><i class="fa fa-twitter-square"></i></a>
 			</nav>
 		</div>

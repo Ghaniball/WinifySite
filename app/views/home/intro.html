@@ -24,25 +24,25 @@
 						 data-easing="Power4.easeOut"
 						 data-endspeed="300"
 						 data-endeasing="Power1.easeIn"
-						 ng-class="{fixed: block !== 'intro'}">
+						 data-ng-class="{fixed: block !== 'intro'}">
 						<ul>
-							<li ng-repeat="_block in homePageBlocks"
+							<li data-ng-repeat="_block in homePageBlocks"
 								class="two columns text-center"
-								ng-class="{push_one: _block.name === 'skills', push_two: _block.name === 'projekte'}"
-								ng-if="_block.name !== 'intro'">
+								data-ng-class="{push_one: _block.name === 'skills', push_two: _block.name === 'projekte'}"
+								data-ng-if="_block.name !== 'intro'">
 								<a href="{{path}}?{{_block.name}}"
-								   ng-click="skipTo(_block.name); sendEvent($event,'S1' + (_block.name.charAt(0).toUpperCase() + _block.name.slice(1)));">
+								   data-ng-click="skipTo(_block.name); sendEvent($event,'S1' + (_block.name.charAt(0).toUpperCase() + _block.name.slice(1)));">
 							<span class="ico">
 								<i class="icon-graduation-cap"
-								   ng-if="_block.name === 'skills'"></i>
+								   data-ng-if="_block.name === 'skills'"></i>
 <!--								<i class="icon-folder"
-								   ng-if="_block.name === 'works'"></i>-->
+								   data-ng-if="_block.name === 'works'"></i>-->
 								<i class="icon-info-circled"
-								   ng-if="_block.name === 'about'"></i>
+								   data-ng-if="_block.name === 'about'"></i>
 								<i class="icon-network"
-								   ng-if="_block.name === 'projekte'"></i>
+								   data-ng-if="_block.name === 'projekte'"></i>
 								<i class="fa fa-phone-square"
-								   ng-if="_block.name === 'contact'"></i>
+								   data-ng-if="_block.name === 'contact'"></i>
 							</span>
 									<h4 class="txt">{{_block.text}}</h4>
 								</a>
@@ -57,7 +57,7 @@
 						 data-speed="600"
 						 data-start="800">
 						<a href="/calculator/"
-						   ng-click="sendEvent($event,'S1iPhoneCalcBtn');">
+						   data-ng-click="sendEvent($event,'S1iPhoneCalcBtn');">
 							<img src="images/calculator_v2.png" alt=""/>
 							<img class="overlay" src="images/calculator_v2_overlay_v2.png" alt=""/>
 						</a>
@@ -74,7 +74,7 @@
 						 data-endspeed="300"
 						 data-endeasing="Power1.easeIn">
 						<a href="/calculator/"
-						   ng-click="sendEvent($event,'S1CalcBtn');">
+						   data-ng-click="sendEvent($event,'S1CalcBtn');">
 							Projektrechner <br/>
 							<span>Hier in wenigen Schritten die Kosten Ihres Projektes (Webseite oder App) berechnen.</span>
 						</a>
@@ -119,7 +119,7 @@
 						 data-endspeed="300"
 						 data-endeasing="Power1.easeIn">
 						<a href="{{path}}?about"
-						   ng-click="skipTo('about');sendEvent($event,'S2About');">Über uns</a>
+						   data-ng-click="skipTo('about');sendEvent($event,'S2About');">Über uns</a>
 					</div>
 				</div>
 			</div>
@@ -162,7 +162,7 @@
 						 data-endspeed="300"
 						 data-endeasing="Power1.easeIn">
 						<a href="{{path}}?contact"
-						   ng-click="skipTo('contact');sendEvent($event,'S2Contact');">Kontakt</a>
+						   data-ng-click="skipTo('contact');sendEvent($event,'S2Contact');">Kontakt</a>
 					</div>
 				</div>
 			</div>
@@ -173,10 +173,10 @@
 
 <!--<nav class="sidenav-bullets">
 	<ul>
-		<li ng-repeat="_block in homePageBlocks">
+		<li data-ng-repeat="_block in homePageBlocks">
 			<a href="{{path}}?{{_block.name}}"
-			   ng-class="{active: block === _block.name}"
-			   ng-click="skipTo(_block.name)">
+			   data-ng-class="{active: block === _block.name}"
+			   data-ng-click="skipTo(_block.name)">
 				<i class="icon-dot"></i>
 				<span>{{_block.text}}</span>
 			</a>

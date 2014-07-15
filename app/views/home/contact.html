@@ -6,22 +6,22 @@
 <div class="separator"></div>
 
 <form name="contactForm"
-	  ng-init="initFormScope(this)"
-	  ng-if="!contact.sent"
-	  ng-submit="submitContact(contactForm.$valid)"
+	  data-ng-init="initFormScope(this)"
+	  data-ng-if="!contact.sent"
+	  data-ng-submit="submitContact(contactForm.$valid)"
 	  novalidate="">
 
-	<ul class="form-error" ng-show="contact.stripErrors === false">
-		<!--		<li ng-repeat="err in contactForm.$error.required" class="danger alert">
+	<ul class="form-error" data-ng-show="contact.stripErrors === false">
+		<!--		<li data-ng-repeat="err in contactForm.$error.required" class="danger alert">
 					Field "{{err.$name}}" is required
 				</li>
-				<li ng-repeat="err in contactForm.$error.minlength" class="danger alert">
+				<li data-ng-repeat="err in contactForm.$error.minlength" class="danger alert">
 					Field "{{err.$name}}" is to short
 				</li>
-				<li ng-repeat="err in contactForm.$error.maxlength" class="danger alert">
+				<li data-ng-repeat="err in contactForm.$error.maxlength" class="danger alert">
 					Field "{{err.$name}}" is to long
 				</li>
-				<li ng-repeat="err in contact.errorMessages" class="danger alert">
+				<li data-ng-repeat="err in contact.errorMessages" class="danger alert">
 					{{err}}
 				</li>-->
 		<li class="danger alert">
@@ -31,19 +31,19 @@
 
 	<ul class="two_up tiles">
 		<li>
-			<div class="field" ng-class="{danger: !contactForm.name.$valid && !contact.stripErrors}">
+			<div class="field" data-ng-class="{danger: !contactForm.name.$valid && !contact.stripErrors}">
 				<input name="name"
-					   ng-model="contactData.name"
+					   data-ng-model="contactData.name"
 					   class="input"
 					   type="text"
 					   placeholder="Name"
 					   required=""
-					   ng-minlength="2"
-					   ng-maxlength="50"/>
+					   data-ng-minlength="2"
+					   data-ng-maxlength="50"/>
 			</div>
-			<div class="field" ng-class="{danger: !contactForm.email.$valid && !contact.stripErrors}">
+			<div class="field" data-ng-class="{danger: !contactForm.email.$valid && !contact.stripErrors}">
 				<input name="email"
-					   ng-model="contactData.email"
+					   data-ng-model="contactData.email"
 					   class="input"
 					   type="email"
 					   placeholder="Email"
@@ -51,14 +51,14 @@
 			</div>
 		</li>
 		<li>
-			<div class="field" ng-class="{danger: !contactForm.message.$valid && !contact.stripErrors}">
+			<div class="field" data-ng-class="{danger: !contactForm.message.$valid && !contact.stripErrors}">
 				<textarea name="message"
-						  ng-model="contactData.message"
+						  data-ng-model="contactData.message"
 						  class="input textarea"
 						  placeholder="Ihre Nachricht"
 						  required=""
-						  ng-minlength="4"
-						  ng-maxlength="500"></textarea>
+						  data-ng-minlength="4"
+						  data-ng-maxlength="500"></textarea>
 			</div>
 		</li>
 	</ul>
@@ -67,7 +67,7 @@
 		<div class="pull_right submit-btn">
 			<div class="btn medium info">
 				<button type="submit"
-						ng-click="sendEvent($event,'S3ContactFormBtn');">Abschicken
+						data-ng-click="sendEvent($event,'S3ContactFormBtn');">Abschicken
 				</button>
 			</div>
 		</div>
@@ -80,10 +80,10 @@
 		</div>
 	</div>
 
-	<div class="form-overlay" ng-if="contactForm.$valid && contact.submited"></div>
+	<div class="form-overlay" data-ng-if="contactForm.$valid && contact.submited"></div>
 </form>
 
 <div class="success-message"
-	 ng-if="contact.sent">
+	 data-ng-if="contact.sent">
 	<h3>Vielen Dank, wir haben Ihre Nachricht erhalten!</h3>
 </div>
