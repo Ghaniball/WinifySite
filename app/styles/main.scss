@@ -1,3 +1,4 @@
+@charset "UTF-8";
 
 @import "compass";
 @import "mixins";
@@ -7,7 +8,7 @@ $row-max-width: 960px;
 $body-font-color: #333;
 
 @import "../bower_components/mygumby/sass/gumby";
-@import "../bower_components/fontawesome/scss/font-awesome";
+//@import "../bower_components/fontawesome/scss/font-awesome";
 @import "carousel";
 @import "vars";
 @import "base";

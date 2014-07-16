@@ -453,8 +453,9 @@ module.exports = function (grunt) {
           fileNamePrefix: '',
           msWaitForPages: 3000,
           removeScripts: true,
-          removeLinkTags: true,
-          removeMetaTags: true,
+          removeComments: true,
+          //removeStyleTags: true,
+          //removeStyleAttrs: true,
           replaceStrings: [
             {'<html ': '<!doctype html><html '}
           ],
@@ -550,8 +551,8 @@ module.exports = function (grunt) {
     'rev',
     'usemin',
     'htmlmin',
-    'htmlSnapshot',
-    'exec'
+    'htmlSnapshot'/*,
+    'exec'*/
   ]);
 
   grunt.registerTask('default', [
