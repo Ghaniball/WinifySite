@@ -3,8 +3,8 @@
 angular
   .module('winifySiteApp', [
     /*'ngCookies',
-     'ngResource',
-     'ngSanitize',*/
+     'ngResource',*/
+    'ngTouch',
     'ngRoute',
     'winifySiteHomeCtrl',
     'winifySiteFooterPagesCtrl',
@@ -72,6 +72,7 @@ angular
       $rootScope.$on('$routeChangeSuccess', function() {
         //$window.console.log($location.path());
         $window.ga('send', 'pageview', $location.path());
+        $window.ga('newTracker.send', 'pageview', $location.path());
         $window._gaq.push(['_trackPageview', $location.path()]);
 
         $rootScope.timerInitial = new Date().getTime();
