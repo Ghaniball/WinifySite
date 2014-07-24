@@ -10,7 +10,7 @@
     "jquery": "~1.11.1",
     "fontawesome": "~4.1.0",
     "jqueryui": "~1.10.4",
-    "gumby": "https://github.com/Ghaniball/Gumby.git"
+    "gumby": "git://github.com/Ghaniball/Gumby.git#entypo_win8"
   },
   "devDependencies": {
     "angular-mocks": "~1.2.16",

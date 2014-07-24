@@ -438,7 +438,14 @@ module.exports = function (grunt) {
     nginclude: {
       dist: {
         options: {
-          assetsDirs: ['<%= yeoman.app %>']
+          assetsDirs: ['<%= yeoman.app %>'],
+          cheerioOpts: {
+            decodeEntities: false
+          },
+          prependAttrs: 'data-',
+          filterTags: '[data-replace-ng-include]',
+          useWrapComments: false,
+          attrs2Remove: ['data-replace-ng-include']
         },
         files: {
           '<%= yeoman.dist %>/views/home.html': ['<%= yeoman.app %>/views/home.html']
