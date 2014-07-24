@@ -12,31 +12,32 @@
 
 
 			<!--<div class="caption-wrapper row">-->
-				<!--<div class="caption-position">-->
-					<!-- LAYERS -->
-					<!-- LAYER NR. 1 -->
-					<nav class="skiplinks-nav row caption lft"
-						 data-x="center"
-						 data-y="center"
-						 data-voffset="-50"
-						 data-speed="400"
-						 data-start="800"
-						 data-easing="Power4.easeOut"
-						 data-endspeed="300"
-						 data-endeasing="Power1.easeIn"
-						 data-ng-class="{fixed: block !== 'intro'}">
-						<ul>
-							<li data-ng-repeat="_block in homePageBlocks"
-								class="two columns text-center"
-								data-ng-class="{push_one: _block.name === 'skills', push_two: _block.name === 'projekte'}"
-								data-ng-if="_block.name !== 'intro'">
-								<a href="{{path}}?{{_block.name}}"
-								   data-ng-click="skipTo(_block.name); sendEvent($event,'S1' + (_block.name.charAt(0).toUpperCase() + _block.name.slice(1)));">
+			<!--<div class="caption-position">-->
+			<!-- LAYERS -->
+			<!-- LAYER NR. 1 -->
+			<nav class="skiplinks-nav row caption lft"
+				 data-x="center"
+				 data-y="center"
+				 data-voffset="-50"
+				 data-speed="400"
+				 data-start="800"
+				 data-easing="Power4.easeOut"
+				 data-endspeed="300"
+				 data-endeasing="Power1.easeIn"
+				 data-ng-class="{fixed: block !== 'intro'}">
+				<ul>
+					<li data-ng-repeat="_block in homePageBlocks"
+						class="two columns text-center"
+						data-ng-class="{push_one: _block.name === 'skills', push_two: _block.name === 'projekte'}"
+						data-ng-if="_block.name !== 'intro'">
+						<a href="{{path}}?{{_block.name}}"
+						   data-ng-click="skipTo(_block.name);
+										   sendEvent($event, 'S1' + (_block.name.charAt(0).toUpperCase() + _block.name.slice(1)));">
 							<span class="ico">
 								<i class="icon-graduation-cap"
 								   data-ng-if="_block.name === 'skills'"></i>
-<!--								<i class="icon-folder"
-								   data-ng-if="_block.name === 'works'"></i>-->
+								<!--								<i class="icon-folder"
+																   data-ng-if="_block.name === 'works'"></i>-->
 								<i class="icon-info-circled"
 								   data-ng-if="_block.name === 'about'"></i>
 								<i class="icon-network"
@@ -44,42 +45,44 @@
 								<i class="fa fa-phone-square"
 								   data-ng-if="_block.name === 'contact'"></i>
 							</span>
-									<h4 class="txt">{{_block.text}}</h4>
-								</a>
-							</li>
-						</ul>
-					</nav>
-
-					<!-- LAYER NR. 3 -->
-					<div class="phone-calculator caption lfb"
-						 data-x="center"
-						 data-y="bottom"
-						 data-speed="600"
-						 data-start="800">
-						<a href="/calculator/"
-						   data-ng-click="sendEvent($event,'S1iPhoneCalcBtn');">
-							<img alt="Winify project calculator" src="images/calculator_v2.png" alt=""/>
-							<img alt="Winify project calculator" class="overlay" src="images/calculator_v2_overlay_v2.png" alt=""/>
+							<h4 class="txt">{{_block.text}}</h4>
 						</a>
-					</div>
+					</li>
+				</ul>
+			</nav>
 
-					<!-- LAYER NR. 2 -->
-					<div class="tp-caption skewfromright large bxwide orange btn big-btn"
-						 data-x="center"
-						 data-y="center"
-						 data-voffset="200"
-						 data-speed="400"
-						 data-start="1500"
-						 data-easing="Power4.easeOut"
-						 data-endspeed="300"
-						 data-endeasing="Power1.easeIn">
-						<a href="/calculator/"
-						   data-ng-click="sendEvent($event,'S1CalcBtn');">
-							Projektrechner <br/>
-							<span>Hier in wenigen Schritten die Kosten Ihres Projektes (Webseite oder App) berechnen.</span>
-						</a>
-					</div>
-				<!--</div>-->
+			<!-- LAYER NR. 3 -->
+			<div class="phone-calculator caption lfb"
+				 data-x="center"
+				 data-y="bottom"
+				 data-speed="600"
+				 data-start="800">
+				<a href="/calculator/"
+				   target="_self"
+				   data-ng-click="sendEvent($event, 'S1iPhoneCalcBtn');">
+					<img alt="Winify project calculator" src="images/calculator_v2.png" alt=""/>
+					<img alt="Winify project calculator" class="overlay" src="images/calculator_v2_overlay_v2.png" alt=""/>
+				</a>
+			</div>
+
+			<!-- LAYER NR. 2 -->
+			<div class="tp-caption skewfromright large bxwide orange btn big-btn"
+				 data-x="center"
+				 data-y="center"
+				 data-voffset="200"
+				 data-speed="400"
+				 data-start="1500"
+				 data-easing="Power4.easeOut"
+				 data-endspeed="300"
+				 data-endeasing="Power1.easeIn">
+				<a href="/calculator/"
+				   target="_self"
+				   data-ng-click="sendEvent($event, 'S1CalcBtn');">
+					Projektrechner <br/>
+					<span>Hier in wenigen Schritten die Kosten Ihres Projektes (Webseite oder App) berechnen.</span>
+				</a>
+			</div>
+			<!--</div>-->
 			<!--</div>-->
 		</li>
 		<li data-transition="fade"
@@ -119,7 +122,8 @@
 						 data-endspeed="300"
 						 data-endeasing="Power1.easeIn">
 						<a href="{{path}}?about"
-						   data-ng-click="skipTo('about');sendEvent($event,'S2About');">Über uns</a>
+						   data-ng-click="skipTo('about');
+							   sendEvent($event, 'S2About');">Über uns</a>
 					</div>
 				</div>
 			</div>
@@ -162,7 +166,8 @@
 						 data-endspeed="300"
 						 data-endeasing="Power1.easeIn">
 						<a href="{{path}}?contact"
-						   data-ng-click="skipTo('contact');sendEvent($event,'S2Contact');">Kontakt</a>
+						   data-ng-click="skipTo('contact');
+							   sendEvent($event, 'S2Contact');">Kontakt</a>
 					</div>
 				</div>
 			</div>
