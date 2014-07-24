@@ -203,7 +203,7 @@ module.exports = function (grunt) {
         httpImagesPath: '/images',
         httpGeneratedImagesPath: '/images/generated',
         httpFontsPath: '/styles/fonts',
-        loadAll: '<%= yeoman.app %>/bower_components/mygumby/sass/extensions',
+        loadAll: '<%= yeoman.app %>/bower_components/gumby/sass/extensions',
         relativeAssets: true,
         force: true,
         lineComments: false,
@@ -363,7 +363,7 @@ module.exports = function (grunt) {
           dest: '<%= yeoman.dist %>/../'
         }, {
           expand: true,
-          cwd: '<%= yeoman.app %>/bower_components/mygumby/js/libs',
+          cwd: '<%= yeoman.app %>/bower_components/gumby/js/libs',
           src: ['jquery.mobile.custom.min.js'],
           dest: '<%= yeoman.dist %>/js/libs'
         }, {
@@ -387,7 +387,7 @@ module.exports = function (grunt) {
       },
       server: {
         expand: true,
-        cwd: '<%= yeoman.app %>/bower_components/mygumby/js/libs',
+        cwd: '<%= yeoman.app %>/bower_components/gumby/js/libs',
         src: ['jquery.mobile.custom.min.js'],
         dest: '.tmp/js/libs'
       }
@@ -550,8 +550,8 @@ module.exports = function (grunt) {
     'uglify',
     'rev',
     'usemin',
-    'htmlmin',
-    'htmlSnapshot'/*,
+    'htmlmin'/*,
+    'htmlSnapshot',
     'exec'*/
   ]);
 
