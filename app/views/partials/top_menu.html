@@ -15,10 +15,10 @@
 		</a>
 	</div>
 	<ul class="pull_right">
-		<li data-ng-repeat="_block in homePageBlocks">
+		<li data-ng-repeat="_block in l10n.homePageBlocks">
 			<a href="{{path}}?{{_block.name}}"
 			   data-ng-class="{active: block === _block.name}"
-			   data-ng-click="skipTo(_block.name); sendEvent($event,'S0' + (_block.name.charAt(0).toUpperCase() + _block.name.slice(1)));">{{_block.text}}</a>
+			   data-ng-click="skipTo(_block.name); sendEvent($event,'S0' + (_block.name.charAt(0).toUpperCase() + _block.name.slice(1)));">{{_block.text[lang]}}</a>
 		</li>
 <!--
 		<li><a href="{{path}}?intro"
@@ -38,6 +38,6 @@
 				   sendEvent($event, 'S0Contact');">Kontakt</a></li>-->
 		<li><a href="/calculator/"
 			   target="_self"
-			   data-ng-click="sendEvent($event, 'S0Calculator');">Projektrechner</a></li>
+			   data-ng-click="sendEvent($event, 'S0Calculator');">{{l10n.footer.menu.calculator[lang]}}</a></li>
 	</ul>
 </div>

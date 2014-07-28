@@ -544,6 +544,9 @@ FileETag None
 
 <IfModule mod_rewrite.c>
     RewriteEngine On
+
+    RewriteRule ^[de|en](.*) $1
+	#^localpath(.*) /otherpath$1 || /otherpath/pathinfo
 	
 	RewriteCond %{QUERY_STRING} ^_escaped_fragment_=(.*)$
     RewriteRule ^$ /snapshots/index.html? [L,NC]
@@ -552,5 +555,6 @@ FileETag None
 
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_URI} !^/[de|en]
     RewriteRule (.*) index.html [QSA,L]
 </IfModule>

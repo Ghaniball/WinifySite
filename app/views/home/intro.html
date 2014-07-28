@@ -26,13 +26,13 @@
 				 data-endeasing="Power1.easeIn"
 				 data-ng-class="{fixed: block !== 'intro'}">
 				<ul>
-					<li data-ng-repeat="_block in homePageBlocks"
+					<li data-ng-repeat="_block in l10n.homePageBlocks"
 						class="two columns text-center"
 						data-ng-class="{push_one: _block.name === 'skills', push_two: _block.name === 'projekte'}"
 						data-ng-if="_block.name !== 'intro'">
 						<a href="{{path}}?{{_block.name}}"
 						   data-ng-click="skipTo(_block.name);
-										   sendEvent($event, 'S1' + (_block.name.charAt(0).toUpperCase() + _block.name.slice(1)));">
+								   sendEvent($event, 'S1' + (_block.name.charAt(0).toUpperCase() + _block.name.slice(1)));">
 							<span class="ico">
 								<i class="icon-graduation-cap"
 								   data-ng-if="_block.name === 'skills'"></i>
@@ -45,13 +45,13 @@
 								<i class="fa fa-phone-square"
 								   data-ng-if="_block.name === 'contact'"></i>
 							</span>
-							<h4 class="txt">{{_block.text}}</h4>
+							<h4 class="txt">{{_block.text[lang]}}</h4>
 						</a>
 					</li>
 				</ul>
 			</nav>
 
-			<!-- LAYER NR. 3 -->
+			<!-- LAYER NR. 2 -->
 			<div class="phone-calculator caption lfb"
 				 data-x="center"
 				 data-y="bottom"
@@ -65,7 +65,7 @@
 				</a>
 			</div>
 
-			<!-- LAYER NR. 2 -->
+			<!-- LAYER NR. 3 -->
 			<div class="tp-caption skewfromright large bxwide orange btn big-btn"
 				 data-x="center"
 				 data-y="center"
@@ -77,10 +77,8 @@
 				 data-endeasing="Power1.easeIn">
 				<a href="/calculator/"
 				   target="_self"
-				   data-ng-click="sendEvent($event, 'S1CalcBtn');">
-					Projektrechner <br/>
-					<span>Hier in wenigen Schritten die Kosten Ihres Projektes (Webseite oder App) berechnen.</span>
-				</a>
+				   data-ng-click="sendEvent($event, 'S1CalcBtn');"
+				   data-ng-bind-html="l10n.intro.slide1.layer3.btn[lang]"></a>
 			</div>
 			<!--</div>-->
 			<!--</div>-->
@@ -107,10 +105,8 @@
 						data-start="1000"
 						data-easing="Power4.easeOut"
 						data-endspeed="300"
-						data-endeasing="Power1.easeIn">
-						Wir entwickeln und realisieren<br/>
-						Ihre <span>Ideen.</span>
-					</h2>
+						data-endeasing="Power1.easeIn"
+						data-ng-bind-html="l10n.intro.slide2.layer1.h2[lang]"></h2>
 
 					<!--LAYER NR. 2-->
 					<div class="tp-caption skewfromleft large bxwide orange btn"
@@ -123,7 +119,8 @@
 						 data-endeasing="Power1.easeIn">
 						<a href="{{path}}?about"
 						   data-ng-click="skipTo('about');
-							   sendEvent($event, 'S2About');">Über uns</a>
+							   sendEvent($event, 'S2About');"
+						   data-ng-bind-html="l10n.intro.slide2.layer2.btn[lang]"></a>
 					</div>
 				</div>
 			</div>
@@ -150,10 +147,8 @@
 						data-start="1000"
 						data-easing="Power4.easeOut"
 						data-endspeed="300"
-						data-endeasing="Power1.easeIn">
-						<span>Aufwachen!</span><br/>
-						Lassen Sie uns gemeinsam etwas neues ausprobieren!
-					</h2>
+						data-endeasing="Power1.easeIn"
+						data-ng-bind-html="l10n.intro.slide3.layer1.h2[lang]"></h2>
 
 					<!--LAYER NR. 2-->
 					<div class="tp-caption skewfromleft large bxwide orange btn"
@@ -167,7 +162,8 @@
 						 data-endeasing="Power1.easeIn">
 						<a href="{{path}}?contact"
 						   data-ng-click="skipTo('contact');
-							   sendEvent($event, 'S2Contact');">Kontakt</a>
+							   sendEvent($event, 'S2Contact');"
+						   data-ng-bind-html="l10n.intro.slide3.layer2.btn[lang]"></a>
 					</div>
 				</div>
 			</div>
@@ -178,7 +174,7 @@
 
 <!--<nav class="sidenav-bullets">
 	<ul>
-		<li data-ng-repeat="_block in homePageBlocks">
+		<li data-ng-repeat="_block in l10n.homePageBlocks">
 			<a href="{{path}}?{{_block.name}}"
 			   data-ng-class="{active: block === _block.name}"
 			   data-ng-click="skipTo(_block.name)">

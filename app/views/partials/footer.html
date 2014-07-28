@@ -5,13 +5,21 @@
 				<nav class="footer-nav">
 					<a href="/calculator/"
 					   data-ng-click="sendEvent($event, 'S3Calculator');"
-					   target="_self">Projektrechner</a>
-					<a href="{{path}}agb">Haftungsausschluss</a>
-					<a href="{{path}}impressum">Impressum</a>
-					<a href="{{path}}datenschutz">Datenschutzbestimmungen</a>
+					   target="_self">{{l10n.footer.menu.calculator[lang]}}</a>
+					<a href="{{path}}agb">{{l10n.footer.menu.agb[lang]}}</a>
+					<a href="{{path}}impressum">{{l10n.footer.menu.impressum[lang]}}</a>
+					<a href="{{path}}datenschutz">{{l10n.footer.menu.datenschutz[lang]}}</a>
 				</nav>
 
-				<p class="copyright">&COPY; 2014 Winify. Alle Rechte vorbehalten.</p>
+				<p class="copyright clearfix">
+					<span class="pull_left">
+						{{l10n.footer.copyright[lang]}}
+					</span>
+					<span class="language pull_right">
+						<a data-ng-if="lang === 'de'" href="{{base + 'en' + locpath}}">En</a>
+						<a data-ng-if="lang === 'en'" href="{{base + 'de' + locpath}}">De</a>
+					</span>
+				</p>
 			</div>
 
 			<nav class="social-nav pull_right">

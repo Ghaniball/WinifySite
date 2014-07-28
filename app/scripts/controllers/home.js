@@ -22,7 +22,7 @@ angular.module('winifySiteHomeCtrl', [])
 
       //$window.document.title = 'Home :: Winify';
       
-      window.console.log($location);
+      window.console.log(searchKey.get());
 
       $rootScope.isHome = true;
       $scope.offsetTop = false;

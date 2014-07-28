@@ -83,7 +83,10 @@ module.exports = function (grunt) {
           middleware: function(connect, options) {
             var middlewares = [];
  
-            middlewares.push(modRewrite(['^[^\\.]*$ /index.html [L]'])); //Matches everything that does not contain a '.' (period)
+            middlewares.push(modRewrite([
+              '^/de|en/(.*) /$1',
+              '^[^\\.]*$ /index.html [L]'
+            ])); //Matches everything that does not contain a '.' (period)
             options.base.forEach(function(base) {
               middlewares.push(connect.static(base));
             });
@@ -346,6 +349,7 @@ module.exports = function (grunt) {
             '*.html',
             '*.xml',
             '*.php',
+            'templates/{,*/}*.html',
             'views/{,*/}*.html',
             '!views/home/*.html',
             'images/{,*/}*.{webp}',

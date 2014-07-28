@@ -1,7 +1,5 @@
-<h2 class="negative">
-	Wir würden gerne mehr über<br/>
-	<span>Ihr Projekt</span> erfahren.
-</h2>
+<h2 class="negative"
+	data-ng-bind-html="l10n.contact.title[lang]"></h2>
 
 <div class="separator"></div>
 
@@ -24,9 +22,7 @@
 				<li data-ng-repeat="err in contact.errorMessages" class="danger alert">
 					{{err}}
 				</li>-->
-		<li class="danger alert">
-			Bitte füllen Sie alle Felder aus!
-		</li>
+		<li class="danger alert">{{l10n.contact.form.error[lang]}}</li>
 	</ul>
 
 	<ul class="two_up tiles">
@@ -55,7 +51,7 @@
 				<textarea name="message"
 						  data-ng-model="contactData.message"
 						  class="input textarea"
-						  placeholder="Ihre Nachricht"
+						  placeholder="{{l10n.contact.form.placeholder.message[lang]}}"
 						  required=""
 						  data-ng-minlength="4"
 						  data-ng-maxlength="500"></textarea>
@@ -67,15 +63,15 @@
 		<div class="pull_right submit-btn">
 			<div class="btn medium info">
 				<button type="submit"
-						data-ng-click="sendEvent($event,'S3ContactFormBtn');">Abschicken
-				</button>
+						data-ng-click="sendEvent($event,'S3ContactFormBtn');"
+						data-ng-bind-html="l10n.contact.form.submit[lang]"></button>
 			</div>
 		</div>
 
 		<div class="pull_left text-left">
-				<span class="office-phone"><i class="icon-phone"></i>+41 41 511 2684 (Schweiz)
+				<span class="office-phone"><i class="icon-phone"></i>+41 41 511 2684 ({{l10n.countries[0][lang]}})
 </span><br/>
-				<span class="office-phone"><i class="icon-phone"></i>+49 177 88 458 12 (Deutschland)
+				<span class="office-phone"><i class="icon-phone"></i>+49 177 88 458 12 ({{l10n.countries[1][lang]}})
 </span>
 		</div>
 	</div>
@@ -85,5 +81,5 @@
 
 <div class="success-message"
 	 data-ng-if="contact.sent">
-	<h3>Vielen Dank, wir haben Ihre Nachricht erhalten!</h3>
+	<h3>{{l10n.contact.form.success[lang]}}</h3>
 </div>
