@@ -172,70 +172,7 @@ angular.module('winifySiteServices', [])
       $transition.animationEndEventName = findEndEventName(animationEndEventNames);
       return $transition;
     }])
-  .constant('skillsModel', [
-    {
-      'ico': 'skill-dev',
-      'head': 'Software Entwicklung',
-      'desc': 'Wir entwickeln leistungsfähige und sichere Software, Webseiten und Apps.'
-    },
-    {
-      'ico': 'skill-manage',
-      'head': 'Projekt Management',
-      'desc': 'Wir sind mit dem Projekt Management erst zufrieden, wenn Sie sich gut informiert und sicher fühlen.'
-    },
-    {
-      'ico': 'skill-test',
-      'head': 'Qualitätskontrolle',
-      'desc': 'Das Winify Testing und QA Programm begleitet Ihr Projekt von einem frühen Stadium bis zur finalen Übergabe an Sie.'
-    },
-    {
-      'ico': 'skill-design',
-      'head': 'Design',
-      'desc': 'Wir entwickeln gemeinsam mit Ihnen den Service, der genau zu Ihnen passt. Von der Datenbank bis zum Logo Design – alles individuell.'
-    },
-    {
-      'ico': 'skill-admin',
-      'head': 'Administration',
-      'desc': 'Wir kümmern uns darum, dass Ihr Service immer einwandfrei läuft. 24/7 an 365 Tagen im Jahr.'
-    }
-  ])
-  .constant('quotesModel', [
-    {
-      'text': 'Die Zusammenarbeit mit Winify hat immer Freude bereitet. Über die Zeit hat sich ein persönlich-professionelles Verhältnis entwickelt, in dem wir uns gut aufgehoben fühlen. Winify ist immer bereit auf Anmerkungen und Kritik einzugehen. Wir diskutieren auf Augenhöhe und holen so sicher das Beste heraus.',
-      'author': {
-        'name': 'Cashless Nation AG',
-        'desc': ''
-      }
-    },
-    /*    {
-     'text': 'Winify hat uns bei der Erstellung unseres Services App sehr geholfen. Es war weniger ein Auftraggeber-Auftragnehmer Verhältnis, als eine Partnerschaft auf Augenhöhe. Wir haben uns so lange Ideen und Konzepte hin- und her gespielt bis alle zufrieden waren. Klarer Fall: Daumen hoch!',
-     'author': {
-     'name': 'WERBEANSTALT Schweiz AG',
-     'desc': ''
-     }
-     },*/
-    {
-      'text': 'Wir haben mit einem kleineren Auftrag mit der Winify AG begonnen und waren sehr zufrieden. Nach und nach haben wir die Zusammenarbeit ausgebaut und mittlerweile ist Winify unser wichtigster Software und Produkt Partner.',
-      'author': {
-        'name': 'MUUME AG',
-        'desc': ''
-      }
-    },
-    {
-      'text': 'Wir arbeiten mit Winify nun schon seit drei Jahren in verschiedenen Projekten zusammen. Die Kompetenz vor allem im Bereich "Payment" und was damit zu tun hat, ist beachtenswert.',
-      'author': {
-        'name': 'Dr. Felix Hötzinger, Vorstand, Demekon Entertainment AG',
-        'desc': ''
-      }
-    },
-    {
-      'text': 'Bei mehreren Portfoliounternehmen ist Winify - zum Teil für kürzere Phasen, zum Teil seit über 12 Monaten - im Einsatz. Für uns ist Winify als Partner sehr wertvoll und äußerst wichtig.',
-      'author': {
-        'name': 'Volker Rofalski, Mountain Partners Group',
-        'desc': ''
-      }
-    }
-  ])
+
   .factory('gmapService', ['$window', '$rootScope', function($window, $rootScope) {
       var styles = [
         {'featureType': 'water', 'stylers': [{'visibility': 'on'}, {'color': '#e0f0fa'}]},
@@ -365,11 +302,15 @@ angular.module('winifySiteServices', [])
     'skills': {
       'title': {
         'en': 'We listen to you and give you useful advices.<br/>We make beautiful websites.<br/>We make good software.<br/><span>Winify.</span>',
-        'de': 'Wir hören Ihnen zu und beraten Sie.<br/>Wir machen schöne Webseiten.<br/>Wir machen gute Software.<br/><span>Winify.</span>'
+        'de': 'Wir sind <span>Winify.</span><br/>Wir machen gute Software.<br/>Wir machen schöne Webseiten.<br/>Wir hören Ihnen zu und beraten Sie.'
       },
       'content': {
         'en': 'The core to your success is fully functional technology that fulfills all user’s needs and can even generate joy. We master all the leading software solutions and tailor them exactly to your needs. The thing that makes the difference is our creativity! We believe that only solutions that stand out from the mass can be successful. Our solutions inspire, they are intuitive and possess the magnetism for the user. Our standard is the success in our client\'s business. That\'s why we always think integrally and give our clients competent and innovative advices in all the areas of a product chain.',
-        'de': 'Der Grundstein zu Ihrem Erfolg ist Technologie, die gut funktioniert, die Bedürfnisse des Nutzers erfüllt und vielleicht sogar Freude bereitet. Wir beherrschen alle führenden Software-Lösungen und passen diese exakt auf Ihre Bedürfnisse an. Doch den Unterschied macht Kreativität. Nur Lösungen, die aus der Masse heraus stechen, können wirklich überdurchschnittlich erfolgreich sein.  Unsere Lösungen begeistern, sind intuitiv und erzeugen eine hohe Anziehungskraft. Der Geschäftserfolg unserer Kunden ist unser Maßstab. Darum denken und beraten wir ganzheitlich, innovativ und kompetent in allen Bereichen der Wertschöpfungskette.'
+        'de': 'Wir beherrschen alle führenden Programmiersprachen und Software-Lösungen und passen sie exakt auf Ihre Ansprüche an. Und packen eine gehörige Portion Kreativität drauf. Denn nur Ideen, die sich von der Masse abheben, werden überdurchschnittlich erfolgreich sein. Unsere Lösungen begeistern, lassen sich intuitiv bedienen und erzeugen eine hohe Anziehungskraft.'
+      },
+      'content2': {
+        'en': '',
+        'de': 'Software ist kein Selbstzweck. Software ist ein digitales Werkzeug, das einen Zweck zu erfüllen hat. Sie wollen Software programmieren oder eine Webseite erstellen lassen, weil Sie damit ein Ziel verfolgen. Und natürlich wollen Sie damit Erfolg haben. Genauso sehen wir das auch: Uns treibt der Wunsch, Produkte zu erstellen, die unsere Kunden weiterbringen.'
       },
       'list': [
         {

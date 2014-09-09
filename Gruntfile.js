@@ -561,8 +561,8 @@ module.exports = function (grunt) {
     'uglify',
     'rev',
     'usemin',
-    'htmlmin',
-    'htmlSnapshot'/*,
+    'htmlmin',/*
+    'htmlSnapshot',
     'exec'*/
   ]);
 

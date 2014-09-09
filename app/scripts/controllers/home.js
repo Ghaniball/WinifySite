@@ -11,9 +11,9 @@ angular.module('winifySiteHomeCtrl', [])
     '$http',
     'searchKey',
     'gmapService',
-    'skillsModel',
-    'quotesModel',
-    function($rootScope, $scope, $location, $routeParams, $window, $timeout, $http, searchKey, gmapService, skillsModel, quotesModel)
+//    'skillsModel',
+//    'quotesModel',
+    function($rootScope, $scope, $location, $routeParams, $window, $timeout, $http, searchKey, gmapService/*, skillsModel, quotesModel*/)
     {
       var $ = $window.jQuery,
         $w = $($window),
@@ -65,9 +65,9 @@ angular.module('winifySiteHomeCtrl', [])
         $location.search(val);
       });
 
-      $scope.quotes = quotesModel;
+      //$scope.quotes = quotesModel;
 
-      $scope.skills = skillsModel;
+      //$scope.skills = skillsModel;
 
       $scope.initializeGMap = function() {
         if (mapLoaded) {
