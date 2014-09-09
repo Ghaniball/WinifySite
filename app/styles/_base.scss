@@ -3,6 +3,8 @@
     Author     : igodorogea
 */
 
+@import "_vars.scss";
+
 body, html {
 	height: 100%;
 }
@@ -58,6 +60,24 @@ a:hover {
 	min-width: 20px;
 	position: static;
 	text-align: center;
+}
+
+.my-column-50 {
+	width: 50%;
+}
+
+.bg-white {
+	background-color: white;
+}
+
+.bg-orange {
+	background-color: $orange;
+	color: white;
+}
+
+.bg-gray {
+	background-color: $dGray;
+	color: white;
 }
 
 i.left-icon {

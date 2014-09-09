@@ -1,12 +1,31 @@
-<h2 data-ng-bind-html="l10n.skills.title[lang]"></h2>
+<div class="skills-top-section">
+	<div class="clearfix">
+		<div class="my-column-50 pull_left bg-white text-right">
+			<h2 data-ng-bind-html="l10n.skills.column1.title[lang]"></h2>
+			<p data-ng-bind-html="l10n.skills.column1.content[lang]"></p>
+		</div>
+		<div class="my-column-50 pull_right bg-gray text-left">
+			<h2 class="negative" data-ng-bind-html="l10n.skills.column2.title[lang]"></h2>
+			<p data-ng-bind-html="l10n.skills.column2.content[lang]"></p>
+		</div>
+	</div>
+
+	<div class="bg-orange">
+		<h2 class="negative" data-ng-bind-html="l10n.skills.column3.title[lang]"></h2>
+		<p data-ng-bind-html="l10n.skills.column3.content[lang]"></p>
+	</div>
+</div>
+
+
+<!--<h2 data-ng-bind-html="l10n.skills.title[lang]"></h2>
 
 <div class="separator"></div>
 
-<p data-ng-bind-html="l10n.skills.content[lang]"></p>
+<p data-ng-bind-html="l10n.skills.content[lang]"></p>-->
 
 <div class="separator"></div>
 
-<ul class="skill-list clearfix">
+<ul class="skill-list row">
 	<li data-ng-repeat="skill in l10n.skills.list">
 		<div class="skill">
 			<span class="ico"><i data-ng-class="skill.ico"></i></span>
@@ -18,4 +37,6 @@
 
 <div class="separator"></div>
 
-<p data-ng-bind-html="l10n.skills.content2[lang]"></p>
+<p class="row" data-ng-bind-html="l10n.skills.content2[lang]"></p>
+
+<div class="separator"></div>

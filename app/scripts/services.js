@@ -2,9 +2,9 @@
 
 angular.module('winifySiteServices', [])
   .factory('AnalyticsEvents', ['$window', '$rootScope',
-    function($window, $rootScope) {
+    function ($window, $rootScope) {
       return {
-        'send': function(ev, label) {
+        'send': function (ev, label) {
           var $this = angular.element(ev.currentTarget);
           /*
            try {
@@ -32,7 +32,7 @@ angular.module('winifySiteServices', [])
               'eventAction': 'WebsiteClicks',
               'eventLabel': label,
               'eventValue': Math.round((new Date().getTime() - $rootScope.timerInitial) / 1000),
-              'hitCallback': function() {
+              'hitCallback': function () {
                 $window.document.location = $this.attr('href');
               }
             });
@@ -51,9 +51,9 @@ angular.module('winifySiteServices', [])
       };
     }])
   .factory('BSizeService', ['$window', '$timeout', '$rootScope',
-    function($window, $timeout, $rootScope) {
+    function ($window, $timeout, $rootScope) {
       return {
-        'get': function(onResize) {
+        'get': function (onResize) {
           var $w = angular.element($window),
             size = {
               'width': $w.width(),
@@ -64,7 +64,7 @@ angular.module('winifySiteServices', [])
 
           if (onResize) {
             (function resize() {
-              $w.on('resize', function() {
+              $w.on('resize', function () {
                 $w.off('resize');
                 $rootScope.$broadcast('browser.resize', {
                   'width': $w.width(),
@@ -78,18 +78,18 @@ angular.module('winifySiteServices', [])
 
           return size;
         },
-        'stop': function() {
+        'stop': function () {
           angular.element($window).off('resize');
         }
       };
     }])
   .factory('searchKey', ['l10n', '$location',
-    function(l10n, $location) {
+    function (l10n, $location) {
       return {
-        'get': function() {
+        'get': function () {
           var search = $location.search() || {};
 
-          return (function(b, s) {
+          return (function (b, s) {
             var i = 0, l = b.length;
             for (i; i < l; i++) {
               if (b[i].name in s) {
@@ -101,15 +101,15 @@ angular.module('winifySiteServices', [])
         }
       };
     }])
-  .factory('$transition', ['$q', '$timeout', '$rootScope', function($q, $timeout, $rootScope) {
+  .factory('$transition', ['$q', '$timeout', '$rootScope', function ($q, $timeout, $rootScope) {
 
-      var $transition = function(element, trigger, options) {
+      var $transition = function (element, trigger, options) {
         options = options || {};
         var deferred = $q.defer();
         var endEventName = $transition[options.animation ? 'animationEndEventName' : 'transitionEndEventName'];
 
-        var transitionEndHandler = function(event) {
-          $rootScope.$apply(function() {
+        var transitionEndHandler = function (event) {
+          $rootScope.$apply(function () {
             element.unbind(endEventName, transitionEndHandler);
             deferred.resolve(element);
           });
@@ -120,7 +120,7 @@ angular.module('winifySiteServices', [])
         }
 
         // Wrap in a timeout to allow the browser time to update the DOM before the transition is to occur
-        $timeout(function() {
+        $timeout(function () {
           if (angular.isString(trigger)) {
             element.addClass(trigger);
           } else if (angular.isFunction(trigger)) {
@@ -137,7 +137,7 @@ angular.module('winifySiteServices', [])
         // Add our custom cancel function to the promise that is returned
         // We can call this if we are about to run a new transition, which we know will prevent this transition from ending,
         // i.e. it will therefore never raise a transitionEnd event for that transition
-        deferred.promise.cancel = function() {
+        deferred.promise.cancel = function () {
           if (endEventName) {
             element.unbind(endEventName, transitionEndHandler);
           }
@@ -173,7 +173,7 @@ angular.module('winifySiteServices', [])
       return $transition;
     }])
 
-  .factory('gmapService', ['$window', '$rootScope', function($window, $rootScope) {
+  .factory('gmapService', ['$window', '$rootScope', function ($window, $rootScope) {
       var styles = [
         {'featureType': 'water', 'stylers': [{'visibility': 'on'}, {'color': '#e0f0fa'}]},
         {'featureType': 'landscape', 'stylers': [{'visibility': 'on'}, {'color': '#fff6e5'}]},
@@ -188,7 +188,7 @@ angular.module('winifySiteServices', [])
       var google = $window.google;
 
       return {
-        init: function() {
+        init: function () {
 
           function sendEvent(label) {
             $window.ga('send', 'event', 'WebsiteBtns', 'WebsiteClicks', label, (new Date().getTime() - $rootScope.timerInitial) / 1000);
@@ -202,7 +202,7 @@ angular.module('winifySiteServices', [])
 
             var infoWindow = new google.maps.InfoWindow({content: infoTxt});
 
-            google.maps.event.addListener(marker, 'click', function() {
+            google.maps.event.addListener(marker, 'click', function () {
               infoWindow.open(map, marker);
 
               switch (marker.secretCode) {
@@ -300,6 +300,36 @@ angular.module('winifySiteServices', [])
       }
     },
     'skills': {
+      'column1': {
+        'title': {
+          'en': '',
+          'de': 'Wir sind <span>Winify</span>'
+        },
+        'content': {
+          'en': '',
+          'de': '85 Mitarbeiter, Büros in Deutschland, Schweiz, Polen, Moldawien, Australien'
+        }
+      },
+      'column2': {
+        'title': {
+          'en': '',
+          'de': 'Wir sind <span>Spezialisten</span>'
+        },
+        'content': {
+          'en': '',
+          'de': 'Mobile Apps & Webseiten, Bezahllösungen, E & M - Commerce, Social Plattformen'
+        }
+      },
+      'column3': {
+        'title': {
+          'en': '',
+          'de': 'Wir entwickeln <span>Software</span>'
+        },
+        'content': {
+          'en': '',
+          'de': 'Alle relevanten Programmiersprachen, Produkt & Projekt Management, Qualitätskontrolle, Administration & Service'
+        }
+      },
       'title': {
         'en': 'We listen to you and give you useful advices.<br/>We make beautiful websites.<br/>We make good software.<br/><span>Winify.</span>',
         'de': 'Wir sind <span>Winify.</span><br/>Wir machen gute Software.<br/>Wir machen schöne Webseiten.<br/>Wir hören Ihnen zu und beraten Sie.'

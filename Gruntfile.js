@@ -84,7 +84,7 @@ module.exports = function (grunt) {
             var middlewares = [];
  
             middlewares.push(modRewrite([
-              '^/de|en/(.*) /$1',
+              //'^/de|en/(.*) /$1',
               '^[^\\.]*$ /index.html [L]'
             ])); //Matches everything that does not contain a '.' (period)
             options.base.forEach(function(base) {
@@ -561,8 +561,8 @@ module.exports = function (grunt) {
     'uglify',
     'rev',
     'usemin',
-    'htmlmin',/*
-    'htmlSnapshot',
+    'htmlmin',
+    'htmlSnapshot'/*,
     'exec'*/
   ]);
 

@@ -9,49 +9,30 @@ angular
     'ngRoute',
     'winifySiteHomeCtrl',
     'winifySiteFooterPagesCtrl',
-    'winifySiteCalculatorCtrl',
     'winifySiteServices',
     'winifySiteDirectives'
   ])
   .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
       $locationProvider.html5Mode(true).hashPrefix('!');
-      /*      if (Modernizr.history) {
-       $locationProvider.html5Mode(true);
-       } else {
-       $locationProvider.hashPrefix('!');
-       }
-       */
       $routeProvider
-        .when('/:lang/', {
+        .when('/', {
           templateUrl: 'views/home.html',
           controller: 'HomeCtrl',
           reloadOnSearch: false
         })
-        .when('/:lang/agb', {
+        .when('/agb', {
           templateUrl: 'views/agb.html',
           controller: 'FooterPagesCtrl'
         })
-        .when('/:lang/impressum', {
+        .when('/impressum', {
           templateUrl: 'views/impressum.html',
           controller: 'FooterPagesCtrl'
         })
-        .when('/:lang/datenschutz', {
+        .when('/datenschutz', {
           templateUrl: 'views/datenschutz.html',
           controller: 'FooterPagesCtrl'
-        })/*
-         .when('/calculator', {
-         templateUrl: 'views/calculator.html',
-         controller: 'CalculatorCtrl'
-         })*/
-//        .when('/calculator/agreement', {
-//          templateUrl: 'views/calculator/agreement.html',
-//          controller: 'CalculatorCtrl'
-//        })
-//        .when('/calculator', {
-//          redirectTo: '/calculator/agreement'
-//        })
-        .otherwise({
-          redirectTo: '/de/'
+        }).otherwise({
+          redirectTo: '/'
         });
     }
   ])
@@ -70,23 +51,22 @@ angular
       $rootScope.base = $location.$$html5 ? '/' : '/#!/';
 
       $rootScope.$on('$locationChangeSuccess', function() {
-        $rootScope.locpath = $location.url().replace('/de', '').replace('/en', '');
+        $rootScope.locpath = $location.url();
 
-        window.console.log($rootScope.locpath);
+        //window.console.log($rootScope.locpath);
       });
 
       $rootScope.$on('$routeChangeSuccess', function() {
-        var l = $routeParams.lang;
-        $rootScope.lang = l === 'en' ? 'en' : 'de';
+        $rootScope.lang = 'de';
 
-        $rootScope.path = $rootScope.base + $rootScope.lang + '/';
+        $rootScope.path = $rootScope.base;
         
         $rootScope.l10n = l10n;
 
         //$window.console.log($location.path());
         $window.ga('send', 'pageview', $location.path());
-        $window.ga('newTracker.send', 'pageview', $location.path());
-        $window._gaq.push(['_trackPageview', $location.path()]);
+        //$window.ga('newTracker.send', 'pageview', $location.path());
+        //$window._gaq.push(['_trackPageview', $location.path()]);
 
         $rootScope.timerInitial = new Date().getTime();
       });
