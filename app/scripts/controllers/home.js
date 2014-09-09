@@ -27,12 +27,20 @@ angular.module('winifySiteHomeCtrl', [])
       $rootScope.isHome = true;
       $scope.offsetTop = false;
       $scope.block = searchKey.get() || 'intro';
-
+      
+      var offset = 0;
       $scope.skipTo = function(block) {
         //window.console.log('skipto: ' + block);
         //window.console.log('block.top: ' + $('.' + block + '-block').offset().top);
+        
+        if (block === 'skills') {
+          offset = 50;
+        } else {
+          offset = 0;
+        }
+        
         $('html,body').animate({
-          'scrollTop': $('.' + block + '-block').offset().top
+          'scrollTop': $('.' + block + '-block').offset().top - offset
         }, 900, 'easeInOutExpo', function() {
           $('#nav1 > ul').removeClass('active');
         });
