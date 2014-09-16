@@ -5,17 +5,30 @@
 	xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 	<url>
-		<loc>http://winify.com/</loc>
+		<loc>http://winify.com/de/</loc>
 		<priority>0.8</priority>
 	</url>
 	<url>
-		<loc>http://winify.com/agb</loc>
+		<loc>http://winify.com/en/</loc>
+		<priority>0.8</priority>
 	</url>
 	<url>
-		<loc>http://winify.com/impressum</loc>
+		<loc>http://winify.com/de/agb</loc>
 	</url>
 	<url>
-		<loc>http://winify.com/datenschutz</loc>
+		<loc>http://winify.com/de/impressum</loc>
+	</url>
+	<url>
+		<loc>http://winify.com/de/datenschutz</loc>
+	</url>
+	<url>
+		<loc>http://winify.com/en/agb</loc>
+	</url>
+	<url>
+		<loc>http://winify.com/en/impressum</loc>
+	</url>
+	<url>
+		<loc>http://winify.com/en/datenschutz</loc>
 	</url>
 	<url>
 		<loc>http://winify.com/calculator/</loc>
@@ -26,5 +39,4 @@
 	<url>
 		<loc>http://winify.com/calculator/website.php</loc>
 	</url>
-
 </urlset>

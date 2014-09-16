@@ -1,0 +1,64 @@
+/* 
+    Created on : 15.09.2014, 16:01:39
+    Author     : igodorogea
+*/
+
+
+.footer {
+	background-color: $dGray;
+	color: white;
+
+	a {
+		color: white;
+	}
+
+	.copyright {
+		font-size: 14px;
+		font-size: 0.875rem;
+		margin: 0;
+	}
+
+	.footer-nav {
+		margin-bottom: 1em;
+
+		a {
+			margin-left: 1em;
+			position: relative;
+
+			&:before {
+				content: "/";
+				left: -12px;
+				position: absolute;
+			}
+
+			&:first-child {
+				margin-left: 0;
+
+				&:before {
+					content: "";
+				}
+			}
+		}
+	}
+
+	.language-menu {
+		margin-left: 1.5em;
+		margin-top: 19px;
+	}
+
+	.social-nav {
+		margin-top: 0.5em;
+
+		a {
+			font-size: 50px;
+			font-size: 3.125rem;
+			@include inline-block;
+			@include opacity(0.9);
+			@include transition(opacity 0.15s ease-in-out 0s);
+
+			&:hover {
+				@include opacity(1);
+			}
+		}
+	}
+}

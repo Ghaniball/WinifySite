@@ -14,3 +14,10 @@ $ddorange: #E26B29;
 $topMenuH: 80px;
 $topMenuHA: 54px;
 $footerHeight : 120px;
+
+
+@mixin keyframes($name) {
+    @-webkit-keyframes #{$name} { @content; }
+    @-moz-keyframes #{$name} { @content; }
+    @keyframes #{$name} { @content; }
+}

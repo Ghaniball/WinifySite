@@ -172,7 +172,6 @@ angular.module('winifySiteServices', [])
       $transition.animationEndEventName = findEndEventName(animationEndEventNames);
       return $transition;
     }])
-
   .factory('gmapService', ['$window', '$rootScope', function ($window, $rootScope) {
       var styles = [
         {'featureType': 'water', 'stylers': [{'visibility': 'on'}, {'color': '#e0f0fa'}]},
@@ -265,7 +264,7 @@ angular.module('winifySiteServices', [])
       'slide1': {
         'layer3': {
           'btn': {
-            'en': 'Project calculator <br/><span>Here you can estimate the approximate costs of your project (website or app development) in a few simple steps.</span>',
+            'en': 'Project calculator <br/><span>Calculate the costs of your project (website or app) in a few steps</span>',
             'de': 'Projektrechner <br/><span>Hier in wenigen Schritten die Kosten Ihres Projektes (Webseite oder App) berechnen.</span>'
           }
         }
@@ -273,7 +272,7 @@ angular.module('winifySiteServices', [])
       'slide2': {
         'layer1': {
           'h2': {
-            'en': 'We develop your <span>ideas</span><br/>and bring them to life.',
+            'en': 'We develop and realize<br/>your <span>ideas</span>',
             'de': 'Wir entwickeln und realisieren<br/>Ihre <span>Ideen.</span>'
           }
         },
@@ -293,7 +292,7 @@ angular.module('winifySiteServices', [])
         },
         'layer2': {
           'btn': {
-            'en': 'Contact us',
+            'en': 'Contact',
             'de': 'Kontakt'
           }
         }
@@ -302,44 +301,44 @@ angular.module('winifySiteServices', [])
     'skills': {
       'column1': {
         'title': {
-          'en': '',
+          'en': 'We are <span>Winify</span>',
           'de': 'Wir sind <span>Winify</span>'
         },
         'content': {
-          'en': '',
+          'en': 'A staff of 85 employees – offices in Germany, Switzerland, Poland, Moldova, and Australia',
           'de': '85 Mitarbeiter, Büros in Deutschland, Schweiz, Polen, Moldawien, Australien'
         }
       },
       'column2': {
         'title': {
-          'en': '',
+          'en': 'We are <span>experts</span>',
           'de': 'Wir sind <span>Spezialisten</span>'
         },
         'content': {
-          'en': '',
-          'de': 'Mobile Apps & Webseiten, Bezahllösungen, E & M - Commerce, Social Plattformen'
+          'en': 'Mobile apps & websites, payment systems, E- & M-Commerce, social platforms',
+          'de': 'Mobile Apps & Webseiten, Bezahllösungen, E- & M-Commerce, soziale Plattformen'
         }
       },
       'column3': {
         'title': {
-          'en': '',
+          'en': 'We develop <span>software</span>',
           'de': 'Wir entwickeln <span>Software</span>'
         },
         'content': {
-          'en': '',
+          'en': 'All relevant programming languages, product & project management, quality assurance, administration & service',
           'de': 'Alle relevanten Programmiersprachen, Produkt & Projekt Management, Qualitätskontrolle, Administration & Service'
         }
       },
       'title': {
-        'en': 'We listen to you and give you useful advices.<br/>We make beautiful websites.<br/>We make good software.<br/><span>Winify.</span>',
+        'en': 'We are <span>Winify.</span><br/>We make good software.<br/>We make attractive websites.<br/>We will listen to you and consult you.',
         'de': 'Wir sind <span>Winify.</span><br/>Wir machen gute Software.<br/>Wir machen schöne Webseiten.<br/>Wir hören Ihnen zu und beraten Sie.'
       },
       'content': {
-        'en': 'The core to your success is fully functional technology that fulfills all user’s needs and can even generate joy. We master all the leading software solutions and tailor them exactly to your needs. The thing that makes the difference is our creativity! We believe that only solutions that stand out from the mass can be successful. Our solutions inspire, they are intuitive and possess the magnetism for the user. Our standard is the success in our client\'s business. That\'s why we always think integrally and give our clients competent and innovative advices in all the areas of a product chain.',
+        'en': 'We are experts in all leading programming languages and software solutions. We will tailor them to suit your specific requirements. And add a good deal of creativity. Because only ideas which stand out from the crowd will be extraordinarily successful. Our solutions delight. They are highly appealing and can be operated intuitively.',
         'de': 'Wir beherrschen alle führenden Programmiersprachen und Software-Lösungen und passen sie exakt auf Ihre Ansprüche an. Und packen eine gehörige Portion Kreativität drauf. Denn nur Ideen, die sich von der Masse abheben, werden überdurchschnittlich erfolgreich sein. Unsere Lösungen begeistern, lassen sich intuitiv bedienen und erzeugen eine hohe Anziehungskraft.'
       },
       'content2': {
-        'en': '',
+        'en': 'Software is not an end in itself. Software is a digital tool to an end. The reason you want new software or a new website is that you want to achieve an objective. And of course you want be successful by doing so. That is exactly how we see it: We are driven by the wish to produce solutions which will help our customers to succeed.',
         'de': 'Software ist kein Selbstzweck. Software ist ein digitales Werkzeug, das einen Zweck zu erfüllen hat. Sie wollen Software programmieren oder eine Webseite erstellen lassen, weil Sie damit ein Ziel verfolgen. Und natürlich wollen Sie damit Erfolg haben. Genauso sehen wir das auch: Uns treibt der Wunsch, Produkte zu erstellen, die unsere Kunden weiterbringen.'
       },
       'list': [
@@ -350,7 +349,7 @@ angular.module('winifySiteServices', [])
             'de': 'Software Entwicklung'
           },
           'desc': {
-            'en': 'We develop powerful and secure software, websites and apps.',
+            'en': 'We develop efficient and safe software, websites, and apps.',
             'de': 'Wir entwickeln leistungsfähige und sichere Software, Webseiten und Apps.'
           }
         },
@@ -361,7 +360,7 @@ angular.module('winifySiteServices', [])
             'de': 'Projekt Management'
           },
           'desc': {
-            'en': 'We\'re satisfied with our project management only when you feel well-informed and secure.',
+            'en': 'We are not satisfied with our project management until you feel well-informed and certain.',
             'de': 'Wir sind mit dem Projekt Management erst zufrieden, wenn Sie sich gut informiert und sicher fühlen.'
           }
         },
@@ -372,7 +371,7 @@ angular.module('winifySiteServices', [])
             'de': 'Qualitätskontrolle'
           },
           'desc': {
-            'en': 'Testing and QA Program by Winify accompanies your project from the early stages untill final delivery to you.',
+            'en': 'The Winify testing und QA programme will accompany your project from the very beginning to the final handover.',
             'de': 'Das Winify Testing und QA Programm begleitet Ihr Projekt von einem frühen Stadium bis zur finalen Übergabe an Sie.'
           }
         },
@@ -383,7 +382,7 @@ angular.module('winifySiteServices', [])
             'de': 'Design'
           },
           'desc': {
-            'en': 'Together with you we develop a software that exactly matches your needs. And all its parts are built individually from database till logo design.',
+            'en': 'Together we will develop an individual service which will meet all your needs and wishes – from database management to the design of the logo.',
             'de': 'Wir entwickeln gemeinsam mit Ihnen den Service, der genau zu Ihnen passt. Von der Datenbank bis zum Logo Design – alles individuell.'
           }
         },
@@ -394,16 +393,16 @@ angular.module('winifySiteServices', [])
             'de': 'Administration'
           },
           'desc': {
-            'en': 'We maintain and secure the functionality of your service over time. 24/7 and 365 days a year.',
-            'de': 'Wir kümmern uns darum, dass Ihr Service immer einwandfrei läuft. 24/7 an 365 Tagen im Jahr.'
+            'en': 'We will ensure that your service works perfectly. 24/7 on every day of the year.',
+            'de': 'Wir kümmern uns darum, dass Ihr Service immer einwandfrei läuft. 24/7 und an jedem Tag des Jahres.'
           }
         }
       ]
     },
     'flow': {
       'title': {
-        'en': 'From initial <span>Idea</span>, through general <span>Concept</span><br/>to the <span>Launch</span>',
-        'de': 'Von der ersten <span>Idee</span>, über das <span>Konzept</span><br/>bis zum <span>Launch</span>'
+        'en': 'From the first <span>idea</span> and <span>concept</span><br/>to the final launch',
+        'de': 'Von der ersten <span>Idee</span> über das <span>Konzept</span><br/>bis zum <span>Launch</span>'
       },
       'list': [
         {
@@ -413,7 +412,7 @@ angular.module('winifySiteServices', [])
             'de': 'Plan'
           },
           'desc': {
-            'en': 'Set goals<br/>Arrange milestones<br/>Plan launch date',
+            'en': 'Setting goals<br/>Determining milestones<br/>Setting the launch date',
             'de': 'Ziele setzen<br/>Milestones vereinbaren<br/>Launch-Termin festlegen'
           }
         },
@@ -424,18 +423,18 @@ angular.module('winifySiteServices', [])
             'de': 'Design'
           },
           'desc': {
-            'en': 'UI Design<br/>User Experience<br/>Usability<br/>Build mock-up & prototype',
-            'de': 'UI Design<br/>User Experience<br/>Usability<br/>Entwurf & Prototyp erstellen'
+            'en': 'UI Design<br/>User experience<br/>Usability<br/>Drafts & prototypes',
+            'de': 'UI Design<br/>User Experience<br/>Usability<br/>Entwurf & Prototyp'
           }
         },
         {
           'ico': 'flow-dev',
           'head': {
-            'en': 'Develop',
+            'en': 'Development',
             'de': 'Entwickeln'
           },
           'desc': {
-            'en': 'Web & App Development<br/>Content Management<br/>Databases<br/>E-Commerce solutions<br/>Responsive Web Design<br/>Quality Assurance',
+            'en': 'Web & app development<br/>Content management<br/>Database management<br/>E-commerce solutions<br/>Responsive web design<br/>Quality assurance',
             'de': 'Web & App Development<br/>Content Management<br/>Datenbanken<br/>E-Commerce Lösungen<br/>Responsive Web Design<br/>Quality Assurance'
           }
         },
@@ -446,7 +445,7 @@ angular.module('winifySiteServices', [])
             'de': 'Launch'
           },
           'desc': {
-            'en': 'Switch to live<br/>SEO/SEM<br/>Administration<br/>QA and maintenance',
+            'en': 'Going live<br/>SEO/SEM<br/>Administration<br/>Maintenance and QA',
             'de': 'Live schalten<br/>SEO/SEM<br/>Administration<br/>Wartung und QA'
           }
         }
@@ -454,18 +453,18 @@ angular.module('winifySiteServices', [])
     },
     'about': {
       'title': {
-        'en': 'Your csutomers are glad to use your website.<br/>Your sales are high.<br/><span>Winify</span> has done a good job.',
+        'en': 'Your customers like your website.<br/>Your earnings are good.<br/><span>Winify</span> has done a good job.',
         'de': 'Ihre Kunden nutzen Ihre Webseite gerne.<br/>Ihre Umsätze sind gut.<br/><span>Winify</span> hat einen guten Job gemacht.'
       },
       'content': {
-        'en': 'We make good products by throwing all our experience, know-how and creativity into the mix. We want to reach the best results for our clients: state-of-the-art websites and software products, user friendly design & usability, shops that convert into sales and many more. Too many buzzwords? Please, scroll down. There you will find our contact form. Just let us speak and we’ll get straight to the point.',
+        'en': 'Doing a good job means that we will invest all our experience, all our know-how, and all our creativity. We want to achieve the best for our customers: state-of-the-art websites and software solutions, user-friendly designs & high usability levels, automatically converting online shops, and much more. Too many buzzwords? Please scroll down a bit to find our contact box. Let us get in touch, we are always glad to specify.',
         'de': 'Gute Produkte zu machen heißt für uns, unsere ganze Erfahrung, all unser Know How und Kreativität in die Waagschale zu werfen. Wir wollen das beste für unsere Kunden erreichen: State-of-the-Art Webseiten und Software Produkte, kundenfreundliches Design & Usability, konvertierende Shops und vieles mehr. Zu viele Buzzwords? Scrollen Sie bitte etwas herunter. Dort ist unser Kontaktfeld. Lassen Sie uns sprechen, wir werden gerne konkret.'
       }
     },
     'quotes': [
       {
         'text': {
-          'en': 'Collaboration with Winify has always been a pleasure. We’ve developed a precious personal and professional connection over time that makes us feel like we’re in good hands. Winify is always ready to react to all the comments and critique. We have equal roles in our discussions and this allows us to secure the best results.',
+          'en': 'Working with Winify has always been a pleasure. Over time we have developed a personal as well as professional relationship. We feel very much at ease. Winify is always willing to respond to comments and criticisms. We discuss as equals. This way, we are sure to get the best results.',
           'de': 'Die Zusammenarbeit mit Winify hat immer Freude bereitet. Über die Zeit hat sich ein persönlich-professionelles Verhältnis entwickelt, in dem wir uns gut aufgehoben fühlen. Winify ist immer bereit auf Anmerkungen und Kritik einzugehen. Wir diskutieren auf Augenhöhe und holen so sicher das Beste heraus.'
         },
         'author': {
@@ -475,7 +474,7 @@ angular.module('winifySiteServices', [])
       },
       {
         'text': {
-          'en': 'We’ve started to work with Winify on a small contract and were very satisfied with the job. Over time we’ve been developing our collaboration way further and now we can tell that Winify is our most important software and product partner.',
+          'en': 'We started with a rather small job for Winify AG and were very satisfied. As a result, we have been gradually intensifying our cooperation. Today, Winify is our most important software and product partner.',
           'de': 'Wir haben mit einem kleineren Auftrag mit der Winify AG begonnen und waren sehr zufrieden. Nach und nach haben wir die Zusammenarbeit ausgebaut und mittlerweile ist Winify unser wichtigster Software und Produkt Partner.'
         },
         'author': {
@@ -485,7 +484,7 @@ angular.module('winifySiteServices', [])
       },
       {
         'text': {
-          'en': 'We’ve been working with Winify for over three years on different projects. Their competence, especially in “Payment” and all related fields is noteworthy.',
+          'en': 'For three years now we have been cooperating with Winify in different projects. Their competence in the field of payment and everything that has to do with it is remarkable',
           'de': 'Wir arbeiten mit Winify nun schon seit drei Jahren in verschiedenen Projekten zusammen. Die Kompetenz vor allem im Bereich "Payment" und was damit zu tun hat, ist beachtenswert.'
         },
         'author': {
@@ -495,7 +494,7 @@ angular.module('winifySiteServices', [])
       },
       {
         'text': {
-          'en': 'For many portfolio enterprises is Winify partially for shorter phases, partially for those over 12 months always in use. For us Winify is a very valuable and especially important partner.',
+          'en': 'Several of our portfolio companies are or have been Winify customers – some for shorter periods, some for more than a year. For us, Winify is a very valuable and important partner.',
           'de': 'Bei mehreren Portfoliounternehmen ist Winify - zum Teil für kürzere Phasen, zum Teil seit über 12 Monaten - im Einsatz. Für uns ist Winify als Partner sehr wertvoll und äußerst wichtig.'
         },
         'author': {
@@ -506,11 +505,11 @@ angular.module('winifySiteServices', [])
     ],
     'projekte': {
       'title': {
-        'en': 'Our <span>Projects</span>',
+        'en': 'Our <span>projects</span>',
         'de': 'Unsere <span>Projekte</span>'
       },
       'content': {
-        'en': 'We are proud to have accomplished interesting projects with over 100 known and innovative enterprises. Here you will find several examples:',
+        'en': 'We are proud to have realized many interesting projects <b>with more than 100 renowned and innovative companies</b>.<br />Just a few examples:',
         'de': 'Wir sind stolz darauf, viele interessante Projekte mit <b>über 100 bekannten und<br/>innovativen Unternehmen</b> umgesetzt zu haben. Hier einige Beispiele:'
       }
     },
@@ -569,7 +568,7 @@ angular.module('winifySiteServices', [])
           'de': 'Projektrechner'
         },
         'agb': {
-          'en': 'Disclaimer',
+          'en': 'Exclusion of liability',
           'de': 'Haftungsausschluss'
         },
         'impressum': {
@@ -600,7 +599,7 @@ angular.module('winifySiteServices', [])
       {
         name: 'about',
         text: {
-          'en': 'We',
+          'en': 'Us',
           'de': 'Wir'
         }
       },
@@ -614,18 +613,18 @@ angular.module('winifySiteServices', [])
       {
         name: 'contact',
         text: {
-          'en': 'Contact us',
+          'en': 'Contact',
           'de': 'Kontakt'
         }
       }
     ],
     'agb': {
       'title': {
-        'en': 'Disclaimer',
+        'en': 'Exclusion of liability',
         'de': 'Haftungsausschluss'
       },
       'content': {
-        'en': 'Winify AG and its subsidiaries do not guarantee that all the information presented on this website is full, correct and actual in any case. This also works for all the links that refer from this website directly or indirectly. Winify AG and its subsidiaries aren’t responsible for the content of the websites that can be reached through by clicking on the links. Winify AG and its subsidiaries reserve the right to change or to complete the already present information without prior notice. <br/>In making this information available, Winify AG and its subsidiaries do not establish the basis for any offer about information, consulting or similar contractual relationships. All liability for the use of the content of the website or for the accuracy of the information or for the access ability of this website is excluded.<br/>Winify AG and its subsidiaries are not liable for specific, indirect and direct damage or for any damage which can arise as a result of a lack of accessibility, loss of data or lost profits that arouse as a result of the use of documentation and information presented on this website.',
+        'en': 'Winify AG and its subsidiaries do not guarantee that the information provided on this website is complete, accurate, and always current. This also applies to all links to which this website makes direct or indirect reference. Winify AG and its subsidiaries are not responsible for the content of any site reached by link from this website. Winify AG and its subsidiaries retain the right to modify or supplement information without prior notice.<br/>In making this information available, Winify AG and its subsidiaries do not establish the basis for any offer about information, consulting or similar contractual relationships. All liability for the use of the content of the website or for the accuracy of the content or for the availability of the website is excluded.<br/>Winify AG and its subsidiaries do therefore not assume any liability whatsoever for actual, direct or indirect losses or for losses incurred due to the unavailability of use, data losses or lost profits in connection with the use of documents or information accessible via this web site.',
         'de': 'Die Winify AG und deren Tochterunternehmen übernehmen keine Garantie dafür, dass die auf dieser Website bereitgestellten Informationen vollständig, richtig und in jedem Falle aktuell sind. Dies gilt auch für alle Verbindungen (“Links”), die von dieser Website direkt oder indirekt verweisen. Die Winify AG und deren Tochterunternehmen sind für den Inhalt einer Seite, die mit einem Link erreicht wird, nicht verantwortlich. Die Winify AG und deren Tochterunternehmen behalten sich das Recht vor, ohne vorherige Ankündigung Änderungen oder Ergänzungen der bereitgestellten Informationen vorzunehmen.<br/>Die Winify AG und deren Tochterunternehmen begründen durch die Bereitstellung dieser Informationen kein Vertragsangebot über Auskünfte, Beratung oder ähnliche Vertragsbeziehungen. Jegliche Haftung für die Nutzung der Inhalte der Website oder die Richtigkeit der Inhalte oder die Erreichbarkeit der Website wird ausgeschlossen.<br/>Die Winify AG und deren Tochterunternehmen haften daher nicht für konkrete, mittelbare und unmittelbare Schäden oder Schäden, die durch fehlende Nutzungsmöglichkeiten, Datenverluste oder entgangene Gewinne entstehen können, die im Zusammenhang mit der Nutzung von Dokumenten oder Informationen entstehen, die auf dieser Website zugänglich sind.'
       }
     },
@@ -635,40 +634,68 @@ angular.module('winifySiteServices', [])
         'de': 'Datenschutzbestimmungen'
       },
       'title2': {
-        'en': 'Your data by us',
+        'en': 'Winify and your data',
         'de': 'Ihre Daten bei uns'
       },
       'content': {
-        'en': 'Winify AG and its subsidiaries undertake to protect your personal data. This data privacy statement describes in detail which information we collect from you and what happens to that data.<br/>In the following we shall thus declare how the collection and storage of data takes place and how we protect personal data that you give through this website:',
+        'en': 'Winify AG and its subsidiaries undertake to protect your personal data. This data protection declaration describes in full detail which information we gather from you and how we proceed with the data.<br/>In the following, we will therefore explain how we collect and store the data and how we ensure the protection of the personal information that you enter on this website:',
         'de': 'Die Winify AG und deren Tochterunternehmen verpflichten sich, Ihre persönlichen Daten zu schützen. Diese Datenschutzerklärung beschreibt ausführlich, welche Informationen wir über Sie erheben und was mit diesen Daten geschieht.<br/>Daher werden wir im Folgenden erklären, wie die Datenerhebung und Speicherung funktioniert und wie wir den Schutz Ihrer persönlichen Daten gewährleisten, wenn Sie über diese Website Daten eingeben:'
       },
       'content1': {
-        'en': '<b>1. How is the data collected?</b><br/>The data is first collected with the use of online forms. For this end the necessary data is sent to Winify by e-mail.  Second, the log information is also saved.',
+        'en': '<b>1. How are the data collected?</b><br/>For one thing, the data are collected via online forms. These data will be sent to one of Winify\'s own addresses via e-mail. The log-in data will also be saved.',
         'de': '<b>1. Wie werden die Daten erhoben?</b><br/>Die Daten werden zum einen über Online-Formulare erhoben, dabei werden die erfassten Daten per E-Mail an eine Winify-Adresse versendet. Zum anderen werden Log-Informationen abgespeichert.'
       },
       'content2': {
-        'en': '<b>2. Which data is collected?</b><br/>The data is collected through contact form or newsletter registration, thus we collect only the data that you provide by yourself by filling the form. The input of these data takes place voluntarily. At the same time we point it out that you can’t use all the functions unless you provide all the data. In addition to this URL as well as IP address is also collected by Winify websites.',
+        'en': '<b>2. Which data are collected?</b><br/>We only collect the data you enter for newsletter registration or into contact forms. All data input is voluntary. However, we would like you to note that not all functions may be available for use if you do not enter the complete data. Furthermore, the URL and IP address will be collected once you access a Winify website.',
         'de': '<b>2. Welche Daten werden erhoben?</b><br/>Es werden Daten erhoben über das Kontaktformular oder die Newsletter Registrierung – dabei werden nur die Daten erhoben, die Sie selbst über die Eingabemasken eingeben. Jede Dateneingabe ist freiwillig. Wir weisen Sie allerdings darauf hin, dass Sie nicht alle Funktionen vollständig nutzen können, wenn Sie nicht alle Daten eingeben. Zudem werden die URL sowie die IP Adresse beim Abrufen von Winify-Webseiten erhoben.'
       },
       'content3': {
-        'en': '<b>3. Who uses the data and how?</b><br/>The data is used exclusively for the processing of the inquiry and is removed after this procedure. We process and use your data only within Winify AG and its subsidiaries in order to be able to offer you the desired information and services. Log information is used to further improve Winify AG and its subsidiaries’ services and thus contains no personally identifiable information.',
+        'en': '<b>3. How is your data being used and who uses your data?</b><br/>The data is used solely for the processing of inquiries and deleted upon completion. Only Winify AG and its subsidiaries will process and use your data to be able to offer you the correct information and services. Log-in information helps to further improve the service of Winify AG and its subsidiaries. These data do not contain any personal identification information.',
         'de': '<b>3. Wie und von wem werden die Daten genutzt?</b><br/>Die Daten werden ausschließlich zur Bearbeitung der Anfragen genutzt und nach Abschluss des Vorgangs gelöscht. Wir verarbeiten und nutzen Ihre Daten nur innerhalb der Winify AG und deren Tochterunternehmen, um Ihnen die gewünschten Informationen und Dienstleistungen anbieten zu können. Die Log-Informationen werden verwendet, um den Service der Winify AG und deren Tochterunternehmen weiter zu verbessern und beinhalten keine persönliche Identifizierungsinformation.'
       },
       'content4': {
-        'en': '<b>4. How do we count the number of visits to our website?</b><br/>This website uses Google Analytics, a web analysis service of the Google Inc. („Google“). Google Analytics uses the so-called „cookies“, text files that are saved on a computer and that allow for analysis of the use of website. The information generated by the cookie concerning your use of this website is usually transferred to one of Google\'s servers in the USA, where it is stored.<br/>The IP address transferred from your browser within Google Analytics will not be associated with other data held by Google. You can prevent the use of cookies by a special setting in your browser, still we point it out that by doing so you won’t be able to use certain functionalities of this website. Moreover, you can prevent the collection of your data (incl. IP address) by the use of cookies and its further processing by Google by downloading and installing the following plugin for your browser: <a href="http://tools.google.com/dlpage/gaoptout?hl=de">http://tools.google.com/dlpage/gaoptout?hl=de</a>.',
+        'en': '<b>4. How do we measure visits to the website?</b><br/>This website uses Google Analytics, a web analysis service by Google, Inc. („Google“). Google Analytics uses so-called "cookies", text files saved to your computer which allow for the analysis of your website visit. When you use this website, the information created by the cookie (including your IP address) is transmitted to a Google server in the USA and saved.<br/>Google Analytics will not link the IP address transmitted by your browser to other Google data. You may refuse the use of cookies by selecting the appropriate settings on your browser. We would like to point out, however, that you might in this case not be able to use all functions of this website to their full extent. You can also prevent the data generated by the cookie about your use of the website (including your IP address) from being transmitted to Google and being stored and processed by Google by downloading and installing the browser plugin available at the following link: <a href="http://tools.google.com/dlpage/gaoptout?hl=de">http://tools.google.com/dlpage/gaoptout?hl=de</a>.',
         'de': '<b>4. Wie messen wir die Besuche auf der Webseite?</b><br/>Diese Website benutzt Google Analytics, einen Webanalysedienst der Google Inc. („Google“). Google Analytics verwendet sog. „Cookies“, Textdateien, die auf Ihrem Computer gespeichert werden und die eine Analyse der Benutzung der Website durch Sie ermöglichen. Die durch den Cookie erzeugten Informationen über Ihre Benutzung dieser Website werden in der Regel an einen Server von Google in den USA übertragen und dort gespeichert.<br/>Die im Rahmen von Google Analytics von Ihrem Browser übermittelte IP-Adresse wird nicht mit anderen Daten von Google zusammengeführt. Sie können die Speicherung der Cookies durch eine entsprechende Einstellung Ihrer Browser-Software verhindern; wir weisen Sie jedoch darauf hin, dass Sie in diesem Fall gegebenenfalls nicht sämtliche Funktionen dieser Website vollumfänglich werden nutzen können. Sie können darüber hinaus die Erfassung der durch das Cookie erzeugten und auf Ihre Nutzung der Website bezogenen Daten (inkl. Ihrer IP-Adresse) an Google sowie die Verarbeitung dieser Daten durch Google verhindern, indem sie das unter dem folgenden Link verfügbare Browser-Plugin herunterladen und installieren: <a href="http://tools.google.com/dlpage/gaoptout?hl=de">http://tools.google.com/dlpage/gaoptout?hl=de</a>.'
       },
       'content5': {
-        'en': '<b>5. Who else has access to the data?</b><br/>No one. Your data is not transmitted to third parties.',
+        'en': '<b>5. Who else has access to the data?</b><br/>Nobody. Your data are not forwarded to third parties.',
         'de': '<b>5. Wer hat sonst noch Zugriff auf die Daten?</b><br/>Niemand. Eine Übermittlung Ihrer Daten an Dritte findet nicht statt.'
       },
       'content6': {
-        'en': '<b>6. How can the user access the data, change or remove it?</b><br/>The requests to remove or to change the data can be e-mailed to Winify AG at customer@winify.com. When you cancel your newsletter all corresponding data is deleted.',
+        'en': '<b>6. How can the user access data, change or delete them?</b><br/>If you would like Winify AG to delete or change data, please contact us by email: <a href="mailto:customer@winify.com">customer@winify.com</a>. By cancelling your newsletter all corresponding data is deleted.',
         'de': '<b>6. Wie kann der Nutzer auf die Daten zugreifen, sie ändern oder löschen?</b><br/>Anfragen zur Löschung der Daten oder Änderungsanfragen sind ebenso per E-Mail an die Winify AG zu richten: customer@winify.com. Mit der Abmeldung des Newsletters werden auch die entsprechenden Daten gelöscht.'
       },
       'content7': {
-        'en': '<b>7. How is ensured the data security?</b><br/>The data will be saved on our own servers that comply with the highest security standards. If you send us your personal data via internet, we take measures to secure the safety of your personal data. Your data is carefully protected against loss, destruction, manipulation, and illegal access.',
+        'en': '<b>7. How is the data protection ensured?</b><br/>The data are stored on our own state-of-the-art security systems. Once your personal data are transferred to us via internet, our precautionary measures will ensure their protection. Your data are carefully protected against loss, destruction, manipulation and unauthorized access.',
         'de': '<b>7. Wie wird die Datensicherheit gewährleistet?</b><br/>Die Daten werden auf unseren eigenen Systemen gespeichert, deren sehr hohe Sicherheit auf dem Stand der Technik ist. Wenn Sie uns personenbezogene Daten via Internet übermittelt haben, greifen unsere Vorkehrungen, um die Sicherheit Ihrer personenbezogenen Daten zu gewährleisten. Ihre Daten werden gewissenhaft vor Verlust, Zerstörung, Manipulation und unberechtigtem Zugriff geschützt.'
       }
+    },
+    'impressum': {
+      'title': {
+        'en': 'Exclusion of liability',
+        'de': 'Haftungsausschluss'
+      },
+      'content': {
+        'en': '',
+        'de': ''
+      },
+      'berlin': {
+        'en': 'Berlin office',
+        'de': 'Büro Berlin'
+      },
+      'munich': {
+        'en': 'Munich office',
+        'de': 'Büro München'
+      }
     }
-  });
+  })
+  .constant('langs', [
+    {
+      name: 'en',
+      title: 'En'
+    },
+    {
+      name: 'de',
+      title: 'De'
+    }
+  ]);

@@ -37,13 +37,3 @@
 @import "mixins/nav-vertical-align";
 @import "mixins/grid-framework";
 @import "mixins/grid";
-
-@mixin background-cover($url, $position: 'center center'){
-	background: url($url) no-repeat #{$position};
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
-	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='#{$url}', sizingMethod='scale');
-	-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='#{$url}', sizingMethod='scale')";
-}

@@ -84,7 +84,7 @@ module.exports = function (grunt) {
             var middlewares = [];
  
             middlewares.push(modRewrite([
-              //'^/de|en/(.*) /$1',
+              '^/de|en/(.*) /$1',
               '^[^\\.]*$ /index.html [L]'
             ])); //Matches everything that does not contain a '.' (period)
             options.base.forEach(function(base) {
@@ -188,7 +188,7 @@ module.exports = function (grunt) {
         ignorePath: '<%= yeoman.app %>/'
       },
       sass: {
-        src: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
+        src: ['<%= yeoman.app %>/styles/*.{scss,sass}'],
         ignorePath: '<%= yeoman.app %>/bower_components/'
       }
     },
@@ -460,7 +460,7 @@ module.exports = function (grunt) {
       all: {
         options: {
           snapshotPath: '<%= yeoman.dist %>/snapshots/',
-          sitePath: 'http://winify-site.lc/',
+          sitePath: 'http://winify.lc/',
           fileNamePrefix: '',
           msWaitForPages: 3000,
           removeScripts: true,
@@ -471,17 +471,22 @@ module.exports = function (grunt) {
             {'<html ': '<!doctype html><html '}
           ],
           sanitize: function (requestUri) {
+            console.log('uri: ' + requestUri);
             if (/\/$/.test(requestUri)) {
-              return 'index';
+              return requestUri + 'index';
             } else {
               return requestUri;
             }
           },
           urls: [
-            '/',
-            'datenschutz',
-            'impressum',
-            'agb'
+            'de/',
+            'de/datenschutz',
+            'de/impressum',
+            'de/agb',
+            'en/',
+            'en/datenschutz',
+            'en/impressum',
+            'en/agb'
           ]
         }
       }

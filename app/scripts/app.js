@@ -12,27 +12,28 @@ angular
     'winifySiteServices',
     'winifySiteDirectives'
   ])
-  .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
+  .config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
       $locationProvider.html5Mode(true).hashPrefix('!');
       $routeProvider
-        .when('/', {
+        .when('/:lang/', {
           templateUrl: 'views/home.html',
           controller: 'HomeCtrl',
           reloadOnSearch: false
         })
-        .when('/agb', {
+        .when('/:lang/agb', {
           templateUrl: 'views/agb.html',
           controller: 'FooterPagesCtrl'
         })
-        .when('/impressum', {
+        .when('/:lang/impressum', {
           templateUrl: 'views/impressum.html',
           controller: 'FooterPagesCtrl'
         })
-        .when('/datenschutz', {
+        .when('/:lang/datenschutz', {
           templateUrl: 'views/datenschutz.html',
           controller: 'FooterPagesCtrl'
-        }).otherwise({
-          redirectTo: '/'
+        })
+        .otherwise({
+          redirectTo: '/de/'
         });
     }
   ])
@@ -45,22 +46,31 @@ angular
     'BSizeService',
     'AnalyticsEvents',
     'l10n',
-    function($rootScope, $routeParams, $location, $window, $timeout, BSizeService, AnalyticsEvents, l10n) {
+    'langs',
+    function ($rootScope, $routeParams, $location, $window, $timeout, BSizeService, AnalyticsEvents, l10n, langs) {
       $rootScope.timerInitial = new Date().getTime();
 
       $rootScope.base = $location.$$html5 ? '/' : '/#!/';
 
-      $rootScope.$on('$locationChangeSuccess', function() {
-        $rootScope.locpath = $location.url();
+      $rootScope.$on('$locationChangeSuccess', function () {
+        $rootScope.locpath = $location.url().replace('/de', '').replace('/en', '');
 
         //window.console.log($rootScope.locpath);
       });
 
-      $rootScope.$on('$routeChangeSuccess', function() {
-        $rootScope.lang = 'de';
+      $rootScope.$on('$routeChangeSuccess', function () {
+        var l = $routeParams.lang;
+        $rootScope.lang = l === 'en' ? 'en' : 'de';
+        $rootScope.langs = langs;
+        $rootScope.test = {'key': $rootScope.lang};
 
-        $rootScope.path = $rootScope.base;
-        
+        $rootScope.$watch('test.key', function (val) {
+          $rootScope.lang = val;
+//          window.console.log(val);
+        });
+
+        $rootScope.path = $rootScope.base + $rootScope.lang + '/';
+
         $rootScope.l10n = l10n;
 
         //$window.console.log($location.path());
@@ -73,18 +83,18 @@ angular
 
       $rootScope.sendEvent = AnalyticsEvents.send;
 
-      $rootScope.loadTopMenu = function(title) {
+      $rootScope.loadTopMenu = function (title) {
         $window.Gumby.initialize('toggles');
         $window.Gumby.initialize('fixed');
       };
 
       $rootScope.BrowserSize = BSizeService.get(true);
 
-      $rootScope.$on('browser.resize', function($event, arg) {
+      $rootScope.$on('browser.resize', function ($event, arg) {
         $rootScope.BrowserSize = arg;
       });
 
-      $rootScope.$on('$destroy', function() {
+      $rootScope.$on('$destroy', function () {
         BSizeService.off();
       });
     }
