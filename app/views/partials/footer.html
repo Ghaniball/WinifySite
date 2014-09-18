@@ -3,7 +3,7 @@
 		<div class="clearfix">
 			<div class="pull_left">
 				<nav class="footer-nav">
-					<a href="/calculator/"
+					<a href="/{{lang}}/calculator/"
 					   data-ng-click="sendEvent($event, 'S3Calculator');"
 					   target="_self">{{l10n.footer.menu.calculator[lang]}}</a>
 					<a href="{{path}}agb">{{l10n.footer.menu.agb[lang]}}</a>
@@ -24,27 +24,6 @@
 						ng-options="_lang.name as _lang.title for _lang in langs">
 				</select>
 			</div>
-<!--
-			<div class="field language-menu pull_right">
-				<div class="picker">
-					<select
-						ng-model="test.key"
-						ng-options="_lang.name as _lang.title for _lang in langs">
-					</select>
-				</div>
-			</div>-->
-
-			<!--			<nav class="btn-group language-menu pull_right">
-							<a role="button" class="btn btn-default">{{lang === 'de' ? 'De' : 'En'}}</a>
-							<button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-								<span class="caret"></span>
-								<span class="sr-only">Choose Language</span>
-							</button>
-							<ul class="dropdown-menu" role="menu">
-								<li><a data-ng-if="lang === 'de'" href="{{base + 'en' + locpath}}">En</a></li>
-								<li><a data-ng-if="lang === 'en'" href="{{base + 'de' + locpath}}">De</a></li>
-							</ul>
-						</nav>-->
 
 			<nav class="social-nav pull_right">
 				<a href="https://www.facebook.com/Winify"

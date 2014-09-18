@@ -488,7 +488,7 @@ angular.module('winifySiteServices', [])
           'de': 'Wir arbeiten mit Winify nun schon seit drei Jahren in verschiedenen Projekten zusammen. Die Kompetenz vor allem im Bereich "Payment" und was damit zu tun hat, ist beachtenswert.'
         },
         'author': {
-          'name': 'Dr. Felix Hötzinger, Vorstand, Demekon Entertainment AG',
+          'name': 'Dr. Felix Hötzinger, CEO, Demekon Entertainment AG',
           'desc': ''
         }
       },
@@ -549,11 +549,11 @@ angular.module('winifySiteServices', [])
         'de': 'Deutschland'
       },
       {
-        'en': 'Germany',
+        'en': 'Poland',
         'de': 'Polen'
       },
       {
-        'en': 'Germany',
+        'en': 'Moldova',
         'de': 'Moldau'
       }
     ],
@@ -672,8 +672,8 @@ angular.module('winifySiteServices', [])
     },
     'impressum': {
       'title': {
-        'en': 'Exclusion of liability',
-        'de': 'Haftungsausschluss'
+        'en': 'Imprint',
+        'de': 'Imprint'
       },
       'content': {
         'en': '',

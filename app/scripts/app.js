@@ -52,11 +52,9 @@ angular
 
       $rootScope.base = $location.$$html5 ? '/' : '/#!/';
 
-      $rootScope.$on('$locationChangeSuccess', function () {
-        $rootScope.locpath = $location.url().replace('/de', '').replace('/en', '');
-
-        //window.console.log($rootScope.locpath);
-      });
+//      $rootScope.$on('$locationChangeSuccess', function () {
+//        $rootScope.locpath = $location.url().replace('/de', '').replace('/en', '');
+//      });
 
       $rootScope.$on('$routeChangeSuccess', function () {
         var l = $routeParams.lang;
@@ -65,8 +63,8 @@ angular
         $rootScope.test = {'key': $rootScope.lang};
 
         $rootScope.$watch('test.key', function (val) {
-          $rootScope.lang = val;
-//          window.console.log(val);
+          //$rootScope.lang = val;
+          $location.url('/' + val + $location.url().replace('/de', '').replace('/en', ''));
         });
 
         $rootScope.path = $rootScope.base + $rootScope.lang + '/';
