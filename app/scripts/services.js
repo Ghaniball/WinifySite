@@ -272,7 +272,7 @@ angular.module('winifySiteServices', [])
       'slide2': {
         'layer1': {
           'h2': {
-            'en': 'We develop and realize<br/>your <span>ideas</span>',
+            'en': 'We develop and realize<br/>your <span>ideas.</span>',
             'de': 'Wir entwickeln und realisieren<br/>Ihre <span>Ideen.</span>'
           }
         },
@@ -315,8 +315,8 @@ angular.module('winifySiteServices', [])
           'de': 'Wir sind <span>Spezialisten</span>'
         },
         'content': {
-          'en': 'Mobile apps & websites, payment systems, E- & M-Commerce, social platforms',
-          'de': 'Mobile Apps & Webseiten, Bezahllösungen, E- & M-Commerce, soziale Plattformen'
+          'en': 'Mobile apps & websites, payment systems, E&ndash;&nbsp;&&nbsp;M&ndash;Commerce, social platforms',
+          'de': 'Mobile Apps & Webseiten, Bezahllösungen, E&ndash;&nbsp;&&nbsp;M&ndash;Commerce, soziale Plattformen'
         }
       },
       'column3': {
