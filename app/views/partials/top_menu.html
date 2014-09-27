@@ -11,10 +11,16 @@
 				 src="/images/logo_winify.png"/>
 			<!--<img class="small-logo"-->
 			<!--src="/images/logo-des.png"/>-->
-			<span data-ng-hide="BrowserSize.width < 875">Winify</span>
+			<span>Winify</span>
 		</a>
 	</div>
-	<ul class="pull_right">
+	
+	<nav class="language-menu pull_right">
+		<a data-ng-class="{active: lang === 'en'}" href="{{base + 'en' + locpath}}">En</a>
+		<a data-ng-class="{active: lang === 'de'}" href="{{base + 'de' + locpath}}">De</a>
+	</nav>
+	
+	<ul class="top-nav pull_right">
 		<li data-ng-repeat="_block in l10n.homePageBlocks">
 			<a href="{{path}}?{{_block.name}}"
 			   data-ng-class="{active: block === _block.name}"

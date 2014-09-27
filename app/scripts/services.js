@@ -101,7 +101,8 @@ angular.module('winifySiteServices', [])
         }
       };
     }])
-  .factory('$transition', ['$q', '$timeout', '$rootScope', function ($q, $timeout, $rootScope) {
+  .factory('$transition', ['$q', '$timeout', '$rootScope',
+    function ($q, $timeout, $rootScope) {
 
       var $transition = function (element, trigger, options) {
         options = options || {};
@@ -260,6 +261,10 @@ angular.module('winifySiteServices', [])
       };
     }])
   .constant('l10n', {
+    'siteTitle': {
+      'en': 'Winify Software Development',
+      'de': 'Winify Software Entwicklung'
+    },
     'intro': {
       'slide1': {
         'layer3': {
@@ -315,8 +320,8 @@ angular.module('winifySiteServices', [])
           'de': 'Wir sind <span>Spezialisten</span>'
         },
         'content': {
-          'en': 'Mobile apps & websites, payment systems, E&ndash;&nbsp;&&nbsp;M&ndash;Commerce, social platforms',
-          'de': 'Mobile Apps & Webseiten, Bezahllösungen, E&ndash;&nbsp;&&nbsp;M&ndash;Commerce, soziale Plattformen'
+          'en': 'Mobile apps & websites, payment systems, <span class="nobr">E- & M-Commerce</span>, social platforms',
+          'de': 'Mobile Apps & Webseiten, Bezahllösungen, <span class="nobr">E- & M-Commerce</span>, soziale Plattformen'
         }
       },
       'column3': {
@@ -346,7 +351,7 @@ angular.module('winifySiteServices', [])
           'ico': 'skill-dev',
           'head': {
             'en': 'Software Development',
-            'de': 'Software Entwicklung'
+            'de': 'Software Development'
           },
           'desc': {
             'en': 'We develop efficient and safe software, websites, and apps.',
@@ -555,6 +560,10 @@ angular.module('winifySiteServices', [])
       {
         'en': 'Moldova',
         'de': 'Moldau'
+      },
+      {
+        'en': 'Australia',
+        'de': 'Australia'
       }
     ],
     'footer': {

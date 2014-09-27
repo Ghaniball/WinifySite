@@ -48,6 +48,10 @@ a:hover {
 	font-size: 100%;
 }
 
+.nobr {
+	white-space: nowrap;
+}
+
 .hidden {
 	display: none !important;
 	visibility: hidden;
@@ -254,11 +258,6 @@ h2 {
 	.row {
 		padding-left: 10px;
 		padding-right: 10px;
-	}
-
-	.navbar a.toggle {
-		top: 50%;
-		margin-top: -20px;
 	}
 }
 

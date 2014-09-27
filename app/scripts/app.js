@@ -52,29 +52,27 @@ angular
 
       $rootScope.base = $location.$$html5 ? '/' : '/#!/';
 
-//      $rootScope.$on('$locationChangeSuccess', function () {
-//        $rootScope.locpath = $location.url().replace('/de', '').replace('/en', '');
-//      });
+      $rootScope.$on('$locationChangeSuccess', function () {
+        $rootScope.locpath = $location.url().replace('/de', '').replace('/en', '');
+      });
 
       $rootScope.$on('$routeChangeSuccess', function () {
         var l = $routeParams.lang;
         $rootScope.lang = l === 'en' ? 'en' : 'de';
         $rootScope.langs = langs;
-        $rootScope.test = {'key': $rootScope.lang};
-
-        $rootScope.$watch('test.key', function (val) {
-          //$rootScope.lang = val;
-          $location.url('/' + val + $location.url().replace('/de', '').replace('/en', ''));
-        });
-
+//        $rootScope.site = {'lang': $rootScope.lang};
+//
+//        $rootScope.$watch('site.lang', function (val) {
+//          $location.url('/' + val + $location.url().replace('/de', '').replace('/en', ''));
+//        });
+        
+        $window.document.title = l10n.siteTitle[$rootScope.lang];
+        
         $rootScope.path = $rootScope.base + $rootScope.lang + '/';
 
         $rootScope.l10n = l10n;
 
-        //$window.console.log($location.path());
         $window.ga('send', 'pageview', $location.path());
-        //$window.ga('newTracker.send', 'pageview', $location.path());
-        //$window._gaq.push(['_trackPageview', $location.path()]);
 
         $rootScope.timerInitial = new Date().getTime();
       });
