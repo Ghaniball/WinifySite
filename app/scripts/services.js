@@ -310,7 +310,7 @@ angular.module('winifySiteServices', [])
           'de': 'Wir sind <span>Winify</span>'
         },
         'content': {
-          'en': 'A staff of 85 employees – offices in Germany, Switzerland, Poland, Moldova, and Australia',
+          'en': 'A staff of 85 employees – offices in Germany, Switzerland, Poland, Moldova and Australia',
           'de': '85 Mitarbeiter, Büros in Deutschland, Schweiz, Polen, Moldawien, Australien'
         }
       },
