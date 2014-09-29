@@ -269,7 +269,7 @@ angular.module('winifySiteServices', [])
       'slide1': {
         'layer3': {
           'btn': {
-            'en': 'Project calculator <br/><span>Calculate the costs of your project (website or app) in a few steps</span>',
+            'en': 'Project calculator <br/><span>Calculate the costs of your project (website or app)<br/>in a few steps</span>',
             'de': 'Projektrechner <br/><span>Hier in wenigen Schritten die Kosten Ihres Projektes (Webseite oder App) berechnen.</span>'
           }
         }
