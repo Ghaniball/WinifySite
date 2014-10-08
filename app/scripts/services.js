@@ -682,7 +682,7 @@ angular.module('winifySiteServices', [])
     'impressum': {
       'title': {
         'en': 'Imprint',
-        'de': 'Imprint'
+        'de': 'Impressum'
       },
       'content': {
         'en': '',
