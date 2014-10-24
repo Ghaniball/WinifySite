@@ -2,14 +2,20 @@
 
 @import "compass";
 
-
-
 $row-max-width: 960px;
 $body-font-color: #333;
 
+// override gumby styles
+
+body {
+	color: #333;
+}
+
+.row {
+	max-width: 960px;
+}
 
 // bower:scss
-@import "../bower_components/gumby/sass/gumby.scss";
 // endbower
 
 @import "mixins";

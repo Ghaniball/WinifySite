@@ -71,7 +71,9 @@ angular
         $rootScope.path = $rootScope.base + $rootScope.lang + '/';
 
         $rootScope.l10n = l10n;
-
+        
+        $window.ga = $window.ga || angular.noop;
+        
         $window.ga('send', 'pageview', $location.path());
 
         $rootScope.timerInitial = new Date().getTime();

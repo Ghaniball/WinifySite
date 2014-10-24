@@ -170,7 +170,7 @@ angular.module('winifySiteDirectives', [])
       function restartTimer() {
         resetTimer();
         var interval = +$scope.interval;
-        if (!isNaN(interval) && interval >= 0) {
+        if (!isNaN(interval) && interval > 0) {
           currentTimeout = $timeout(timerFn, interval);
         }
       }

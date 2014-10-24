@@ -36,7 +36,6 @@ body.home {
 .intro-block,
 /*.skills-block,*/
 .works-block,
-.projekte-block,
 .contact-block,
 .about-block {
 	/*background-color: $llGray;*/
@@ -73,12 +72,6 @@ body.home {
 .works-block {
 	.separator {
 		height: 10%;
-	}
-}
-
-.projekte-block {
-	.separator {
-		height: 7%;
 	}
 }
 
