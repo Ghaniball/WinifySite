@@ -17,12 +17,18 @@
 			padding: 2.5em;
 		}
 
-		.pull_left,
 		.pull_right {
 			p {
 				max-width: 444px;
 			}
 		}
+		
+		.pull_left {
+			p {
+				max-width: 340px;
+			}
+		}
+		
 		.pull_left {
 			p, h2 {
 				float: right;
