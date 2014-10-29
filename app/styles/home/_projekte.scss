@@ -9,15 +9,16 @@
 	height: $h;
 	margin-left: 0 - $w/2;
 	margin-top: 0 - $h/2;
-	@if ($hor == true) {
-		background-position: $x -$w  $y;
-	}
-	@else {
-		background-position: $x $y -$h;
-	}
+
+	background-position: $x $y;
 
 	&.hover {
-		background-position: $x $y;
+		@if ($hor == true) {
+			background-position: $x -$w  $y;
+		}
+		@else {
+			background-position: $x $y -$h;
+		}
 	}
 }
 
@@ -37,8 +38,8 @@
 		li {
 			border-bottom: 1px solid $lGray;
 			border-right: 1px solid $lGray;
-			padding-bottom: 10%;
-			width: 20%;
+			padding-bottom: 18%;
+			width: 33%;
 			margin-left: 0;
 			position: relative;
 			float: left;
@@ -57,7 +58,7 @@
 
 				> div {
 					position: absolute;
-					background-image: url('../images/site-sprite-new5.png');
+					background-image: url('../images/site-sprite.png');
 					width: 0;
 					height: 0;
 					background-position: 0 0;
@@ -68,43 +69,39 @@
 					}
 
 					&.porche {
-						@include parner-logo(47px, 60px, 0, -130px);
+						@include parner-logo(69px, 90px, 0, -130px, true);
 					}
 
 					&.sky {
-						@include parner-logo(81px, 51px, -351px, -210px, true);
+						@include parner-logo(110px, 70px, 0, -220px);
 					}
 
 					&.masterpayment {
-						@include parner-logo(142px, 25px, -351px, -160px);
+						@include parner-logo(117px, 100px, -480px, -130px);
 					}
 
 					&.after-buy {
-						@include parner-logo(87px, 45px, 0, -250px);
+						@include parner-logo(134px, 70px, 0, -360px);
 					}
 
 					&.cashless-nation {
-						@include parner-logo(95px, 55px, -256px, -160px);
+						@include parner-logo(166px, 100px, -138px, -130px, true);
 					}
 
 					&.vorwerk {
-						@include parner-logo(99px, 40px, -47px, -130px);
+						@include parner-logo(156px, 60px, -110px, -230px);
 					}
 
 					&.iwant2 {
-						@include parner-logo(55px, 55px, -146px, -130px, true);
+						@include parner-logo(90px, 90px, -266px, -230px, true);
 					}
 
 					&.meinprospekt {
-						@include parner-logo(132px, 30px, -256px, -130px, true);
+						@include parner-logo(193px, 44px, -134px, -350px);
 					}
 
 					&.pcp {
-						@include parner-logo(78px, 45px, -87px, -210px);
-					}
-
-					&.googlin {
-						@include parner-logo(89px, 48px, -165px, -190px);
+						@include parner-logo(153px, 90px, -327px, -320px);
 					}
 				}
 
@@ -135,96 +132,7 @@
 	}
 }
 
-@media only screen and (min-width: 640px) and (max-width: 767px) {
-	.projekte-block .partners {
-		li {
-			width: 25%;
-			padding-bottom: 12%;
-
-			&.last {
-				border-right: 1px solid $lGray;
-			}
-
-			&.last-row {
-				border-bottom: 1px solid $lGray;
-			}
-
-			&:nth-child(4n) {
-				border-right: none !important;
-			}
-
-			&:nth-child(9n),
-				&:nth-child(10n) {
-				border-bottom: none;
-			}
-
-			&:nth-child(9n) {
-				margin-left: 25%;
-
-				&:before {
-					content: "";
-					position: absolute;
-					left: -1px;
-					top: 0;
-					width: 1px;
-					height: 100%;
-					border-left: 1px solid $lGray;
-				}
-			}
-		}
-	}
-}
-
-
-@media only screen and (min-width: 480px) and (max-width: 639px) {
-	.projekte-block .partners {
-		li {
-			width: 33.33%;
-			padding-bottom: 15%;
-
-			&.last {
-				border-right: 1px solid $lGray;
-			}
-
-			&.last-row {
-				border-bottom: 1px solid $lGray;
-			}
-
-			&:nth-child(3n) {
-				border-right: none !important;
-			}
-
-			&:nth-child(10n) {
-				margin-left: 33.33%;
-				border-bottom: none;
-
-				&:before {
-					content: "";
-					position: absolute;
-					left: -1px;
-					top: 0;
-					width: 1px;
-					height: 100%;
-					border-left: 1px solid $lGray;
-				}
-			}
-		}
-	}
-}
-
-@media only screen and (max-width: 479px) {
-	.projekte-block {
-		> .row {
-			padding-top: 2em;
-			padding-bottom: 2em;
-		}
-
-		.separator {
-			height: 2em;
-		}
-	}
-
-
+@media only screen and (min-width: 480px) and (max-width: 767px) {
 	.projekte-block .partners {
 		li {
 			width: 50%;
@@ -246,6 +154,40 @@
 				&:nth-child(10n) {
 				border-bottom: none;
 			}
+		}
+	}
+}
+
+
+@media only screen and (max-width: 479px) {
+	.projekte-block .partners {
+		li {
+			width: 100%;
+			padding-bottom: 30%;
+			
+			border-right: none !important;
+			
+			
+			&.last-row {
+				border-bottom: 1px solid $lGray;
+				
+				&.last {
+					border-bottom: none !important;
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 479px) {
+	.projekte-block {
+		> .row {
+			padding-top: 2em;
+			padding-bottom: 2em;
+		}
+
+		.separator {
+			height: 2em;
 		}
 	}
 }
