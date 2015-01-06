@@ -291,8 +291,8 @@ angular.module('winifySiteServices', [])
       'slide3': {
         'layer1': {
           'h2': {
-            'en': '<span>Wake up!</span><br/>Let\'s try something new together!',
-            'de': '<span>Aufwachen!</span><br/>Lassen Sie uns gemeinsam etwas neues ausprobieren!'
+            'en': '<span>Wake up!</span><br/>Let\'s try something new together.',
+            'de': '<span>Aufwachen!</span><br/>Lassen Sie uns gemeinsam etwas neues ausprobieren.'
           }
         },
         'layer2': {
@@ -320,8 +320,8 @@ angular.module('winifySiteServices', [])
           'de': 'Wir sind <span>Spezialisten</span>'
         },
         'content': {
-          'en': 'Mobile apps & websites, payment systems, <span class="nobr">E- & M-Commerce</span>, social platforms',
-          'de': 'Mobile Apps & Webseiten, Bezahllösungen, <span class="nobr">E- & M-Commerce</span>, soziale Plattformen'
+          'en': 'Mobile apps & websites, payment systems, <span class="nobr">E-commerce and</span> mobile commerce, social platforms',
+          'de': 'Mobile Apps & Webseiten, Bezahllösungen, <span class="nobr">E-Commerce und</span> Mobile Commerce, soziale Plattformen'
         }
       },
       'column3': {
