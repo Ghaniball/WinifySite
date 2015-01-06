@@ -69,7 +69,7 @@ module.exports = function (grunt) {
       options: {
         port: 9010,
         // Change this to '0.0.0.0' to access the server from outside.
-        hostname: '192.168.3.192',
+        hostname: '192.168.3.134',
         livereload: 35729
       },
       livereload: {
@@ -82,7 +82,7 @@ module.exports = function (grunt) {
           // MODIFIED: Add this middleware configuration
           middleware: function(connect, options) {
             var middlewares = [];
- 
+
             middlewares.push(modRewrite([
               '^/de|en/(.*) /$1',
               '^[^\\.]*$ /index.html [L]'
@@ -113,7 +113,7 @@ module.exports = function (grunt) {
           ],
           middleware: function(connect, options) {
             var middlewares = [];
- 
+
             middlewares.push(modRewrite(['^[^\\.]*$ /index.html [L]'])); //Matches everything that does not contain a '.' (period)
             options.base.forEach(function(base) {
               middlewares.push(connect.static(base));
@@ -453,7 +453,7 @@ module.exports = function (grunt) {
         },
         files: {
           '<%= yeoman.dist %>/views/home.html': ['<%= yeoman.app %>/views/home.html']
-        },
+        }
       }
     },
     htmlSnapshot: {
@@ -462,13 +462,13 @@ module.exports = function (grunt) {
           snapshotPath: '<%= yeoman.dist %>/snapshots/',
           sitePath: 'http://winify.lc/',
           fileNamePrefix: '',
-          msWaitForPages: 3000,
+          msWaitForPages: 2000,
           removeScripts: true,
           removeComments: true,
           //removeStyleTags: true,
           //removeStyleAttrs: true,
           replaceStrings: [
-            {'<html ': '<!doctype html><html '}
+            {'<html ': '<!DOCTYPE html><html '}
           ],
           sanitize: function (requestUri) {
             console.log('uri: ' + requestUri);
