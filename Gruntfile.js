@@ -69,7 +69,7 @@ module.exports = function (grunt) {
       options: {
         port: 9010,
         // Change this to '0.0.0.0' to access the server from outside.
-        hostname: '192.168.3.134',
+        hostname: '0.0.0.0',
         livereload: 35729
       },
       livereload: {
@@ -460,7 +460,7 @@ module.exports = function (grunt) {
       all: {
         options: {
           snapshotPath: '<%= yeoman.dist %>/snapshots/',
-          sitePath: 'http://winify.lc/',
+          sitePath: 'http://winify.com/',
           fileNamePrefix: '',
           msWaitForPages: 2000,
           removeScripts: true,

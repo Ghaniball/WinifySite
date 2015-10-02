@@ -214,10 +214,6 @@ angular.module('winifySiteServices', [])
                   sendEvent('S3MapDEBelin');
                   break;
 
-                case 'munchen':
-                  sendEvent('S3MapDEMunich');
-                  break;
-
                 case 'krakow':
                   sendEvent('S3MapPL');
                   break;
@@ -240,7 +236,6 @@ angular.module('winifySiteServices', [])
           var infoTexts = {
             'schweiz': '<p class="info-window">Winify AG - ' + $rootScope.l10n.countries[0][$rootScope.lang] + '<br/>Alte Steinhauserstrasse 1<br/>6330 Cham</p>',
             'berlin': '<p class="info-window">Winify AG - ' + $rootScope.l10n.countries[1][$rootScope.lang] + '<br/>Stendaler Strasse 4<br/>10559 Berlin</p>',
-            'munchen': '<p class="info-window">Winify AG - ' + $rootScope.l10n.countries[1][$rootScope.lang] + '<br/>Fürstenrieder Straße 99<br/>80686 München</p>',
             'poland': '<p class="info-window">Winify Sp. z o.o. - ' + $rootScope.l10n.countries[2][$rootScope.lang] + '<br/>ul. Syrokomli 22/6<br/>30-102 Kraków</p>',
             'moldova': '<p class="info-window">Winify SRL. - ' + $rootScope.l10n.countries[3][$rootScope.lang] + '<br/>str. A. Puskin 47/1, of 4,<br/>MD-2005 Chișinău</p>'
           };
@@ -249,8 +244,6 @@ angular.module('winifySiteServices', [])
           addMarker([47.1861859, 8.473614], infoTexts.schweiz, 'cham');
           // Deutschland Berlin
           addMarker([52.533502, 13.349253], infoTexts.berlin, 'berlin');
-          // Deutschland Munchen
-          addMarker([48.131939, 11.503241], infoTexts.munchen, 'munchen');
           // Poland
           addMarker([50.057118, 19.92484], infoTexts.poland, 'krakow');
           // Moldova
