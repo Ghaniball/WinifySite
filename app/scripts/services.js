@@ -236,7 +236,7 @@ angular.module('winifySiteServices', [])
           var infoTexts = {
             'schweiz': '<p class="info-window">Winify AG - ' + $rootScope.l10n.countries[0][$rootScope.lang] + '<br/>Alte Steinhauserstrasse 1<br/>6330 Cham</p>',
             'berlin': '<p class="info-window">Winify AG - ' + $rootScope.l10n.countries[1][$rootScope.lang] + '<br/>Stendaler Strasse 4<br/>10559 Berlin</p>',
-            'poland': '<p class="info-window">Winify Sp. z o.o. - ' + $rootScope.l10n.countries[2][$rootScope.lang] + '<br/>ul. Syrokomli 22/6<br/>30-102 Kraków</p>',
+            'poland': '<p class="info-window">Winify Sp. z o.o. - ' + $rootScope.l10n.countries[2][$rootScope.lang] + '<br/>ul. Urzędnicza 20/8<br/>30-051 Kraków</p>',
             'moldova': '<p class="info-window">Winify SRL. - ' + $rootScope.l10n.countries[3][$rootScope.lang] + '<br/>str. A. Puskin 47/1, of 4,<br/>MD-2005 Chișinău</p>'
           };
 
@@ -245,7 +245,7 @@ angular.module('winifySiteServices', [])
           // Deutschland Berlin
           addMarker([52.533502, 13.349253], infoTexts.berlin, 'berlin');
           // Poland
-          addMarker([50.057118, 19.92484], infoTexts.poland, 'krakow');
+          addMarker([50.069404, 19.918399], infoTexts.poland, 'krakow');
           // Moldova
           addMarker([47.02948428, 28.84300053], infoTexts.moldova, 'chisinau');
 
