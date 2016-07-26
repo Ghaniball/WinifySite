@@ -353,7 +353,8 @@ module.exports = function (grunt) {
             'views/{,*/}*.html',
             '!views/home/*.html',
             'images/{,*/}*.{webp}',
-            'fonts/**'
+            'fonts/**',
+            'files/**'
           ]
         }, {
           expand: true,
