@@ -18,7 +18,6 @@
         "zendframework/zend-loader": "2.3.*",
         "zendframework/zend-mime": "2.3.*",
         "zendframework/zend-stdlib": "2.3.*",
-        "zendframework/zend-loader": "2.3.*",
         "zendframework/zend-uri": "2.3.*"
     },
     "require-dev": {
