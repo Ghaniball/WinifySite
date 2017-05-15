@@ -1,13 +1,13 @@
 <div class="top-menu"
 	 data-ng-class="{active: block !== 'intro' || BrowserSize.width < 768}"
-	 data-ng-include="'views/partials/top_menu.html'"
+	 data-ng-include="'/views/partials/top_menu.html'"
 	 onload="loadTopMenu()"></div>
 
 <div class="intro-block"
 	 data-wnf-scroll-pos="{{offsetTop}}"
 	 data-ng-class="{active: block === 'intro', fixed: block !== 'intro'}">
 	<div class="fullscreenbanner-container"
-		 data-ng-include="'views/home/intro.html'"
+		 data-ng-include="'/views/home/intro.html'"
 		 data-replace-ng-include=""
 		 onload="initIntroSlider()"></div>
 </div>
@@ -16,7 +16,7 @@
 	 data-wnf-scroll-pos="{{offsetTop}}">
 	<div class="text-center"
 		 data-replace-ng-include=""
-		 data-ng-include="'views/home/skills.html'"></div>
+		 data-ng-include="'/views/home/skills.html'"></div>
 </div>
 
 <div class="flow-block"
@@ -24,7 +24,7 @@
 	<div class="tvalign row">
 		<div class="tcvalign text-center"
 			 data-replace-ng-include=""
-			 data-ng-include="'views/home/flow.html'"></div>
+			 data-ng-include="'/views/home/flow.html'"></div>
 	</div>
 </div>
 
@@ -32,7 +32,7 @@
 	<div class="tvalign row">
 		<div class="tcvalign text-center"
 			 data-replace-ng-include=""
-			 data-ng-include="'views/home/about.html'"></div>
+			 data-ng-include="'/views/home/about.html'"></div>
 	</div>
 </div>
 
@@ -40,29 +40,29 @@
 	<div class="tvalign row">
 		<div class="tcvalign text-center"
 			 data-replace-ng-include=""
-			 data-ng-include="'views/home/quotes.html'"></div>
+			 data-ng-include="'/views/home/quotes.html'"></div>
 	</div>
 </div>
 
 <div class="projekte-block" data-wnf-scroll-pos="{{offsetTop}}">
 		<div class="row text-center"
 			 data-replace-ng-include=""
-			 data-ng-include="'views/home/projekte.html'"></div>
+			 data-ng-include="'/views/home/projekte.html'"></div>
 </div>
 
 <div class="contact-block" data-wnf-scroll-pos="{{offsetTop}}">
 	<div class="tvalign row">
 		<div class="tcvalign text-center"
 			 data-replace-ng-include=""
-			 data-ng-include="'views/home/contact.html'"></div>
+			 data-ng-include="'/views/home/contact.html'"></div>
 	</div>
 </div>
 
 <div class="gmap-block"
 	 data-ng-if="BrowserSize.width >= 768"
-	 data-ng-include="'views/partials/gmap.html'"></div>
+	 data-ng-include="'/views/partials/gmap.html'"></div>
 
 <div id="footer"
 	 class="footer"
-	 data-ng-include="'views/partials/footer.html'"
+	 data-ng-include="'/views/partials/footer.html'"
 	 onload=""></div>

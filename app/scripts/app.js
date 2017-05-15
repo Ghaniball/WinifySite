@@ -16,20 +16,20 @@ angular
       $locationProvider.html5Mode(true).hashPrefix('!');
       $routeProvider
         .when('/:lang/', {
-          templateUrl: 'views/home.html',
+          templateUrl: '/views/home.html',
           controller: 'HomeCtrl',
           reloadOnSearch: false
         })
         .when('/:lang/agb', {
-          templateUrl: 'views/agb.html',
+          templateUrl: '/views/agb.html',
           controller: 'FooterPagesCtrl'
         })
         .when('/:lang/impressum', {
-          templateUrl: 'views/impressum.html',
+          templateUrl: '/views/impressum.html',
           controller: 'FooterPagesCtrl'
         })
         .when('/:lang/datenschutz', {
-          templateUrl: 'views/datenschutz.html',
+          templateUrl: '/views/datenschutz.html',
           controller: 'FooterPagesCtrl'
         })
         .otherwise({
