@@ -19,8 +19,8 @@ class MailService {
 		$message = new Message();
 		$message//->setFrom($mailCfg->from->mail, $mailCfg->from->name)
 				->addTo($mailCfg->to->mail, $mailCfg->to->name)
-				->addTo($mailCfg->cc->mail, $mailCfg->cc->name)
-				->addTo($mailCfg->bcc->mail, $mailCfg->bcc->name)
+//				->addTo($mailCfg->cc->mail, $mailCfg->cc->name)
+//				->addTo($mailCfg->bcc->mail, $mailCfg->bcc->name)
 				->setSubject($mailCfg->subject);
 
 		// Setup SMTP transport using LOGIN authentication
